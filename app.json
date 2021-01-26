@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/formCollect/formCollect",
+    "pages/feedbackCollect/feedbackCollect",
+    "pages/submitAccess/submitAccess",
+    "pages/formHistory/formHistory",
+    "pages/laptopSuggest/laptopSuggest",
+    "pages/assignmentAccept/assignmentAccept",
+    "pages/managerIndex/managerIndex",
+
+
+    "pages/staffIndex/staffIndex",
+    "pages/userIndex/userIndex", 
+    "pages/index2/index2"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2c61b4",
+    "navigationBarTitleText": "呼叫及时雨",
+    "navigationBarTextStyle":"white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-avatar":"/miniprogram_npm/lin-ui/avatar/index"
+  }
+}

@@ -1,0 +1,23 @@
+l-radio{
+  margin: 0 20rpx;
+}
+
+l-checkbox{
+  margin: 0 20rpx;
+}
+
+.comment{
+  font-size: 26rpx;
+  color: #2c60b4e0;
+  margin: 0 20rpx 20rpx 20rpx;
+  
+}
+
+.btns{
+  height: 120rpx;
+}
+
+l-button{
+  display: inline-block;
+  margin: 20rpx 87.5rpx 20rpx 87.5rpx;
+}

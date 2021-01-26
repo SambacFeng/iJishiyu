@@ -1,0 +1,107 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.0",
+  "appid": "wx2278c2c1237dd227",
+  "projectname": "jishiyuTest",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "用户首页",
+          "pathName": "pages/userIndex/userIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "队员首页",
+          "pathName": "pages/staffIndex/staffIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "跳转页面",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理员首页",
+          "pathName": "pages/managerIndex/managerIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修表单收集",
+          "pathName": "pages/formCollect/formCollect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提交成功页面",
+          "pathName": "pages/submitAccess/submitAccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "维修反馈页面",
+          "pathName": "pages/feedbackCollect/feedbackCollect",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

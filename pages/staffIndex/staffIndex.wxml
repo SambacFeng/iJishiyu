@@ -1,0 +1,18 @@
+<view class="main">
+  <view class="header">
+    <!-- 后期改为调取队员头像 -->
+    <view class="avatar">
+      <l-avatar src="/assets/logo.jpg" size="220"/>
+    </view>
+    <!-- 后期改为调取队员姓名 -->
+    <view class="name">
+      <text>及时雨志愿者服务队</text>
+    </view>
+  </view>
+  <view class="btns">
+    <l-button type="default" plain width="600" height="100"><text>我要接单</text></l-button>
+    <l-button type="default" plain width="600" height="100"><text>已接报修单</text></l-button>
+    <l-button type="default" plain width="600" height="100"><text>上传报告</text></l-button>
+    <l-button type="default" plain width="600" height="100"><text>报告查询</text></l-button>
+  </view>
+</view>

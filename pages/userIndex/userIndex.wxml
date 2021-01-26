@@ -1,0 +1,15 @@
+<view class="main">
+  <image src="/assets/logo.jpg" class="logo"/>
+  <view class="intro">
+    呼叫及时雨是计信院及时雨志愿者服务队的特色活动，旨在运用所学的知识为同学提供免费服务，解决电脑方面的问题。若是对我们的服务有好的建议，欢迎填写反馈表单，以便我们提供更优质的服务。
+    愿您心中有个温暖的及时雨。
+    欢迎来到呼叫及时雨表单系统！
+  </view>
+  <view class="btns">
+      <l-button type="default" plain width="600" height="100"><text>我要报修</text></l-button>
+      <l-button type="default" plain width="600" height="100"><text>维修反馈</text></l-button>
+      <l-button type="default" plain width="600" height="100"><text>报修历史</text></l-button>
+      <l-button type="default" plain width="600" height="100"><text>购机推荐</text></l-button>
+  </view>
+</view>
+
