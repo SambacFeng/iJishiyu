@@ -18,7 +18,7 @@
   margin: 60rpx 275rpx 0 275rpx;
 }
 
-l-button{
+navigator{
   margin: 20rpx 0;
 }
 

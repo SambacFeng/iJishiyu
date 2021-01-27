@@ -6,10 +6,26 @@
     欢迎来到呼叫及时雨表单系统！
   </view>
   <view class="btns">
-      <l-button type="default" plain width="600" height="100"><text>我要报修</text></l-button>
-      <l-button type="default" plain width="600" height="100"><text>维修反馈</text></l-button>
-      <l-button type="default" plain width="600" height="100"><text>报修历史</text></l-button>
-      <l-button type="default" plain width="600" height="100"><text>购机推荐</text></l-button>
+      <navigator url="/pages/formCollect/formCollect">
+        <l-button type="default" plain width="600" height="100">
+          <text>我要报修</text>
+        </l-button>
+      </navigator>
+      <navigator url="/pages/feedbackCollect/feedbackCollect">
+        <l-button type="default" plain width="600" height="100">
+          <text>维修反馈</text>
+        </l-button>
+      </navigator>
+      <navigator url="/pages/formHistory/formHistory">
+        <l-button type="default" plain width="600" height="100">
+          <text>报修历史</text>
+        </l-button>
+      </navigator>
+      <navigator url="/pages/laptopRecommend/laptopRecommend">
+        <l-button type="default" plain width="600" height="100">
+          <text>购机推荐</text>
+        </l-button>
+      </navigator>
   </view>
 </view>
 

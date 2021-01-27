@@ -1,37 +1,37 @@
 <view>
-  <l-form action="">
+  <l-form action="" bindsubmit="formSubmit">
     <content-card name="姓名">
-      <l-input hide-label="{{true}}" placeholder="请输入姓名" value="{{form.name}}"></l-input>
+      <l-input name="name" hide-label="{{true}}" placeholder="请输入姓名" value="{{form.name}}"></l-input>
     </content-card>
     <content-card name="性别">
-      <l-radio-group placement="row" current="1" none-checked="{{false}}" length="2">
+      <l-radio-group name="gender" placement="row" current="1" none-checked="{{false}}" length="2">
         <l-radio key="1">男</l-radio>
         <l-radio key="2">女</l-radio>
       </l-radio-group>
     </content-card>
     <content-card name="联系方式">
-      <l-input label="手机" placeholder="请输入11位手机号码"></l-input>
-      <l-input label="QQ" placeholder="请输入QQ号码"></l-input>
-      <l-input label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
+      <l-input name="phone" label="手机" placeholder="请输入11位手机号码"></l-input>
+      <l-input name="QQ" label="QQ" placeholder="请输入QQ号码"></l-input>
+      <l-input name="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
     </content-card>
     <content-card name="遇到的问题">
-      <l-checkbox-group bind:change="onChangeTap" >
+      <l-checkbox-group name="problem" bind:change="onChangeTap" >
         <l-checkbox
           wx:for-items="{{items}}"
-          wx:key="{{item.value}}"
-          key="{{item.value}}"
+          wx:key="key"
+          key="{{item.key}}"
           checked="{{item.isChecked}}">
           {{item.value}}
         </l-checkbox>
       </l-checkbox-group>
       <!-- 设置为仅在选中“其他”时出现 -->
-      <l-input hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
+      <l-input problemDetail hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
     </content-card>
     <content-card name="电脑使用的紧急性">
       <view class="comment">
           由于队员任务较多，会根据您使用电脑的紧急程度安排维修，给您带来不便敬请谅解。
       </view>
-      <l-radio-group placement="row" current="1" none-checked="{{false}}" length="3">
+      <l-radio-group name="timeArrange" placement="row" current="1" none-checked="{{false}}" length="3">
         <l-radio key="1">今天</l-radio>
         <l-radio key="2">三天以内</l-radio>
         <l-radio key="3">一周以内</l-radio>
