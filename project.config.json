@@ -1,4 +1,5 @@
 {
+  "cloudfunctionRoot": "cloudfunctions/",
   "description": "项目配置文件",
   "packOptions": {
     "ignore": []
@@ -99,6 +100,7 @@
         {
           "name": "维修反馈页面",
           "pathName": "pages/feedbackCollect/feedbackCollect",
+          "query": "",
           "scene": null
         }
       ]
