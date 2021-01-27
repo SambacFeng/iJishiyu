@@ -22,7 +22,7 @@
   font-size: 40rpx;
 }
 
-l-button{
+navigator{
   margin: 20rpx 0;
 }
 
