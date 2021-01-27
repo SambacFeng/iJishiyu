@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/formCollect/formCollect",
+    "pages/formClaim/formClaim",
     "pages/feedbackCollect/feedbackCollect",
     "pages/submitAccess/submitAccess",
     "pages/formHistory/formHistory",

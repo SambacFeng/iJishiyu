@@ -10,6 +10,9 @@
       </l-radio-group>
     </content-card>
     <content-card name="联系方式">
+      <view class="comment">
+          您的联系方式仅用于为您提供服务的队员与您联系，不会另作他用，请您放心填写。
+      </view>
       <l-input name="phone" label="手机" placeholder="请输入11位手机号码"></l-input>
       <l-input name="QQ" label="QQ" placeholder="请输入QQ号码"></l-input>
       <l-input name="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
@@ -25,7 +28,7 @@
         </l-checkbox>
       </l-checkbox-group>
       <!-- 设置为仅在选中“其他”时出现 -->
-      <l-input problemDetail hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
+      <l-input name="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
     </content-card>
     <content-card name="电脑使用的紧急性">
       <view class="comment">

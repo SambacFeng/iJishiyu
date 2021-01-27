@@ -1,0 +1,50 @@
+<!-- 
+  使用数组渲染，有一个渲染一个，没有的话输出“暂时没有未处理的报修单，做点其他事情吧” 
+-->
+<view>
+  <!-- 
+    content-card里的name记得改成数组标号
+   -->
+  <content-card name="1">
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+      <view class="lv2" style="width: 520rpx">
+        姓名：{{}}
+      </view>
+      <view class="lv2" style="width: 186rpx">
+        性别：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        手机：{{}}
+      </view>
+      <view class="lv2">
+        QQ：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        地址：{{}}
+      </view>
+      <view class="lv2">
+        紧急性：{{}}
+      </view>
+    </view>
+    <!-- 这个问题设置成如果选已有问题就显示选项，选“其他”的话就显示报修人写的具体内容 -->
+    <view class="lv1">
+      <view class="lv2 prob">
+        问题：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2" style="width: 520rpx">
+        报修时间：{{}}
+      </view>
+      <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx; ">
+        <l-button width="170">
+          <text style="font-size: 36rpx">接单</text>
+        </l-button>
+      </view>
+    </view>
+  </content-card>
+</view>

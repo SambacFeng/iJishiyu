@@ -102,6 +102,11 @@
           "pathName": "pages/feedbackCollect/feedbackCollect",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "接单页面",
+          "pathName": "pages/formClaim/formClaim",
+          "scene": null
         }
       ]
     }
