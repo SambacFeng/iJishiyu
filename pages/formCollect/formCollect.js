@@ -6,13 +6,43 @@ Page({
    */
   data: {
     items: [
-      {key: 1, name: '重装系统', value: '重装系统', isChecked: false},
-      {key: 2, name: '蓝屏、黑屏', value: '蓝屏、黑屏', isChecked: false},
-      {key: 3, name: '网络问题，无法连接校园网等', value: '网络问题，无法连接校园网等', isChecked: false},
-      {key: 4, name: '软件安装、使用相关问题', value: '需安装软件或软件使用过程中遇到问题', isChecked: false},
-      {key: 5, name: '拆机清灰、更换硅脂等', value: '拆机清灰、更换硅脂等', isChecked: false},
-      {key: 6, name: '其他或问题不清楚，请在下方简单描述', value: '其他或问题不清楚，请在下方简单描述', isChecked: false},
+      {
+        id: 1, 
+        name: '重装系统', 
+        ckecked: false},
+      {
+        id: 2, 
+        name: '蓝屏、黑屏', 
+        ckecked: false},
+      {
+        id: 3, 
+        name: '网络问题，无法连接校园网等', 
+        ckecked: false},
+      {
+        id: 4, 
+        name: '软件安装、使用相关问题', 
+        ckecked: false},
+      {
+        id: 5, 
+        name: '拆机清灰、更换硅脂等', 
+        ckecked: false},
+      {
+        id: 6, 
+        name: '其他或问题不清楚，请在下方简单描述',
+        ckecked: false},
     ]
+  },
+
+  change(e) {
+    let items = this.data.items;
+    items.forEach(item => {
+      if(item.name === e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      items: items
+    });
   },
 
   /**
