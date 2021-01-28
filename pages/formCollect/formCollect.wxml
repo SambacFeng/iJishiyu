@@ -1,50 +1,70 @@
 <view>
-  <l-form action="" bindsubmit="formSubmit">
+  <l-form name="form" bind:linsubmit="submit">
     <content-card name="姓名">
-      <l-input name="name" hide-label="{{true}}" placeholder="请输入姓名" value="{{form.name}}"></l-input>
+      <l-form-item name="name">
+        <l-input id="name" hide-label="{{true}}" placeholder="请输入姓名" value="{{name}}"></l-input>
+      </l-form-item>
     </content-card>
     <content-card name="性别">
-      <l-radio-group name="gender" placement="row" current="1" none-checked="{{false}}" length="2">
-        <l-radio key="1">男</l-radio>
-        <l-radio key="2">女</l-radio>
-      </l-radio-group>
+      <l-form-item name="gender">
+        <l-radio-group id="gender" placement="row" current="1" none-checked="{{false}}" length="2">
+          <l-radio key="1">男</l-radio>
+          <l-radio key="2">女</l-radio>
+        </l-radio-group>
+      </l-form-item>
     </content-card>
     <content-card name="联系方式">
       <view class="comment">
-          您的联系方式仅用于为您提供服务的队员与您联系，不会另作他用，请您放心填写。
+        您的联系方式仅用于为您提供服务的队员与您联系，不会另作他用，请您放心填写。
       </view>
-      <l-input name="phone" label="手机" placeholder="请输入11位手机号码"></l-input>
-      <l-input name="QQ" label="QQ" placeholder="请输入QQ号码"></l-input>
-      <l-input name="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
+      <l-form-item name="phone">
+        <l-input id="phone" label="手机" placeholder="请输入11位手机号码"></l-input>
+      </l-form-item>
+      <l-form-item name="QQ">
+        <l-input id="QQ" label="QQ" placeholder="请输入QQ号码"></l-input>
+      </l-form-item>
+      <l-form-item name="address">
+        <l-input id="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
+      </l-form-item>
     </content-card>
     <content-card name="遇到的问题">
-      <l-checkbox-group name="problem" bind:linchange="change">
-        <l-checkbox
-          wx:for="{{items}}"
-          wx:key="id"
-          key="{{item.name}}"
-          checked="{{item.checked}}"
-        >
-          {{item.name}}
-        </l-checkbox>
-      </l-checkbox-group>
+      <l-form-item name="problem">
+        <l-checkbox-group id="problem" bind:linchange="change">
+          <l-checkbox
+            wx:for="{{items}}"
+            wx:key="id"
+            key="{{item.name}}"
+            checked="{{item.checked}}"
+          >
+            {{item.name}}
+          </l-checkbox>
+        </l-checkbox-group>
+      </l-form-item>
       <!-- 设置为仅在选中“其他”时出现 -->
-      <l-input name="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
+      <l-form-item name="problemDetail">
+        <l-input id="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
+      </l-form-item>
     </content-card>
     <content-card name="电脑使用的紧急性">
       <view class="comment">
           由于队员任务较多，会根据您使用电脑的紧急程度安排维修，给您带来不便敬请谅解。
       </view>
-      <l-radio-group name="timeArrange" placement="row" current="1" none-checked="{{false}}" length="3">
-        <l-radio key="1">今天</l-radio>
-        <l-radio key="2">三天以内</l-radio>
-        <l-radio key="3">一周以内</l-radio>
-      </l-radio-group>
+      <l-form-item name="timeArrange">
+        <l-radio-group id="timeArrange" placement="row" current="1" none-checked="{{false}}" length="3">
+          <l-radio key="1">今天</l-radio>
+          <l-radio key="2">三天以内</l-radio>
+          <l-radio key="3">一周以内</l-radio>
+        </l-radio-group>
+      </l-form-item>
     </content-card>
     <!-- 点击提交后跳转到submitAccess页面 -->
-    <view class="btns">
-      <l-button form-type="submit" width="200" height="80">提交</l-button>
-      <l-button form-type="reset" width="200" height="80" plain>重置</l-button>
+    <view slot="submit" class="btns">
+      <view slot="submit" class="btn">
+        <l-button>提交</l-button>
+      </view>
+      <view slot="reset" class="btn">
+        <l-button type="default" plain>重置</l-button>
+      </view>
     </view>
   </l-form>
 </view>
