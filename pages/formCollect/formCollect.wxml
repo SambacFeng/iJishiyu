@@ -18,13 +18,14 @@
       <l-input name="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
     </content-card>
     <content-card name="遇到的问题">
-      <l-checkbox-group name="problem" bind:change="onChangeTap" >
+      <l-checkbox-group name="problem" bind:linchange="change">
         <l-checkbox
-          wx:for-items="{{items}}"
-          wx:key="key"
-          key="{{item.key}}"
-          checked="{{item.isChecked}}">
-          {{item.value}}
+          wx:for="{{items}}"
+          wx:key="id"
+          key="{{item.name}}"
+          checked="{{item.checked}}"
+        >
+          {{item.name}}
         </l-checkbox>
       </l-checkbox-group>
       <!-- 设置为仅在选中“其他”时出现 -->
