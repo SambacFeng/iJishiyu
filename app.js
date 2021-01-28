@@ -38,6 +38,21 @@ App({
         }
       }
     })
+
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] 调用成功 ', res.result.openid, res.result.url)
+        this.globalData.openid = res.result.openid
+        wx.navigateTo({
+          url: res.result.url
+        })
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+      }
+    })
   },
   globalData: {
     userInfo: null

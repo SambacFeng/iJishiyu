@@ -49,6 +49,7 @@
   },
   "scripts": {},
   "isGameTourist": false,
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "plugin": {
       "list": []

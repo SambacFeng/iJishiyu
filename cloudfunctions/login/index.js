@@ -9,21 +9,21 @@ cloud.init({
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
-  url: ''
+  var url = '../userIndex/userIndex'
   re = await db.collection('Member').where({_openid: wxContext.OPENID}).get()
   if (re.data.length == 0){
-    url: "../userIndex/userIndex"
+    url = '../userIndex/userIndex'
   }
   else {
     if (re.data[0].type == 2){//管理员
-      url: "../managerIndex/manageIndex"
+      url = '../managerIndex/managerIndex'
     }
     else if (re.data[0].type == 1){//队员
-      url: "../staffIndex/staffIndex"
+      url = '../staffIndex/staffIndex'
     }
   }
   return {
-    url,
+    url: url,
     openid: wxContext.OPENID
   }
 }
