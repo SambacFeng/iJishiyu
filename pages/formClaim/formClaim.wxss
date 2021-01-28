@@ -1,0 +1,24 @@
+/* pages/formClaim/formClaim.wxss */
+page{
+  font-size: 36rpx;
+  box-sizing: content-box;
+}
+
+.lv1{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  border-bottom: #2c61b440 2rpx solid;
+  border-left: #2c61b440 2rpx solid;
+}
+
+.lv2{
+  width: 355rpx;
+  border-right: #2c61b440 2rpx solid;
+  padding: 20rpx 0 0 10rpx;
+}
+
+.prob{
+  width: 100%;
+  padding-right: 5rpx;
+}
