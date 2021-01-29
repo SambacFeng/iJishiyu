@@ -1,41 +1,54 @@
 <view>
-  <content-card name="您的姓名">
-    <l-input hide-label="{{true}}" placeholder="请输入姓名"></l-input>
-  </content-card>
-  <content-card name="维修人员姓名">
-    <view class="comment">
-      如果您知道为您服务的队员的姓名，可以写下。
+  <l-form name="feedback" bind:linsubmit="submit">
+    <content-card name="您的姓名">
+      <l-form-item name="name">
+        <l-input id="name" hide-label="{{true}}" placeholder="请输入姓名（可不填）" />
+      </l-form-item>
+    </content-card>
+    <content-card name="维修人员姓名">
+      <view class="comment">
+        如果您知道为您服务的队员的姓名，可以写下。
+      </view>
+      <l-form-item name="staffName">
+        <l-input id="staffName" hide-label="{{true}}" placeholder="请输入为您服务的队员姓名" />
+      </l-form-item>
+    </content-card>
+    <content-card name="维修结果">
+      <l-form-item name="result">
+        <l-radio-group id="result" current="1" none-checked="{{false}}" length="4">
+          <l-radio
+            wx:for="{{items}}" 
+            wx:key="id" 
+            key="{{item.name}}" 
+            checked="{{item.checked}}"
+          >
+            {{item.name}}
+          </l-radio>
+        </l-radio-group>
+      </l-form-item>
+    </content-card>
+    <content-card name="评分">
+      <view class="comment" style="text-indent: 56rpx">
+        请您从服务态度、技术水平等方面对及时雨的维修服务打个分。
+      </view>
+      <l-form-item name="rating">
+        <l-radio-group id="rating" placement="row" current="5" none-checked="{{false}}" length="5">
+          <l-radio key="5">5</l-radio>
+          <l-radio key="4">4</l-radio>
+          <l-radio key="3">3</l-radio>
+          <l-radio key="2">2</l-radio>
+          <l-radio key="1">1</l-radio>
+        </l-radio-group>
+      </l-form-item>
+    </content-card>
+    <content-card name="您的意见或建议">
+      <l-form-item>
+        <l-textarea style="width:100%" indicator="{{false}}" placeholder="真诚的感谢您的意见和建议" />
+      </l-form-item>
+    </content-card>
+    <view class="btns" slot="submit">
+      <l-button width="200" height="80">提交</l-button>
+      <l-button width="200" height="80" plain>重置</l-button>
     </view>
-    <l-input hide-label="{{true}}" placeholder="请输入队员姓名"></l-input>
-  </content-card>
-  <content-card name="维修结果">
-    <l-radio-group current="1" none-checked="{{false}}" length="4">
-      <l-radio key="1">电脑问题已全部被解决</l-radio>
-      <l-radio key="2">电脑问题基本被解决，可能仍有少许问题</l-radio>
-      <l-radio key="3">电脑问题没有得到解决</l-radio>
-      <l-radio key="4">其他</l-radio>
-    </l-radio-group>
-  </content-card>
-  <content-card name="评分">
-    <view class="comment" style="text-indent: 56rpx">
-      请您从服务态度、技术水平等方面对及时雨的维修服务打个分。
-    </view>
-    <l-radio-group placement="row" current="1" none-checked="{{false}}" length="5">
-      <l-radio key="1">1</l-radio>
-      <l-radio key="2">2</l-radio>
-      <l-radio key="3">3</l-radio>
-      <l-radio key="4">4</l-radio>
-      <l-radio key="5">5</l-radio>
-    </l-radio-group>
-  </content-card>
-  <content-card name="您的意见或建议">
-    <l-textarea style="width:100%" indicator="{{false}}"  placeholder="说说你的想法吧..."/>
-  </content-card>
-  <view class="btns">
-      <l-button form-type="submit" width="200" height="80">提交</l-button>
-      <l-button form-type="reset" width="200" height="80" plain>重置</l-button>
-    </view>
+  </l-form>
 </view>
-    <!-- <view class="comment">
-      及时雨志愿者服务队电脑维修服务反馈，请留下您的建议，帮助小雨做得更好。
-    </view> -->

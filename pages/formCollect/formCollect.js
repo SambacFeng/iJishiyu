@@ -42,6 +42,13 @@ Page({
     ]
   },
 
+  inputName(e){
+    // console.log(e)
+    this.setData({
+      name: e.detail.value
+    })
+  },
+
   change(e) {
     console.log(e);
     let items = this.data.items;
