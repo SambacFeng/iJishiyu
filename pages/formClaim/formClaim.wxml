@@ -1,47 +1,47 @@
 <!-- 
   使用数组渲染，有一个渲染一个，没有的话输出“暂时没有未处理的报修单，做点其他事情吧” 
 -->
-<view>
+<view wx:for="{{Record.length}}" wx:key="*this">
   <!-- 
     content-card里的name记得改成数组标号
    -->
-  <content-card name="1">
+  <content-card name="{{index+1}}">
     <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
       <view class="lv2" style="width: 520rpx">
-        姓名：{{}}
+        姓名：{{Record[index]._name}}
       </view>
       <view class="lv2" style="width: 186rpx">
-        性别：{{}}
+        性别：{{Record[index]._gender}}
       </view>
     </view>
     <view class="lv1">
       <view class="lv2">
-        手机：{{}}
+        手机：{{Record[index]._phone}}
       </view>
       <view class="lv2">
-        QQ：{{}}
+        QQ：{{Record[index]._QQ}}
       </view>
     </view>
     <view class="lv1">
       <view class="lv2">
-        地址：{{}}
+        地址：{{Record[index]._address}}
       </view>
       <view class="lv2">
-        紧急性：{{}}
+        紧急性：{{Record[index]._timeArrange}}
       </view>
     </view>
     <!-- 这个问题设置成如果选已有问题就显示选项，选“其他”的话就显示报修人写的具体内容 -->
     <view class="lv1">
       <view class="lv2 prob">
-        问题：{{}}
+        问题：{{Record[index]._problem}}
       </view>
     </view>
     <view class="lv1">
       <view class="lv2" style="width: 520rpx">
-        报修时间：{{}}
+        报修时间：{{Record[index]._time}}
       </view>
       <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx; ">
-        <l-button width="170">
+        <l-button width="170" bindtap="toClaim">
           <text style="font-size: 36rpx">接单</text>
         </l-button>
       </view>

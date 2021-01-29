@@ -1,2 +1,7 @@
 <!--pages/formHistory/formHistory.wxml-->
 <text>查询报修历史</text>
+<view wx:for="{{Record}}" wx:key="*this">
+  <content-card name="Name">
+    {{Record[index]._name}}
+  </content-card>
+</view>
