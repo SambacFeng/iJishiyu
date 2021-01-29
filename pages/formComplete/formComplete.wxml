@@ -1,2 +1,31 @@
-<!--pages/formComplete/formComplete.wxml-->
-<text>pages/formComplete/formComplete.wxml</text>
+<l-form name="complete">
+  <l-form-item name="reason">
+    <view class="comment">
+      注意：此页面所填写内容，报修人可以从报修记录中查询，请务必写的通俗易懂，方便报修人理解。
+    </view>
+    <content-card name="问题原因">
+      <l-textarea 
+        id="reason" 
+        placeholder="请向报修人简单描述问题出现的原因" 
+        auto-height="{{true}}"
+      />
+    </content-card>
+  </l-form-item>
+  <l-form-item name="suggestion">
+    <content-card name="使用建议">
+      <l-textarea 
+        id="suggestion" 
+        placeholder="请向报修人提供一些使用电脑的建议" 
+        auto-height="{{true}}"
+      />
+    </content-card>
+  </l-form-item>
+  <view class="btns">
+    <view slot="submit" class="btn">
+      <l-button width="200" height="80">提交</l-button>
+    </view>
+    <view slot="reset" class="btn">
+      <l-button width="200" height="80" plain>重置</l-button>
+    </view>
+  </view>
+</l-form>

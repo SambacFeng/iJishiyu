@@ -43,7 +43,13 @@
     </l-form-item>
     <l-form-item name="advice">
       <content-card name="您的意见或建议">
-        <l-textarea id="advice" style="width:100%" indicator="{{false}}" placeholder="真诚的感谢您的意见和建议" />
+        <l-textarea 
+          id="advice" 
+          style="width:100%" 
+          indicator="{{false}}" 
+          placeholder="真诚的感谢您的意见和建议" 
+          auto-height="{{true}}"
+        />
       </content-card>
     </l-form-item>
     <view class="btns" slot="submit">

@@ -127,6 +127,12 @@
           "pathName": "pages/staffStatistic/staffStatistic",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "完成维修",
+          "pathName": "pages/formComplete/formComplete",
+          "query": "",
+          "scene": null
         }
       ]
     }
