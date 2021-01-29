@@ -2,7 +2,7 @@
   <l-form name="form" bind:linsubmit="submit">
     <content-card name="姓名">
       <l-form-item name="name">
-        <l-input id="name" hide-label="{{true}}" placeholder="请输入姓名" value="{{name}}"></l-input>
+        <l-input id="name" hide-label="{{true}}" placeholder="请输入姓名" value="{{name}}" bind:lininput="inputName" />
       </l-form-item>
     </content-card>
     <content-card name="性别">
@@ -18,13 +18,13 @@
         您的联系方式仅用于为您提供服务的队员与您联系，不会另作他用，请您放心填写。
       </view>
       <l-form-item name="phone">
-        <l-input id="phone" label="手机" placeholder="请输入11位手机号码"></l-input>
+        <l-input id="phone" label="手机" placeholder="请输入11位手机号码" />
       </l-form-item>
       <l-form-item name="QQ">
-        <l-input id="QQ" label="QQ" placeholder="请输入QQ号码"></l-input>
+        <l-input id="QQ" label="QQ" placeholder="请输入QQ号码" />
       </l-form-item>
       <l-form-item name="address">
-        <l-input id="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍"></l-input>
+        <l-input id="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍" />
       </l-form-item>
     </content-card>
     <content-card name="遇到的问题">
@@ -42,7 +42,7 @@
       </l-form-item>
       <!-- 设置为仅在选中“其他”时出现 -->
       <l-form-item name="problemDetail">
-        <l-input id="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题"></l-input>
+        <l-input id="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题" />
       </l-form-item>
     </content-card>
     <content-card name="电脑使用的紧急性">
@@ -60,10 +60,10 @@
     <!-- 点击提交后跳转到submitAccess页面 -->
     <view slot="submit" class="btns">
       <view slot="submit" class="btn">
-        <l-button>提交</l-button>
+        <l-button width="200" height="80">提交</l-button>
       </view>
       <view slot="reset" class="btn">
-        <l-button type="default" plain>重置</l-button>
+        <l-button width="200" height="80" type="default" plain>重置</l-button>
       </view>
     </view>
   </l-form>
