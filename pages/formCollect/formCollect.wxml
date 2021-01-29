@@ -41,8 +41,8 @@
         </l-checkbox-group>
       </l-form-item>
       <!-- 设置为仅在选中“其他”时出现 -->
-      <l-form-item name="problemDetail">
-        <l-input id="problemDetail" hide-label="{{true}}" placeholder="请描述您的电脑遇到的问题" />
+      <l-form-item wx:if="{{items[5].checked === true}}" name="problemDetail">
+        <l-input id="problemDetail" hide-label="{{true}}" value="{{problemDetail}}" bind:lininput="inputProblemDetail" placeholder="请描述您的电脑遇到的问题" />
       </l-form-item>
     </content-card>
     <l-form-item name="timeArrange">

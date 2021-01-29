@@ -18,7 +18,7 @@ Page({
         type: 'UserQuery'
       },
       success: res => {
-        console.log('[云函数] [query] 调用成功',res.result,res.result[0]._name)
+        // console.log('[云函数] [query] 调用成功',res.result,res.result[0]._name)
         this.setData ({
           Record: res.result
         })

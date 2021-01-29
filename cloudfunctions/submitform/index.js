@@ -9,21 +9,19 @@ cloud.init({
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
-  
-  if (event.type == 'userform'){
-    form = {
-      _openid: wxContext.OPENID,
-      // _name: event.item.name
-    }
+  console.log(event)
+  if (event.type === 'userform'){
+    var tmp = event.Record
+    tmp._openid=wxContext.OPENID
+    tmp._staffopenid=''
+    tmp._time=new Date()
+    tmp._solved=false
+    tmp._accepttime=''
+    tmp._solvedtime=''
     db.collection('Forms').add({
-      data: form,
-      success: res => {
-
-      },
-      fail: err => {
-
-      }
+      data: tmp
     })
+    return true
   } else if (event.type == 'userfeedback'){
 
   } else if (event.type == 'staffreport'){

@@ -10,9 +10,9 @@ Page({
     phone: '',
     QQ: '',
     address: '',
-    problem: '',
-    problemDetail: [],
-    timeArrange: '今天',
+    problem: [],
+    problemDetail: '',
+    timeArrange: '一周以内',
 
     items: [
       {
@@ -90,6 +90,12 @@ Page({
     });
   },
 
+  inputProblemDetail(e){
+    this.setData({
+      problemDetail: e.detail.value
+    })
+  },
+
   changeTimeArrange(e){
     // console.log(e)
     this.setData({
@@ -104,19 +110,38 @@ Page({
     let items = this.data.items;
     items.forEach(item => {
       if(item.checked === true) {
-        problem.push(item.name)
+        if(item.name !== "其他或问题不清楚，请在下方简单描述"){
+          problem.push(item.name)
+        }
       }
     });
     this.setData({
-      problemDetail: problem
+      problem: problem
     });
-    // console.log(this.data)
-    // wx.cloud.callFunction({
-    //   name: 'submitform',
-    //   data: {
-    //     _name
-    //   }
-    // })
+    wx.cloud.callFunction({
+      name: 'submitform',
+      data: {
+        _name: this.data.name,
+        _gender: this.data.gender,
+        _phone: this.data.phone,
+        _QQ: this.data.QQ,
+        _address: this.data.address,
+        _problem: this.data.problem,
+        _problemDetail: this.data.problemDetail,
+        _timeArrange: this.data.timeArrange,
+        _time: new Date(),
+        _openid: '',
+        _staffopenid: '',
+        _solved: false
+      },
+      success: res => {
+        console.log('[云函数] [submitform] 执行成功')
+        wx.showToast({
+          title: '提交成功，我们会尽快为您处理',
+          duration: 3000
+        })
+      }
+    })
   },
 
   /**
