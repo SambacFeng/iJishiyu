@@ -1,3 +1,0 @@
-<!-- 页面显示三秒后自动跳转到首页，再根据身份跳转到不同的首页 -->
-<icon type="success" size="128rpx"></icon>
-<view>表单提交成功</view>

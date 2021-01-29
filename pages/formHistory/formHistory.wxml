@@ -15,20 +15,20 @@
       <view wx:if="{{Record[index]._solvedtime !== ''}}">
         <view class="lv1">
           <view class="lv2">
-            完成时间：{{}}
+            完成时间：{{Record[index]._solvedtime}}
           </view>
         </view>
         <view class="lv1" style="height: 140rpx">
           <view class="lv2">
-            问题原因：{{}}
+            问题原因：{{Record[index]._result}}
           </view>
         </view>
         <view class="lv1" style="height: 200rpx">
           <view class="lv2">
-            使用建议：{{}}
+            使用建议：{{Record[index]._suggestion}}
           </view>
         </view>
-      </view>   
+      </view>  
 
       <view wx:elif="{{Record[index]._staffopenid === ''}}" class="lv1">
         <view class="lv2">
