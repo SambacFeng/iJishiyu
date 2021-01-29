@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <content-title name="报修历史" describe="报修记录、维修人员联系方式查询">
   <view wx:for="{{Record}}" wx:key="*this">
     <content-card name="{{index+1}}">
@@ -58,4 +59,66 @@
       </view>
     </content-card>
   </view>
+=======
+<content-title name="报修历史" describe="报修记录、维修人员联系方式查询">
+  <view wx:for="{{Record}}" wx:key="*this">
+    <content-card name="{{index+1}}">
+      <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+        <view class="lv2">
+          电脑问题：{{Record[index]._problem}}
+        </view>
+      </view>
+      <view class="lv1">
+        <view class="lv2">
+          报修时间：{{Record[index]._time}}
+        </view>
+      </view>
+      <!-- 以下三行通过wx:if判断当前维修情况，选择显示哪一行 -->
+      <view wx:if="{{Record[index]._solvedtime !== ''}}">
+        <view class="lv1">
+          <view class="lv2">
+            完成时间：{{}}
+          </view>
+        </view>
+        <view class="lv1" style="height: 140rpx">
+          <view class="lv2">
+            问题原因：{{}}
+          </view>
+        </view>
+        <view class="lv1" style="height: 200rpx">
+          <view class="lv2">
+            使用建议：{{}}
+          </view>
+        </view>
+      </view>   
+
+      <view wx:elif="{{Record[index]._staffopenid === ''}}" class="lv1">
+        <view class="lv2">
+          维修状态：<text>等待分配</text>
+        </view>
+      </view>
+      <view wx:else>
+        <view class="lv1">
+          <view class="lv2">
+            维修状态：<text>维修中</text>
+          </view>
+        </view>
+  
+        <view class="lv1">
+          <view class="lv2">
+            队员姓名：{{Record[index]._staffname}}
+          </view>
+        </view>
+        <view class="lv1">
+          <view class="lv2" style="width: 355rpx">
+            QQ：{{Record[index]._staffQQ}}
+          </view>
+          <view class="lv2" style="width: 355rpx">
+            手机：{{Record[index]._staffphone}}
+          </view>
+        </view>
+      </view>
+    </content-card>
+  </view>
+>>>>>>> initial
 </content-title>
