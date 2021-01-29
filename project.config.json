@@ -137,7 +137,6 @@
         {
           "name": "购机推荐页面",
           "pathName": "pages/laptopRecommend/laptopRecommend",
-          "query": "",
           "scene": null
         }
       ]
