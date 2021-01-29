@@ -10,7 +10,7 @@
     </view>
   </view>
   <view class="btns">
-    <navigator url="">
+    <navigator url="../formClaim/formClaim">
       <l-button type="default" plain width="600" height="100">
         <text>我要接单</text>
       </l-button>
