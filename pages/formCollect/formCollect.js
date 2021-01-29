@@ -5,6 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name: '',
+    gender: '',
+    phone: '',
+    QQ: '',
+    address: '',
+    problem: '',
+    problemDetail: '',
+    timeArrange: '',
+
     items: [
       {
         id: 1, 
@@ -29,11 +38,12 @@ Page({
       {
         id: 6, 
         name: '其他或问题不清楚，请在下方简单描述',
-        ckecked: false},
+        ckecked: false}
     ]
   },
 
   change(e) {
+    console.log(e);
     let items = this.data.items;
     items.forEach(item => {
       if(item.name === e.detail.key) {
@@ -45,39 +55,15 @@ Page({
     });
   },
 
+  submit(e){
+    console.log("提交成功", e)
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  onLoad: function () {
+    wx.lin.initValidateForm(this)
   },
 
   /**
