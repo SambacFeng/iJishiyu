@@ -35,13 +35,13 @@
           维修状态：<text>等待分配</text>
         </view>
       </view>
-
       <view wx:else>
         <view class="lv1">
           <view class="lv2">
             维修状态：<text>维修中</text>
           </view>
         </view>
+  
         <view class="lv1">
           <view class="lv2">
             队员姓名：{{Record[index]._staffname}}
