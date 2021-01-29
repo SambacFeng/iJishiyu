@@ -7,9 +7,9 @@
     </l-form-item>
     <l-form-item name="gender">
       <content-card name="性别">
-        <l-radio-group id="gender" placement="row" current="1" none-checked="{{false}}" length="2">
-          <l-radio key="1">男</l-radio>
-          <l-radio key="2">女</l-radio>
+        <l-radio-group id="gender" placement="row" current="{{gender}}" bind:linchange="changeGender" none-checked="{{false}}" length="2">
+          <l-radio key="男">男</l-radio>
+          <l-radio key="女">女</l-radio>
         </l-radio-group>
       </content-card>
     </l-form-item>
@@ -18,13 +18,13 @@
         您的联系方式仅用于为您提供服务的队员与您联系，不会另作他用，请您放心填写。
       </view>
       <l-form-item name="phone">
-        <l-input id="phone" label="手机" placeholder="请输入11位手机号码" />
+        <l-input id="phone" label="手机" placeholder="请输入11位手机号码" value="{{phone}}" bind:lininput="inputPhone" />
       </l-form-item>
       <l-form-item name="QQ">
-        <l-input id="QQ" label="QQ" placeholder="请输入QQ号码" />
+        <l-input id="QQ" label="QQ" placeholder="请输入QQ号码" value="{{QQ}}" bind:lininput="inputQQ" />
       </l-form-item>
       <l-form-item name="address">
-        <l-input id="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍" />
+        <l-input id="address" label="地址" placeholder="请填写园区与楼栋，如：李园1舍" value="{{address}}" bind:lininput="inputAddress" />
       </l-form-item>
     </content-card>
     <content-card name="遇到的问题">
@@ -50,10 +50,10 @@
         <view class="comment">
           由于队员任务较多，会根据您使用电脑的紧急程度安排维修，给您带来不便敬请谅解。
         </view>
-        <l-radio-group id="timeArrange" placement="row" current="1" none-checked="{{false}}" length="3">
-          <l-radio key="1">今天</l-radio>
-          <l-radio key="2">三天以内</l-radio>
-          <l-radio key="3">一周以内</l-radio>
+        <l-radio-group id="timeArrange" placement="row" current="{{timeArrange}}" bind:linchange="changeTimeArrange" none-checked="{{false}}" length="3">
+          <l-radio key="今天">今天</l-radio>
+          <l-radio key="三天以内">三天以内</l-radio>
+          <l-radio key="一周以内">一周以内</l-radio>
         </l-radio-group>
       </content-card>
     </l-form-item>

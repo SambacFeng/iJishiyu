@@ -6,39 +6,39 @@ Page({
    */
   data: {
     name: '',
-    gender: '',
+    gender: '男',
     phone: '',
     QQ: '',
     address: '',
     problem: '',
-    problemDetail: '',
-    timeArrange: '',
+    problemDetail: [],
+    timeArrange: '今天',
 
     items: [
       {
         id: 1, 
         name: '重装系统', 
-        ckecked: false},
+        checked: false},
       {
         id: 2, 
         name: '蓝屏、黑屏', 
-        ckecked: false},
+        checked: false},
       {
         id: 3, 
         name: '网络问题，无法连接校园网等', 
-        ckecked: false},
+        checked: false},
       {
         id: 4, 
         name: '软件安装、使用相关问题', 
-        ckecked: false},
+        checked: false},
       {
         id: 5, 
         name: '拆机清灰、更换硅脂等', 
-        ckecked: false},
+        checked: false},
       {
         id: 6, 
         name: '其他或问题不清楚，请在下方简单描述',
-        ckecked: false}
+        checked: false}
     ]
   },
 
@@ -49,8 +49,36 @@ Page({
     })
   },
 
+  changeGender(e){
+    // console.log(e)
+    this.setData({
+      gender: e.detail.key
+    })
+  },
+
+  inputPhone(e){
+    // console.log(e)
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+
+  inputQQ(e){
+    // console.log(e)
+    this.setData({
+      QQ: e.detail.value
+    })
+  },
+
+  inputAddress(e){
+    // console.log(e)
+    this.setData({
+      address: e.detail.value
+    })
+  },
+
   change(e) {
-    console.log(e);
+    // console.log(e);
     let items = this.data.items;
     items.forEach(item => {
       if(item.name === e.detail.key) {
@@ -62,8 +90,33 @@ Page({
     });
   },
 
+  changeTimeArrange(e){
+    // console.log(e)
+    this.setData({
+      timeArrange: e.detail.key
+    })
+  },
+
   submit(e){
-    console.log("提交成功", e)
+    // console.log("提交成功", e)
+    console.log(this.data)
+    var problem = []
+    let items = this.data.items;
+    items.forEach(item => {
+      if(item.checked === true) {
+        problem.push(item.name)
+      }
+    });
+    this.setData({
+      problemDetail: problem
+    });
+    // console.log(this.data)
+    // wx.cloud.callFunction({
+    //   name: 'submitform',
+    //   data: {
+    //     _name
+    //   }
+    // })
   },
 
   /**
