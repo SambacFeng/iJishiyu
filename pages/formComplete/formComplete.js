@@ -1,4 +1,4 @@
-// pages/submitAccess/submitAccess.js
+// pages/formComplete/formComplete.js
 Page({
 
   /**

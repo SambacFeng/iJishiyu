@@ -28,7 +28,7 @@
       </view>
     </view>
     <!-- 这个问题设置成如果选已有问题就显示选项，选“其他”的话就显示报修人写的具体内容 -->
-    <view class="lv1">
+    <view class="lv1" style="height: 140rpx">
       <view class="lv2 prob">
         问题：{{Record[index]._problem}}
       </view>

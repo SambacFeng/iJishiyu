@@ -93,8 +93,8 @@
           "scene": null
         },
         {
-          "name": "提交成功页面",
-          "pathName": "pages/submitAccess/submitAccess",
+          "name": "提交成功",
+          "pathName": "pages/submitSuccess/submitSuccess",
           "query": "",
           "scene": null
         },
@@ -125,6 +125,7 @@
         {
           "name": "接单统计",
           "pathName": "pages/staffStatistic/staffStatistic",
+          "query": "",
           "scene": null
         }
       ]
