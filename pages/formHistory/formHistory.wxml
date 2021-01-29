@@ -1,7 +1,48 @@
-<!--pages/formHistory/formHistory.wxml-->
-<text>查询报修历史</text>
-<view wx:for="{{Record}}" wx:key="*this">
-  <content-card name="Name">
+<content-title name="报修历史" describe="报修记录、维修人员联系方式查询">
+  <!-- <view wx:for="{{Record}}" wx:key="*this"> -->
+  <content-card name="{{index+1}}">
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+      <view class="lv2">
+        电脑问题：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        报修时间：{{}}
+      </view>
+    </view>
+    
+<!-- 以下三行通过wx:if判断当前维修情况，选择显示哪一行 -->
+    <view class="lv1">
+      <view class="lv2">
+        完成时间：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        维修状态：<text>等待分配队员</text>
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        维修状态：<text>维修中</text>
+      </view>
+    </view>
+
+    <view class="lv1">
+      <view class="lv2">
+        队员姓名：{{}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2" style="width: 355rpx">
+        QQ：{{}}
+      </view>
+      <view class="lv2" style="width: 355rpx">
+        手机：{{}}
+      </view>
+    </view>
     {{Record[index]._name}}
   </content-card>
-</view>
+  <!-- </view> -->
+</content-title>

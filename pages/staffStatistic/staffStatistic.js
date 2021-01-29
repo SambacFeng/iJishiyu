@@ -1,29 +1,18 @@
-// pages/formHistory/formHistory.js
+// pages/staffStatistic/staffStatistic.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    Record: {}
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.cloud.callFunction({
-      name: 'query',
-      data: {
-        type: 'UserQuery'
-      },
-      success: res => {
-        // console.log('[云函数] [query] 调用成功',res.result,res.result[0]._name)
-        this.setData ({
-          Record: res.result
-        })
-      }
-    })
+
   },
 
   /**

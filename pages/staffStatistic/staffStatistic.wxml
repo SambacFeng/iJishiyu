@@ -1,0 +1,33 @@
+<content-card name="队员接单统计">
+  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+    <view class="lv2 name">
+      姓名
+    </view>
+    <view class="lv2">
+      本周
+    </view>
+    <view class="lv2">
+      上周
+    </view>
+    <view class="lv2">
+      总计
+    </view>
+  </view>
+  <!-- 数组渲染，输出全部队员数据 -->
+  <view wx:for="">
+    <view class="lv1">
+      <view class="lv2 name">
+        {{}}
+      </view>
+      <view class="lv2">
+        {{}}
+      </view>
+      <view class="lv2">
+        {{}}
+      </view>
+      <view class="lv2">
+        {{}}
+      </view>
+    </view>
+  </view>
+</content-card>

@@ -6,10 +6,12 @@
     "pages/feedbackCollect/feedbackCollect",
     "pages/submitAccess/submitAccess",
     "pages/formHistory/formHistory",
+    "pages/claimHistory/claimHistory",
     "pages/laptopRecommend/laptopRecommend",
     "pages/laptopSuggest/laptopSuggest",
     "pages/assignmentAccept/assignmentAccept",
     "pages/managerIndex/managerIndex",
+    "pages/staffStatistic/staffStatistic",
 
 
     "pages/staffIndex/staffIndex",
