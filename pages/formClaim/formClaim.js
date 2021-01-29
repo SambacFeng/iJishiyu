@@ -75,6 +75,32 @@ Page({
 
   },
   toClaim: function(e) {
-    console.log(e)
+    console.log(e.currentTarget.dataset)
+    // formid = e.currentTarget.dataset.formid
+    wx.cloud.callFunction({
+      name: 'formClaim',
+      data: {
+        id: e.currentTarget.dataset.formid
+      },
+      success: res => {
+        console.log('[云函数] [forClaim] 调用成功', res.result)
+        var tmp = this.data.Record
+        tmp[e.currentTarget.dataset.index]._staffopenid='1'
+        this.setData({
+          Record: tmp
+        })
+        if (res.result === true){
+          wx.showToast({
+            title: '接单成功',
+          })
+        } else {
+          wx.showToast({
+            title: '该单已被接取',
+            icon: 'none',
+            duration: 3000
+          })
+        }
+      }
+    })
   }
 })
