@@ -11,7 +11,6 @@
           报修时间：{{Record[index]._time}}
         </view>
       </view>
-<<<<<<< HEAD
       <!-- 以下三行通过wx:if判断当前维修情况，选择显示哪一行 -->
       <view wx:if="{{Record[index]._solvedtime !== ''}}">
         <view class="lv1">
@@ -29,17 +28,8 @@
             使用建议：{{}}
           </view>
         </view>
-      </view>
+      </view>   
 
-=======
-      
-  <!-- 以下三行通过wx:if判断当前维修情况，选择显示哪一行 -->
-      <view wx:if="{{Record[index]._solvedtime !== ''}}" class="lv1">
-        <view class="lv2">
-          完成时间：{{}}
-        </view>
-      </view>
->>>>>>> initial
       <view wx:elif="{{Record[index]._staffopenid === ''}}" class="lv1">
         <view class="lv2">
           维修状态：<text>等待分配</text>
