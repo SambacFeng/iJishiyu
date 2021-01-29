@@ -133,6 +133,12 @@
           "pathName": "pages/formComplete/formComplete",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "购机推荐页面",
+          "pathName": "pages/laptopRecommend/laptopRecommend",
+          "query": "",
+          "scene": null
         }
       ]
     }
