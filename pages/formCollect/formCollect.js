@@ -180,6 +180,8 @@ Page({
                   title: '提交成功',
                   duration: 3000
                 })
+                var startTime = new Date().getTime() + 3000;
+                while(new Date().getTime() < startTime) {}
                 wx.redirectTo({
                   url: '../userIndex/userIndex',
                 })

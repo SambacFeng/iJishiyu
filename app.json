@@ -5,7 +5,6 @@
     "pages/formClaim/formClaim",
     "pages/formComplete/formComplete",
     "pages/feedbackCollect/feedbackCollect",
-    "pages/submitSuccess/submitSuccess",
     "pages/formHistory/formHistory",
     "pages/claimHistory/claimHistory",
     "pages/laptopRecommend/laptopRecommend",
