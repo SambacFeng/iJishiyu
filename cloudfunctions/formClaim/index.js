@@ -15,7 +15,10 @@ exports.main = async (event, context) => {
     db.collection('Forms').doc(event.id).update({
       data: {
         _staffopenid: wxContext.OPENID,
-        _claimtime: time
+        _claimtime: time,
+        _staffname: event.staffname,
+        _staffQQ: event.staffQQ,
+        _staffphone: event.staffphone
       }
     })
     return true

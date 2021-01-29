@@ -10,11 +10,13 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
   var url = '../userIndex/userIndex'
+  var Record = {}
   re = await db.collection('Member').where({_openid: wxContext.OPENID}).get()
   if (re.data.length == 0){
     url = '../userIndex/userIndex'
   }
   else {
+    Record = re.data[0]
     if (re.data[0].type == 2){//管理员
       url = '../managerIndex/managerIndex'
     }
@@ -24,6 +26,7 @@ exports.main = async (event, context) => {
   }
   return {
     url: url,
-    openid: wxContext.OPENID
+    openid: wxContext.OPENID,
+    Record: Record
   }
 }

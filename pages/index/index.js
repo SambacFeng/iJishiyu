@@ -42,19 +42,27 @@ Page({
         }
       })
     }
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] 调用成功 ', res.result.openid, res.result.url)
-        wx.redirectTo({
-          url: res.result.url
-        })
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-      }
-    })
+    if (app.globalData.indexurl === ''){
+      wx.cloud.callFunction({
+        name: 'login',
+        data: {},
+        success: res => {
+          console.log('[云函数] [login] 调用成功 ', res.result.openid, res.result.url)
+          app.globalData.indexurl = res.result.url
+          app.globalData.staffInfo = res.result.Record
+          wx.redirectTo({
+            url: res.result.url
+          })
+        },
+        fail: err => {
+          console.error('[云函数] [login] 调用失败', err)
+        }
+      })
+    } else {
+      wx.redirectTo({
+        url: app.globalData.indexurl,
+      })
+    }
   },
   getUserInfo(e) {
     console.log(e)
