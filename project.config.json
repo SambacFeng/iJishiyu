@@ -107,6 +107,24 @@
         {
           "name": "接单页面",
           "pathName": "pages/formClaim/formClaim",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修历史",
+          "pathName": "pages/formHistory/formHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "已接报修单",
+          "pathName": "pages/claimHistory/claimHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "接单统计",
+          "pathName": "pages/staffStatistic/staffStatistic",
           "scene": null
         }
       ]

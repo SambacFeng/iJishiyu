@@ -1,4 +1,4 @@
-/* pages/formHistory/formHistory.wxss */
+/* pages/staffStatistic/staffStatistic.wxss */
 page{
   font-size: 36rpx;
   box-sizing: content-box;
@@ -10,14 +10,16 @@ page{
   display: flex;
   border-bottom: #2c61b440 2rpx solid;
   border-left: #2c61b440 2rpx solid;
+  text-align: center;
 }
 
 .lv2{
-  width: 100%;
+  flex: 1;
   border-right: #2c61b440 2rpx solid;
-  padding: 20rpx 0 0 10rpx;
+  padding-top: 20rpx;
 }
 
-text{
-  color: #2c61b4;
+.name{
+  flex: none;
+  width: 40%;
 }

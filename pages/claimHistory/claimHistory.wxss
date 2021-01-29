@@ -1,4 +1,4 @@
-/* pages/formHistory/formHistory.wxss */
+/* pages/claimHistory/claimHistory.wxss */
 page{
   font-size: 36rpx;
   box-sizing: content-box;
@@ -13,11 +13,7 @@ page{
 }
 
 .lv2{
-  width: 100%;
+  width: 355rpx;
   border-right: #2c61b440 2rpx solid;
   padding: 20rpx 0 0 10rpx;
-}
-
-text{
-  color: #2c61b4;
 }
