@@ -106,41 +106,128 @@ Page({
   submit(e){
     // console.log("提交成功", e)
     console.log(this.data)
-    var problem = []
-    let items = this.data.items;
-    items.forEach(item => {
-      if(item.checked === true) {
-        if(item.name !== "其他或问题不清楚，请在下方简单描述"){
-          problem.push(item.name)
+
+    wx.showModal({
+      cancelColor: 'cancelColor',
+      content: '是否提交？',
+      success: res => {
+        if(res.confirm){
+          var problem = []
+          let items = this.data.items;
+          items.forEach(item => {
+            if(item.checked === true) {
+              if(item.name !== "其他或问题不清楚，请在下方简单描述"){
+                problem.push(item.name)
+              } else {
+                problem.push(this.data.problemDetail)
+              }
+            }
+          });
+          this.setData({
+            problem: problem
+          });
+
+          if(this.data.name === ''){
+            wx.showToast({
+              title: '名字不能为空',
+              icon: 'none'
+            })
+            return 
+          } else if (this.data.phone.length !== 11){
+            wx.showToast({
+              title: '错误的号码格式',
+              icon: 'none'
+            })
+            return 
+          } else if (this.data.QQ === ''){
+            wx.showToast({
+              title: 'QQ不能为空',
+              icon: 'none'
+            })
+            return 
+          } else if (this.data.address === ''){
+            wx.showToast({
+              title: '地址不能为空',
+              icon: 'none'
+            })
+            return 
+          } else if (this.data.problem.length === 0){
+            wx.showToast({
+              title: '未选择问题',
+              icon: 'none'
+            })
+            return 
+          } 
+
+          wx.cloud.callFunction({
+            name: 'submitform',
+            data: {
+              type: 'userform',
+              Record: {
+                _name: this.data.name,
+                _gender: this.data.gender,
+                _phone: this.data.phone,
+                _QQ: this.data.QQ,
+                _address: this.data.address,
+                _problem: this.data.problem,
+                _timeArrange: this.data.timeArrange,
+              }
+            },
+            success: res => {
+              console.log('[云函数] [submitform] 执行成功',res.result)
+              if(res.result === true){
+                wx.showToast({
+                  title: '提交成功',
+                  duration: 3000
+                })
+                wx.redirectTo({
+                  url: '../userIndex/userIndex',
+                })
+              }
+            }
+          })
         }
       }
-    });
+    })
+  },
+
+  reset(e){
     this.setData({
-      problem: problem
-    });
-    wx.cloud.callFunction({
-      name: 'submitform',
-      data: {
-        _name: this.data.name,
-        _gender: this.data.gender,
-        _phone: this.data.phone,
-        _QQ: this.data.QQ,
-        _address: this.data.address,
-        _problem: this.data.problem,
-        _problemDetail: this.data.problemDetail,
-        _timeArrange: this.data.timeArrange,
-        _time: new Date(),
-        _openid: '',
-        _staffopenid: '',
-        _solved: false
-      },
-      success: res => {
-        console.log('[云函数] [submitform] 执行成功')
-        wx.showToast({
-          title: '提交成功，我们会尽快为您处理',
-          duration: 3000
-        })
-      }
+      name: '',
+      gender: '男',
+      phone: '',
+      QQ: '',
+      address: '',
+      problem: [],
+      problemDetail: '',
+      timeArrange: '一周以内',
+
+      items: [
+        {
+          id: 1, 
+          name: '重装系统', 
+          checked: false},
+        {
+          id: 2, 
+          name: '蓝屏、黑屏', 
+          checked: false},
+        {
+          id: 3, 
+          name: '网络问题，无法连接校园网等', 
+          checked: false},
+        {
+          id: 4, 
+          name: '软件安装、使用相关问题', 
+          checked: false},
+        {
+          id: 5, 
+          name: '拆机清灰、更换硅脂等', 
+          checked: false},
+        {
+          id: 6, 
+          name: '其他或问题不清楚，请在下方简单描述',
+          checked: false}
+      ]
     })
   },
 
