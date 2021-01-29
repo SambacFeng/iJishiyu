@@ -2,7 +2,7 @@
   display: flex;
   /* border-bottom: 1px solid #eee; */
   color: #777;
-  padding: 0 20rpx;
+  /* padding: 0 20rpx; */
   position: relative
 }
 

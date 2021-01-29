@@ -1,22 +1,22 @@
 <view>
   <l-form name="feedback" bind:linsubmit="submit">
-    <content-card name="您的姓名">
-      <l-form-item name="name">
+    <l-form-item name="name">
+      <content-card name="您的姓名">
         <l-input id="name" hide-label="{{true}}" placeholder="请输入姓名（可不填）" />
-      </l-form-item>
-    </content-card>
-    <content-card name="维修人员姓名">
-      <view class="comment">
-        如果您知道为您服务的队员的姓名，可以写下。
-      </view>
-      <l-form-item name="staffName">
+      </content-card>
+    </l-form-item>
+    <l-form-item name="staffName">
+      <content-card name="维修人员姓名">
+        <view class="comment">
+          如果您知道为您服务的队员的姓名，可以写下。
+        </view>
         <l-input id="staffName" hide-label="{{true}}" placeholder="请输入为您服务的队员姓名" />
-      </l-form-item>
-    </content-card>
-    <content-card name="维修结果">
-      <l-form-item name="result">
+      </content-card>
+    </l-form-item>
+    <l-form-item name="result">
+      <content-card name="维修结果">
         <l-radio-group id="result" current="1" none-checked="{{false}}" length="4">
-          <l-radio
+          <l-radio 
             wx:for="{{items}}" 
             wx:key="id" 
             key="{{item.name}}" 
@@ -25,13 +25,13 @@
             {{item.name}}
           </l-radio>
         </l-radio-group>
-      </l-form-item>
-    </content-card>
-    <content-card name="评分">
-      <view class="comment" style="text-indent: 56rpx">
-        请您从服务态度、技术水平等方面对及时雨的维修服务打个分。
-      </view>
-      <l-form-item name="rating">
+      </content-card>
+    </l-form-item>
+    <l-form-item name="rating">
+      <content-card name="评分">
+        <view class="comment" style="text-indent: 56rpx">
+          请您从服务态度、技术水平等方面对及时雨的维修服务打个分。
+        </view>
         <l-radio-group id="rating" placement="row" current="5" none-checked="{{false}}" length="5">
           <l-radio key="5">5</l-radio>
           <l-radio key="4">4</l-radio>
@@ -39,13 +39,13 @@
           <l-radio key="2">2</l-radio>
           <l-radio key="1">1</l-radio>
         </l-radio-group>
-      </l-form-item>
-    </content-card>
-    <content-card name="您的意见或建议">
-      <l-form-item>
-        <l-textarea style="width:100%" indicator="{{false}}" placeholder="真诚的感谢您的意见和建议" />
-      </l-form-item>
-    </content-card>
+      </content-card>
+    </l-form-item>
+    <l-form-item name="advice">
+      <content-card name="您的意见或建议">
+        <l-textarea id="advice" style="width:100%" indicator="{{false}}" placeholder="真诚的感谢您的意见和建议" />
+      </content-card>
+    </l-form-item>
     <view class="btns" slot="submit">
       <l-button width="200" height="80">提交</l-button>
       <l-button width="200" height="80" plain>重置</l-button>
