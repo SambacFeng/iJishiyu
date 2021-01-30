@@ -10,13 +10,11 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
   // console.log(event)
-  var date = new Date()
-  var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
+  console.log(date,time)
   if (event.type === 'userform'){
     var tmp = event.Record
     tmp._openid=wxContext.OPENID
     tmp._staffopenid=''
-    tmp._time=time
     tmp._solved=false
     tmp._claimtime=''
     tmp._solvedtime=''
@@ -25,7 +23,12 @@ exports.main = async (event, context) => {
     })
     return true
   } else if (event.type == 'userfeedback'){
-
+    var tmp = event.Record
+    tmp._openid = wxContext.OPENID
+    db.collection('Feedback').add({
+      data: tmp
+    })
+    return true
   } else if (event.type == 'staffreport'){
 
   }

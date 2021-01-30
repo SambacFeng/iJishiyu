@@ -5,30 +5,98 @@ Page({
    * 页面的初始数据
    */
   data: {
-    items: [
-      {
-        id: 1, 
-        name: '电脑问题已全部被解决', 
-        ckecked: false
-      },{
-        id: 2, 
-        name: '电脑问题基本被解决，可能仍有少许问题', 
-        ckecked: false
-      },{
-        id: 3, 
-        name: '电脑问题没有得到解决', 
-        ckecked: false
-      },{
-        id: 4, 
-        name: '其他，请在下方意见栏描述您遇到的情况', 
-        ckecked: false
-      }
-    ]
+    name: '',
+    staffname: '',
+    problem: '电脑问题已全部被解决',
+    problemDetail: '',
+    otheridea: '',
+    score: '5'
+  },
 
+  inputName(e){
+    this.setData({
+      name: e.detail.value
+    })
+  },
+
+  inputStaffname(e){
+    this.setData({
+      staffname: e.detail.value
+    })
+  },
+
+  getProblem(e){
+    this.setData({
+      problem: e.detail.key
+    })
+  },
+
+  inputProblemDetail(e){
+    this.setData({
+      problemDetail: e.detail.value
+    })
+  },
+
+  getScore(e){
+    this.setData({
+      score: e.detail.key
+    })
+  },
+
+  inputOtheridea(e){
+    this.setData({
+      otheridea: e.detail.value
+    })
   },
 
   submit(e){
-    console.log("提交成功", e)
+    console.log(this.data)
+    if(this.data.problemDetail !== ''){
+      this.setData({
+        problem: this.data.problemDetail
+      })
+    }
+    var tmp = this.data
+    delete tmp.problemDetail
+    var date = new Date()
+    var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
+    tmp.time = time
+    tmp.fulltime = date
+    wx.cloud.callFunction({
+      name: 'submitform',
+      data: {
+        type: 'userfeedback',
+        Record: tmp
+      },
+      success: res => {
+        console.log('[云函数] [submitform] 调用成功', res.result)
+        if (res.result === true){
+          wx.showToast({
+            title: '反馈成功',
+            duration: 3000
+          })
+          var startTime = new Date().getTime() + 3000;
+          while(new Date().getTime() < startTime) {}
+          wx.redirectTo({
+            url: '../userIndex/userIndex',
+          })
+        }
+      },
+      fail: err => {
+        console.err
+      }
+    })
+  },
+
+  reset(e){
+    this.setData({
+      name: '',
+      staffname: '',
+      problem: '电脑问题已全部被解决',
+      problemDetail: '',
+      otheridea: '',
+      score: '5'
+    })
   },
 
   /**
