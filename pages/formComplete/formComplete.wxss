@@ -1,1 +1,16 @@
-/* pages/formComplete/formComplete.wxss */
+.comment{
+  font-size: 28rpx;
+  color: #2c60b4e0;
+  margin: 30rpx;
+  text-indent: 58rpx;
+}
+
+.btns{
+  /* height: 120rpx; */
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+}
+
+l-button{
+  margin: 0 87.5rpx 0 87.5rpx;
+}

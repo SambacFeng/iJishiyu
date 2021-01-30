@@ -5,6 +5,71 @@ Page({
    * 页面的初始数据
    */
   data: {
+    type: [{
+      id: 1,
+      name: "轻薄本",
+      checked: false
+    }, {
+      id: 2,
+      name: "全能本",
+      checked: false
+    }, {
+      id: 3,
+      name: "游戏本",
+      checked: false
+    }],
+    brand: [{
+      id: 1,
+      name: "联想",
+      checked: false
+    }, {
+      id: 2,
+      name: "惠普",
+      checked: false
+    }, {
+      id: 3,
+      name: "戴尔",
+      checked: false
+    }, {
+      id: 4,
+      name: "华硕",
+      checked: false
+    }, {
+      id: 5,
+      name: "华为",
+      checked: false
+    }, {
+      id: 6,
+      name: "其他",
+      checked: false
+    }],
+    price: [{
+      id: 1,
+      name: "4k以下",
+      checked: false
+    }, {
+      id: 2,
+      name: "4-5k",
+      checked: false
+    }, {
+      id: 3,
+      name: "5-6k",
+      checked: false
+    }, {
+      id: 4,
+      name: "6-8k",
+      checked: false
+    }, {
+      id: 5,
+      name: "8-10k",
+      checked: false
+    }, {
+      id: 6,
+      name: "10k以上",
+      checked: false
+    }]
+
+
 
   },
 

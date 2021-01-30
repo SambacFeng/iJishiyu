@@ -1,8 +1,0 @@
-icon{
-  margin: 450rpx 311rpx 20rpx 311rpx;
-}
-
-view{
-  text-align: center;
-  font-size: 44rpx;
-}
