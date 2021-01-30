@@ -1,6 +1,3 @@
-<!-- 
-  使用数组渲染，有一个渲染一个，没有的话输出“暂时没有未处理的报修单，做点其他事情吧” 
--->
 <view wx:for="{{Record.length}}" wx:key="*this">
   <content-card name="{{index+1}}">
     <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
@@ -45,4 +42,9 @@
       </view>
     </view>
   </content-card>
+</view>
+<view wx:if="{{Record.length == 0}}">
+  <view class="comment">
+    暂时没有未处理的报修单，去做点其他事情吧。
+  </view>
 </view>

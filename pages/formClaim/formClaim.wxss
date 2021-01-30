@@ -22,3 +22,11 @@ page{
   width: 100%;
   padding-right: 5rpx;
 }
+
+.comment{
+  margin: 40rpx;
+  margin-top: 30vh;
+  font-size: 44rpx;
+  text-indent: 90rpx;
+  color: #2c61b4e0;
+}
