@@ -1,5 +1,5 @@
 /* pages/formSubmit/formSubmit.wxss */
-.icon{
+image{
   width: 300rpx;
   height: 236rpx;
   margin: 15vh 225rpx 0 225rpx;

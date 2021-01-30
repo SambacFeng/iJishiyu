@@ -11,23 +11,18 @@
   </view>
   <view class="btns">
     <navigator url="../formClaim/formClaim">
-      <l-button type="default" plain width="600" height="100">
+      <l-button type="default" width="600">
         <text>我要接单</text>
       </l-button>
     </navigator>
     <navigator url="../claimHistory/claimHistory">
-      <l-button type="default" plain width="600" height="100">
+      <l-button type="default" plain width="600">
         <text>已接报修单</text>
       </l-button>
     </navigator>
-    <navigator url="">
-      <l-button type="default" plain width="600" height="100">
-        <text>上传报告</text>
-      </l-button>
-    </navigator>
-    <navigator url="">
-      <l-button type="default" plain width="600" height="100">
-        <text>报告查询</text>
+    <navigator url="../userIndex/userIndex">
+      <l-button type="default" plain width="600">
+        <text>用户首页</text>
       </l-button>
     </navigator>
   </view>
