@@ -4,6 +4,7 @@
     "pages/formCollect/formCollect",
     "pages/formClaim/formClaim",
     "pages/formComplete/formComplete",
+    "pages/formSubmit/formSubmit",
     "pages/feedbackCollect/feedbackCollect",
     "pages/formHistory/formHistory",
     "pages/claimHistory/claimHistory",

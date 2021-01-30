@@ -1,0 +1,21 @@
+/* pages/formSubmit/formSubmit.wxss */
+.icon{
+  width: 300rpx;
+  height: 236rpx;
+  margin: 15vh 225rpx 0 225rpx;
+}
+
+.comment{
+  font-size: 32rpx;
+  margin: 0 40rpx;
+  text-indent: 2rem;
+}
+
+l-button{
+  margin: 40rpx 0;
+}
+
+navigator{
+  width: 600rpx;
+  margin: 0 75rpx;
+}

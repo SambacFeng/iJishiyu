@@ -137,6 +137,12 @@
         {
           "name": "购机推荐页面",
           "pathName": "pages/laptopRecommend/laptopRecommend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单提交成功",
+          "pathName": "pages/formSubmit/formSubmit",
           "scene": null
         }
       ]

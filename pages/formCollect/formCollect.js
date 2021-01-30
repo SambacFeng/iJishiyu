@@ -186,7 +186,7 @@ Page({
                 var startTime = new Date().getTime() + 3000;
                 while(new Date().getTime() < startTime) {}
                 wx.redirectTo({
-                  url: '../userIndex/userIndex',
+                  url: '../formSubmit/formSubmit',
                 })
               }
             }

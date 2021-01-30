@@ -17,3 +17,11 @@ page{
   border-right: #2c61b440 2rpx solid;
   padding: 20rpx 0 0 10rpx;
 }
+
+.comment{
+  margin: 40rpx;
+  margin-top: 30vh;
+  font-size: 44rpx;
+  text-indent: 90rpx;
+  color: #2c61b4e0;
+}

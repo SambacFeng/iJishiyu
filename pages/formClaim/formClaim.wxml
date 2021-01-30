@@ -35,7 +35,13 @@
         报修时间：{{Record[index]._time}}
       </view>
       <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx; ">
-        <l-button data-formid="{{Record[index]._id}}" data-index="{{index}}" width="170" bind:lintap="toClaim" disabled="{{Record[index]._staffopenid !== ''}}">
+        <l-button 
+          data-formid="{{Record[index]._id}}" 
+          data-index="{{index}}" 
+          width="170" 
+          bind:lintap="toClaim" 
+          disabled="{{Record[index]._staffopenid !== ''}}"
+        >
           <text wx:if="{{Record[index]._staffopenid === ''}}" style="font-size: 36rpx">接单</text>
           <text wx:else style="font-size: 36rpx">已接</text>
         </l-button>
