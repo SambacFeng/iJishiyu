@@ -76,15 +76,16 @@ Page({
 
   },
   toClaim: function(e) {
-    console.log(e.currentTarget.dataset)
-    // formid = e.currentTarget.dataset.formid
+    var date = new Date()
+    var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
     wx.cloud.callFunction({
       name: 'formClaim',
       data: {
         id: e.currentTarget.dataset.formid,
         staffname: app.globalData.staffInfo.name,
         staffQQ: app.globalData.staffInfo.QQ,
-        staffphone: app.globalData.staffInfo.phone
+        staffphone: app.globalData.staffInfo.phone,
+        claimtime: time
       },
       success: res => {
         console.log('[云函数] [forClaim] 调用成功', res.result)

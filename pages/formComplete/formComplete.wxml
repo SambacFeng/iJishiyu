@@ -8,6 +8,8 @@
         id="reason" 
         placeholder="请向报修人简单描述问题出现的原因" 
         auto-height="{{true}}"
+        value="{{result}}"
+        bind:lininput="inputResult"
       />
     </content-card>
   </l-form-item>
@@ -17,15 +19,17 @@
         id="suggestion" 
         placeholder="请向报修人提供一些使用电脑的建议" 
         auto-height="{{true}}"
+        value="{{suggestion}}"
+        bind:lininput="inputSuggestion"
       />
     </content-card>
   </l-form-item>
   <view class="btns">
     <view slot="submit" class="btn">
-      <l-button width="200" height="80">提交</l-button>
+      <l-button width="200" bindtap="submit" height="80">提交</l-button>
     </view>
     <view slot="reset" class="btn">
-      <l-button width="200" height="80" plain>重置</l-button>
+      <l-button width="200" bindtap="reset" height="80" plain>重置</l-button>
     </view>
   </view>
 </l-form>

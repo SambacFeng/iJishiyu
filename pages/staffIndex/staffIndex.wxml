@@ -15,7 +15,7 @@
         <text>我要接单</text>
       </l-button>
     </navigator>
-    <navigator url="">
+    <navigator url="../claimHistory/claimHistory">
       <l-button type="default" plain width="600" height="100">
         <text>已接报修单</text>
       </l-button>

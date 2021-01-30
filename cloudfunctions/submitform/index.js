@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
   // console.log(event)
-  console.log(date,time)
+  // console.log(date,time)
   if (event.type === 'userform'){
     var tmp = event.Record
     tmp._openid=wxContext.OPENID
