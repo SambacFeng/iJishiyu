@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "l-form": "/miniprogram_npm/lin-ui/form/index",
+    "l-textarea":"/miniprogram_npm/lin-ui/textarea/index",
+    "l-form-item": "/miniprogram_npm/lin-ui/form-item/index",
+    "content-card": "/components/content-card/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index"
+  }
+}
