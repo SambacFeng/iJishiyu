@@ -68,9 +68,19 @@ Page({
       name: "10k以上",
       checked: false
     }]
+  },
 
-
-
+  change(e) {
+    console.log(e);
+    let items = this.data.type;
+    items.forEach(item => {
+      if(item.name === e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      type: items
+    });
   },
 
   /**

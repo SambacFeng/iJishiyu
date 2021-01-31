@@ -5,7 +5,7 @@
         类型：       
       </view>
       <view class="right">
-        <l-checkbox-group placement="row">
+        <l-checkbox-group placement="row" bind:linchange="change">
           <l-checkbox 
             wx:for="{{type}}"
             wx:key="id"
@@ -84,16 +84,16 @@
     <view>
       <view class="lv1" style="border-top: #2c61b440 2rpx solid">
         <view class="lv2" style="width: 100%">
-          型号：
+          型号：联想 YOGA Pro 13s Carbon 2021 酷睿版
         </view>
       </view>
       <view name="switchOn">
         <view class="lv1">
           <view class="lv2">
-            CPU：
+            CPU：R5 PRO 4650U
           </view>
           <view class="lv2">
-            显卡：
+            显卡：Radeon Pro 5500M
           </view>
         </view>
         <view class="lv1">
@@ -106,7 +106,7 @@
         </view>
         <view class="lv1">
           <view class="lv2" style="width: 100%">
-            屏幕：
+            屏幕：15.6英寸 1080P 100%sRGB 90Hz 触屏
           </view>
         </view>
         <view class="lv1">
@@ -120,7 +120,7 @@
       </view>
       <view class="lv1">
         <view class="lv2" style="width: 100%">
-          优点：
+          优点：一二三四五六七八九十一二三四五六七八
         </view>
       </view>
       <view class="lv1">
