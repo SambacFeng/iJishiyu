@@ -1,0 +1,32 @@
+<!--pages/formQuery/formQuery.wxml-->
+<view>
+  <content-card name="{{}}">
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid; height: 120rpx">
+      电脑问题：{{}}
+    </view>
+    <view class="lv1">
+      报修时间：{{}}
+    </view>
+
+    <view wx:if="{{}}">
+      <view class="lv1">
+        完成时间：{{}}
+      </view>
+    </view>
+
+    <view wx:elif="{{}}" class="lv1">
+      维修状态：<text>等待分配</text>
+    </view>
+
+    <view wx:else>
+      <view class="lv1">
+        维修状态：<text>维修中</text>
+      </view>
+    </view>
+
+    <view class="lv1">
+      队员姓名：{{}}
+    </view>
+
+  </content-card>
+</view>

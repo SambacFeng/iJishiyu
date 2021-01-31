@@ -143,6 +143,12 @@
         {
           "name": "表单提交成功",
           "pathName": "pages/formSubmit/formSubmit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单查询",
+          "pathName": "pages/formQuery/formQuery",
           "scene": null
         }
       ]

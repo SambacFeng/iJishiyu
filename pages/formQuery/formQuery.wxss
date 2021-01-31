@@ -1,0 +1,17 @@
+/* pages/formQuery/formQuery.wxss */
+page{
+  font-size: 36rpx;
+  box-sizing: content-box;
+}
+
+.lv1{
+  width: 100%;
+  height: 60rpx;
+  border: #2c61b440 2rpx solid;
+  border-top: none;
+  padding: 20rpx 0 0 10rpx;
+}
+
+text{
+  color: #2c61b4;
+}
