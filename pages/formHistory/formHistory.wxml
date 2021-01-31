@@ -44,19 +44,22 @@
         </view>
       </view>
 
-      <view class="lv1">
-        <view class="lv2">
-          队员姓名：{{Record[index]._staffname}}
+      <view wx:if="{{Record[index]._staffopenid !== ''}}">
+        <view class="lv1">
+          <view class="lv2">
+            队员姓名：{{Record[index]._staffname}}
+          </view>
+        </view>
+        <view class="lv1">
+          <view class="lv2" style="width: 355rpx">
+            QQ：{{Record[index]._staffQQ}}
+          </view>
+          <view class="lv2" style="width: 355rpx">
+            手机：{{Record[index]._staffphone}}
+          </view>
         </view>
       </view>
-      <view class="lv1">
-        <view class="lv2" style="width: 355rpx">
-          QQ：{{Record[index]._staffQQ}}
-        </view>
-        <view class="lv2" style="width: 355rpx">
-          手机：{{Record[index]._staffphone}}
-        </view>
-      </view>
+
     </content-card>
   </view>
 </content-title>
