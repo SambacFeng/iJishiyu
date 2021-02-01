@@ -21,8 +21,8 @@
       </l-button>
     </navigator>
     <navigator url="../formQuery/formQuery">
-      <l-button type="default" plain width="600" disabled>
-        <text>表单查询(开发中)</text>
+      <l-button type="default" plain width="600">
+        <text>表单查询</text>
       </l-button>
     </navigator>
     <navigator url="../userIndex/userIndex">
