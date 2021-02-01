@@ -12,7 +12,17 @@ exports.main = async (event, context) => {
   // console.log(event)
   // console.log(date,time)
   var date = new Date()
-  var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
+  var years = date.getFullYear().toString()
+  var months = (date.getMonth()+1).toString()
+  if (months.length < 2) months = '0'+months
+  var days = date.getDate().toString()
+  if (days.length < 2) days = '0'+days
+  var hours = date.getHours().toString()
+  if (hours.length < 2) hours = '0'+hours
+  var minutes = date.getMinutes().toString()
+  if (minutes.length < 2) minutes = '0'+minutes
+  var time = years+'-'+months+'-'+days+' '+hours+':'+minutes
+  
   if (event.type === 'userform'){
     var tmp = event.Record
     tmp._openid=wxContext.OPENID
