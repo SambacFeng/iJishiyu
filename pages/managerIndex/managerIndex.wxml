@@ -10,14 +10,19 @@
     </view>
   </view>
   <view class="btns">
-    <navigator url="../staffStatistic/staffStatistic">
+    <navigator url="../formClaim/formClaim">
       <l-button type="default" width="600">
+        <text>我要接单</text>
+      </l-button>
+    </navigator>
+    <navigator url="../staffStatistic/staffStatistic">
+      <l-button type="default" plain width="600">
         <text>数据统计</text>
       </l-button>
     </navigator>
     <navigator url="../formQuery/formQuery">
-      <l-button type="default" plain width="600">
-        <text>表单查询</text>
+      <l-button type="default" plain width="600" disabled>
+        <text>表单查询(开发中)</text>
       </l-button>
     </navigator>
     <navigator url="../userIndex/userIndex">

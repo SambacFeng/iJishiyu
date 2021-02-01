@@ -26,8 +26,8 @@
         </l-button>
       </navigator>
       <navigator url="/pages/laptopRecommend/laptopRecommend">
-        <l-button type="default" width="600" plain>
-          <text>购机推荐</text>
+        <l-button type="default" width="600" plain disabled>
+          <text>购机推荐(开发中)</text>
         </l-button>
       </navigator>
   </view>
