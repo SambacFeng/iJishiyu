@@ -58,10 +58,6 @@ Page({
     }
     var tmp = this.data
     delete tmp.problemDetail
-    var date = new Date()
-    var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
-    tmp.time = time
-    tmp.fulltime = date
     wx.cloud.callFunction({
       name: 'submitform',
       data: {

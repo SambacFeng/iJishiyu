@@ -48,8 +48,6 @@ Page({
       })
       return
     }
-    var date = new Date()
-    var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
     wx.cloud.callFunction({
       name: 'formClaim',
       data: {
@@ -58,7 +56,6 @@ Page({
         Record: {
           _result: this.data.result,
           _suggestion: this.data.suggestion,
-          _solvedtime: time
         }
       },
       success: res => {

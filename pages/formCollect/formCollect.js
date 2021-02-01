@@ -158,8 +158,6 @@ Page({
             })
             return 
           } 
-          var date = new Date()
-          var time = date.getFullYear().toString()+'-'+(date.getMonth()+1).toString()+'-'+date.getDate().toString()+' '+date.getHours().toString()+':'+date.getMinutes().toString()
           wx.cloud.callFunction({
             name: 'submitform',
             data: {
@@ -169,8 +167,6 @@ Page({
                 _gender: this.data.gender,
                 _phone: this.data.phone,
                 _QQ: this.data.QQ,
-                _time: time,
-                _fulltime: date,
                 _address: this.data.address,
                 _problem: this.data.problem,
                 _timeArrange: this.data.timeArrange,

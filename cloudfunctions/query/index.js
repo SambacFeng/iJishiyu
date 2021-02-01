@@ -16,22 +16,23 @@ exports.main = async (event, context) => {
   } else {
     usertype = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0].type
     if (event.type === 'StaffQuery'){
-      if (usertype != 1){
+      if (usertype !== 1 && usertype !== 2){
         return {}
       }
       form = (await db.collection('Forms').where({_staffopenid: wxContext.OPENID}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'formClaim'){
-      if (usertype != 1){
+      if (usertype !== 1 && usertype !== 2){
         return {}
       }
       form = (await db.collection('Forms').where({_staffopenid: ''}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'ManagerMemberQuery'){
-      if (usertype != 2){
+      if (usertype !== 2){
         return {}
       }
       form = (await db.collection('Member').where({}).orderBy('_fulltime','desc').get()).data
+      var date = new Date()
     } else if (event.type === 'ManagerFormsQuery'){
-      if (usertype != 2){
+      if (usertype !== 2){
         return {}
       }
       form = (await db.collection('Forms').where({}).orderBy('_fulltime','desc').get()).data
