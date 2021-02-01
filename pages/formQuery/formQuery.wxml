@@ -1,31 +1,51 @@
 <!--pages/formQuery/formQuery.wxml-->
 <view>
   <content-card name="{{}}">
-    <view class="lv1" style="border-top: #2c61b440 2rpx solid; height: 120rpx">
-      电脑问题：{{}}
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid">
+      <view class="lv2" style="width: 520rpx">
+        姓名：{{}}
+      </view>
+      <view class="lv2" style="width: 186rpx">
+        性别：{{}}
+      </view>
+    </view>
+    <view class="lv1" style="height: 140rpx">
+      <view class="lv2">
+        电脑问题：{{}}
+      </view>
     </view>
     <view class="lv1">
-      报修时间：{{}}
-    </view>
-
-    <view wx:if="{{}}">
-      <view class="lv1">
-        完成时间：{{}}
+      <view class="lv2">
+        报修时间：{{}}
       </view>
     </view>
 
-    <view wx:elif="{{}}" class="lv1">
-      维修状态：<text>等待分配</text>
+    <view wx:if="{{}}" class="lv1">
+      <view class="lv2">
+        维修状态：<text>等待分配</text>
+      </view>
+    </view>
+
+    <view wx:elif="{{}}">
+      <view class="lv1">
+        <view class="lv2">
+          完成时间：{{}}
+        </view>
+      </view>
     </view>
 
     <view wx:else>
       <view class="lv1">
-        维修状态：<text>维修中</text>
+        <view class="lv2">
+          维修状态：<text>维修中</text>
+        </view>
       </view>
     </view>
 
     <view class="lv1">
-      队员姓名：{{}}
+      <view class="lv2">
+        队员姓名：{{}}
+      </view>
     </view>
 
   </content-card>
