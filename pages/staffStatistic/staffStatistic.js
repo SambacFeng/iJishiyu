@@ -5,14 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    Record: {},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.cloud.callFunction({
+      name: 'query',
+      data: {
+        type: 'ManagerMemberQuery',
+      },
+      success: res => {
+        this.setData({
+          Record: res.result
+        })
+        console.log('[云函数] [query] 调用成功',res.result)
+      }
+    })
   },
 
   /**

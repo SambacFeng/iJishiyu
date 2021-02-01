@@ -14,19 +14,19 @@
     </view>
   </view>
   <!-- 数组渲染，输出全部队员数据 -->
-  <view wx:for="">
+  <view wx:for="{{Record}}" wx:key="*this">
     <view class="lv1">
       <view class="lv2 name">
-        {{}}
+        {{Record[index].name}}
       </view>
       <view class="lv2">
-        {{}}
+        {{Record[index].thisweek}}
       </view>
       <view class="lv2">
-        {{}}
+        {{Record[index].lastweek}}
       </view>
       <view class="lv2">
-        {{}}
+        {{Record[index].total}}
       </view>
     </view>
   </view>

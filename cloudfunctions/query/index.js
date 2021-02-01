@@ -9,6 +9,7 @@ cloud.init({
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   const db = cloud.database()
+  const _ = db.command
   form = {}
   
   if (event.type === 'UserQuery'){
@@ -31,6 +32,33 @@ exports.main = async (event, context) => {
       }
       form = (await db.collection('Member').where({}).orderBy('_fulltime','desc').get()).data
       var date = new Date()
+      var dateofweek = date.getDay() || 7
+      var fday = new Date(date.getFullYear(),date.getMonth(),date.getDate()-dateofweek+1)
+      var ffday = new Date(date.getFullYear(),date.getMonth(),date.getDate()-dateofweek-7+1)
+      
+      const formdb = db.collection('Forms')
+
+      for(var member in form){
+        form[member].thisweek = (await formdb.where({
+          _staffopenid: form[member]._openid,
+          _fulltime: _.gte(fday),
+        }).count()).total
+
+        if (!('lastweek' in form[member])){
+          form[member].lastweek =(await formdb.where({
+            _staffopenid: form[member]._openid,
+            _fulltime: _.gte(ffday),
+          }).count()).total
+          form[member].lastweek -= form[member].thisweek
+          db.collection('Member').doc(form[member]._id).update({
+            data: {
+              lastweek: form[member].lastweek
+            }
+          }) 
+        }
+        form[member].total = (await formdb.where({_staffopenid: form[member]._openid}).count()).total
+      }
+      // console.log(form)
     } else if (event.type === 'ManagerFormsQuery'){
       if (usertype !== 2){
         return {}
