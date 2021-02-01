@@ -5,6 +5,7 @@
     "pages/formClaim/formClaim",
     "pages/formComplete/formComplete",
     "pages/formSubmit/formSubmit",
+    "pages/formQuery/formQuery",
     "pages/feedbackCollect/feedbackCollect",
     "pages/formHistory/formHistory",
     "pages/claimHistory/claimHistory",
