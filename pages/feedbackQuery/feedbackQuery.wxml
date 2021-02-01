@@ -1,0 +1,28 @@
+<!-- <view wx:for="{{Record.length}}" wx:key="*this"> -->
+  <content-card name="{{index+1}}">
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+      <view class="lv2">
+        姓名：{{Record[index]._name}}
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2" style="width: 520rpx">
+        队员姓名：{{Record[index]._name}}
+      </view>
+      <view class="lv2" style="width: 186rpx">
+        评分：{{}}
+      </view>
+    </view>
+    <!-- 选其他的话显示输入框中内容 -->
+    <view class="lv1">
+      <view class="lv2">
+        维修结果：{{}}
+      </view>
+    </view>
+    <view class="lv1" style="height: 200rpx">
+      <view class="lv2">
+        意见或建议：{{Record[index]._time}}
+      </view>
+    </view>
+  </content-card>
+<!-- </view> -->

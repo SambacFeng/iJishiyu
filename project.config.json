@@ -149,6 +149,12 @@
         {
           "name": "表单查询",
           "pathName": "pages/formQuery/formQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "反馈查询页面",
+          "pathName": "pages/feedbackQuery/feedbackQuery",
           "scene": null
         }
       ]

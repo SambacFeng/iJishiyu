@@ -1,4 +1,4 @@
-// pages/assignmentAccept/assignmentAccept.js
+// pages/feedbackQuery/feedbackQuery.js
 Page({
 
   /**
