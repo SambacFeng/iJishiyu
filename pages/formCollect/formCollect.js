@@ -139,12 +139,6 @@ Page({
               icon: 'none'
             })
             return 
-          } else if (this.data.QQ === ''){
-            wx.showToast({
-              title: 'QQ不能为空',
-              icon: 'none'
-            })
-            return 
           } else if (this.data.address === ''){
             wx.showToast({
               title: '地址不能为空',
