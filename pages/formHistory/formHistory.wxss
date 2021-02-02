@@ -21,3 +21,12 @@ page{
 text{
   color: #2c61b4;
 }
+
+.comment{
+  margin: 40rpx;
+  margin-top: 30vh;
+  font-size: 44rpx;
+  line-height: 100%;
+  text-align: center;
+  color: #2c61b4e0;
+}

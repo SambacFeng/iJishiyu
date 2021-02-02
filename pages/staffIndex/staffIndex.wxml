@@ -5,7 +5,7 @@
       <view class="avatar">
         <l-avatar src="/assets/logo.jpg" size="256" />
       </view>
-      <!-- 后期改为调取对员姓名 -->
+      <!-- 后期改为调取队员姓名 -->
       <view class="name">
         <text>及时雨志愿者服务队</text>
       </view>

@@ -62,4 +62,9 @@
 
     </content-card>
   </view>
+  <view wx:if="{{Record.length == 0}}">
+    <view class="comment">
+      没有查询到您的报修记录。 
+    </view>
+  </view>
 </content-title>
