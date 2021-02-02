@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
     })
     return true
   } else {
-    re = (await db.collection('Forms').field({_staffopenid: true}).doc(event.id).get()).data._staffopenid
+    re = (await db.collection('Forms').doc(event.id).get()).data._staffopenid
     if (re === ''){
       db.collection('Forms').doc(event.id).update({
         data: {
