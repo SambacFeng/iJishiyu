@@ -1,18 +1,13 @@
 <view class="main">
   <view class="header">
-    <view class="info">
-      <!-- 后期改为调取队员头像 -->
-      <view class="avatar">
-        <l-avatar src="/assets/logo.jpg" size="256" />
-      </view>
-      <!-- 后期改为调取队员姓名 -->
-      <view class="name">
-        <text>及时雨志愿者服务队</text>
-      </view>
+    <!-- 后期改为调取队员头像 -->
+    <view class="avatar">
+      <l-avatar src="/assets/logo.jpg" size="220" />
     </view>
-    <view class="stat">
-      本周：{{}} 上周：{{}} 共计：{{}}
-    </view>  
+    <!-- 后期改为调取队员姓名 -->
+    <view class="name">
+      <text>及时雨志愿者服务队</text>
+    </view>
   </view>
   <view class="btns">
     <navigator url="../formClaim/formClaim">
