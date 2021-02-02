@@ -44,18 +44,12 @@ exports.main = async (event, context) => {
           _fulltime: _.gte(fday),
         }).count()).total
 
-        if (!('lastweek' in form[member])){
-          form[member].lastweek =(await formdb.where({
-            _staffopenid: form[member]._openid,
-            _fulltime: _.gte(ffday),
-          }).count()).total
-          form[member].lastweek -= form[member].thisweek
-          db.collection('Member').doc(form[member]._id).update({
-            data: {
-              lastweek: form[member].lastweek
-            }
-          }) 
-        }
+        form[member].lastweek =(await formdb.where({
+          _staffopenid: form[member]._openid,
+          _fulltime: _.gte(ffday),
+        }).count()).total
+        form[member].lastweek -= form[member].thisweek
+        
         form[member].total = (await formdb.where({_staffopenid: form[member]._openid}).count()).total
       }
       // console.log(form)
@@ -64,6 +58,11 @@ exports.main = async (event, context) => {
         return {}
       }
       form = (await db.collection('Forms').where({}).orderBy('_fulltime','desc').get()).data
+    } else if (event.type === 'ManagerFeedback'){
+      if (usertype !== 2){
+        return {}
+      }
+      form = (await db.collection('Feedback').where({}).orderBy('_fulltime','desc').get()).data
     }
   }
   return form

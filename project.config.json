@@ -93,12 +93,6 @@
           "scene": null
         },
         {
-          "name": "提交成功",
-          "pathName": "pages/submitSuccess/submitSuccess",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "维修反馈页面",
           "pathName": "pages/feedbackCollect/feedbackCollect",
           "query": "",

@@ -11,7 +11,12 @@ exports.main = async (event, context) => {
   const db = cloud.database()
   var url = '../userIndex/userIndex'
   var Record = {}
-  re = await db.collection('Member').where({_openid: wxContext.OPENID}).get()
+  re = await db.collection('Member').field({
+    name: true,
+    phone: true,
+    QQ: true,
+    
+  }).where({_openid: wxContext.OPENID}).get()
   if (re.data.length == 0){
     url = '../userIndex/userIndex'
   }
