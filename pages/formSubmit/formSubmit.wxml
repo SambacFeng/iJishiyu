@@ -1,7 +1,7 @@
 <image src="/assets/submitSuccess.png" />
-<view class="comment" style="margin-top: 40rpx">及时雨已经收到您的报修表单，我们将尽快为您分配队员，队员分配完成后会与您取得联系。
+<view class="comment" style="margin-top: 40rpx">及时雨已经收到您的报修表单，我们将尽快为您分配队员，队员分配完成后会主动与您取得联系。
 </view>
-<view class="comment">您可以在“报修历史”页面查看维修进度，在维修完成后，还可以看到队员对您电脑问题原因的分析与使用建议。如果短时间内没有队员与您联系，请稍作等待，不要重复提交报修表单。
+<view class="comment">您可以在“报修历史”页面查看队员联系方式及维修进度，在维修完成后，还可以看到队员对您电脑问题原因的分析与使用建议。如果短时间内没有队员与您联系，请稍作等待，不要重复提交报修表单。
 </view>
 <view class="comment" style="margin-bottom: 40rpx">感谢您对及时雨志愿者服务队的支持！如有疑问请咨询及时雨官方QQ：2354221762，或发邮件到swu_jishiyu@163.com
 </view>
