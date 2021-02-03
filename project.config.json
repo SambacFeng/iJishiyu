@@ -50,6 +50,8 @@
   "scripts": {},
   "isGameTourist": false,
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "plugin": {
       "list": []

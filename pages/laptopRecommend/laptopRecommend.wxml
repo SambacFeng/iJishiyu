@@ -81,70 +81,71 @@
         专业模式下，将显示笔记本的CPU、显卡、内存等硬件的具体信息。
       </view>
       <view class="btns">
-        <l-button width="200" height="80" style="margin: 0 77.5rpx">查询</l-button>
-        <l-button width="200" height="80" style="margin: 0 77.5rpx" plain>重置</l-button>
+        <l-button width="200" height="80" style="margin: 0 77.5rpx" bindtap="toClaim">查询</l-button>
+        <l-button width="200" height="80" style="margin: 0 77.5rpx" bindtap="reset" plain>重置</l-button>
       </view>
     </l-form>
   </content-card>
-
   <content-card name="筛选结果">
     <view class="comment">
       本结果中的各项参数仅供参考。如对筛选结果有疑问或不满意，可添加及时雨志愿者服务队官方QQ：2354221762进行咨询
     </view>
-    <!-- 这是一个结果开始的地方 -->
-    <view>
+  </content-card>
+
+  <content-card wx:for="{{Record}}" wx:key="*this" name="{{index+1}}">
+    <view >
       <view class="lv1" style="border-top: #2c61b440 2rpx solid">
         <view class="lv2" style="width: 100%">
-          型号：联想 YOGA Pro 13s Carbon 2021 酷睿版
+          型号：{{Record[index]._model}}
         </view>
       </view>
       <view name="switchOn">
         <view class="lv1">
           <view class="lv2">
-            CPU：R5 PRO 4650U
+            CPU：{{Record[index]._CPU}}
           </view>
           <view class="lv2">
-            显卡：Radeon Pro 5500M
+            显卡：{{Record[index]._GPU}}
           </view>
         </view>
         <view class="lv1">
           <view class="lv2">
-            内存：
+            内存：{{Record[index]._RAM}}
           </view>
           <view class="lv2">
-            硬盘：
+            硬盘：{{Record[index]._storage}}
           </view>
         </view>
         <view class="lv1">
           <view class="lv2" style="width: 100%">
-            屏幕：15.6英寸 1080P 100%sRGB 90Hz 触屏
+            屏幕：{{Record[index]._display}}
           </view>
         </view>
         <view class="lv1">
           <view class="lv2">
-            重量：
+            重量：{{Record[index]._weight}}
           </view>
           <view class="lv2">
-            厚度：
+            厚度：{{Record[index]._thickness}}
           </view>
         </view>
       </view>
       <view class="lv1">
         <view class="lv2" style="width: 100%">
-          优点：一二三四五六七八九十一二三四五六七八
+          优点：{{Record[index]._pros}}
         </view>
       </view>
       <view class="lv1">
         <view class="lv2" style="width: 100%">
-          缺点：
+          缺点：{{Record[index]._cons}}
         </view>
       </view>
       <view class="lv1">
         <view class="lv2">
-          SKU：
+          SKU：{{Record[index]._SKU}}
         </view>
         <view class="lv2">
-          参考价格：
+          参考价格：{{Record[index]._price}}
         </view>
       </view>
     </view>

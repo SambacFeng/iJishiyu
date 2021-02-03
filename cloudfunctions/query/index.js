@@ -12,7 +12,13 @@ exports.main = async (event, context) => {
   const _ = db.command
   form = {}
   
-  if (event.type === 'UserQuery'){
+  if (event.type === 'laptop'){
+    form = (await db.collection('Laptop').where(_.and(
+      _.or(event.Record.type),
+      _.or(event.Record.brand),
+      _.or(event.Record.price),
+    )).orderBy('_fulltime','desc').get()).data
+  } else if (event.type === 'UserQuery'){
     form = (await db.collection('Forms').where({_openid: wxContext.OPENID}).orderBy('_fulltime','desc').get()).data
   } else {
     usertype = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0].type

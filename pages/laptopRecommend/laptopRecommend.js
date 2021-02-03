@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    Record: {},
     type: [{
       id: 1,
       name: '轻薄本',
@@ -107,6 +108,118 @@ Page({
     this.setData({
       price: items
     });
+  },
+
+  toClaim(e) {
+    var type = []
+    var items = this.data.type;
+    items.forEach(item => {
+      if(item.checked == true) {
+        type.push({_type: item.id})
+      }
+    });
+    if(type.length === 0) type.push({})
+    var brand = []
+    var items = this.data.brand;
+    items.forEach(item => {
+      if(item.checked == true) {
+        brand.push({_brand: item.id})
+      }
+    });
+    if(brand.length === 0) brand.push({})
+    var price = []
+    var items = this.data.price;
+    items.forEach(item => {
+      if(item.checked == true) {
+        price.push({_pricerange: item.id})
+      }
+    });
+    if(price.length === 0) price.push({})
+    console.log('update',type, brand, price)
+    wx.cloud.callFunction({
+      name: 'query',
+      data: {
+        type: 'laptop',
+        Record: {
+          type: type,
+          brand: brand,
+          price: price,
+        },
+      },
+      success: res => {
+        this.setData({
+          Record: res.result
+        })
+      }
+    })
+  },
+
+  reset(e){
+    this.setData({
+      type: [{
+        id: 1,
+        name: '轻薄本',
+        checked: false
+      }, {
+        id: 2,
+        name: '全能本',
+        checked: false
+      }, {
+        id: 3,
+        name: '游戏本',
+        checked: false
+      }],
+      brand: [{
+        id: 1,
+        name: '联想',
+        checked: false
+      }, {
+        id: 2,
+        name: '惠普',
+        checked: false
+      }, {
+        id: 3,
+        name: '戴尔',
+        checked: false
+      }, {
+        id: 4,
+        name: '华硕',
+        checked: false
+      }, {
+        id: 5,
+        name: '华为',
+        checked: false
+      }, {
+        id: 6,
+        name: '其他',
+        checked: false
+      }],
+      price: [{
+        id: 1,
+        name: '4k以下',
+        checked: false
+      }, {
+        id: 2,
+        name: '4-5k',
+        checked: false
+      }, {
+        id: 3,
+        name: '5-6k',
+        checked: false
+      }, {
+        id: 4,
+        name: '6-8k',
+        checked: false
+      }, {
+        id: 5,
+        name: '8-10k',
+        checked: false
+      }, {
+        id: 6,
+        name: '10k以上',
+        checked: false
+      }]
+    })
   },
 
   /**
