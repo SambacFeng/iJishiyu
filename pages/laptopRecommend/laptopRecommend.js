@@ -142,7 +142,6 @@ Page({
       }
     });
     if(price.length === 0) price.push({})
-    console.log('update',type, brand, price)
     wx.cloud.callFunction({
       name: 'query',
       data: {
