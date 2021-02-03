@@ -7,74 +7,74 @@ Page({
   data: {
     type: [{
       id: 1,
-      name: "轻薄本",
+      name: '轻薄本',
       checked: false
     }, {
       id: 2,
-      name: "全能本",
+      name: '全能本',
       checked: false
     }, {
       id: 3,
-      name: "游戏本",
+      name: '游戏本',
       checked: false
     }],
     brand: [{
       id: 1,
-      name: "联想",
+      name: '联想',
       checked: false
     }, {
       id: 2,
-      name: "惠普",
+      name: '惠普',
       checked: false
     }, {
       id: 3,
-      name: "戴尔",
+      name: '戴尔',
       checked: false
     }, {
       id: 4,
-      name: "华硕",
+      name: '华硕',
       checked: false
     }, {
       id: 5,
-      name: "华为",
+      name: '华为',
       checked: false
     }, {
       id: 6,
-      name: "其他",
+      name: '其他',
       checked: false
     }],
     price: [{
       id: 1,
-      name: "4k以下",
+      name: '4k以下',
       checked: false
     }, {
       id: 2,
-      name: "4-5k",
+      name: '4-5k',
       checked: false
     }, {
       id: 3,
-      name: "5-6k",
+      name: '5-6k',
       checked: false
     }, {
       id: 4,
-      name: "6-8k",
+      name: '6-8k',
       checked: false
     }, {
       id: 5,
-      name: "8-10k",
+      name: '8-10k',
       checked: false
     }, {
       id: 6,
-      name: "10k以上",
+      name: '10k以上',
       checked: false
     }]
   },
 
   change(e) {
-    console.log(e);
+    console.log(e.detail);
     let items = this.data.type;
     items.forEach(item => {
-      if(item.name === e.detail.key) {
+      if(item.id == e.detail.key) {
         item.checked = e.detail.checked;
       }
     });
@@ -83,11 +83,37 @@ Page({
     });
   },
 
+  change2(e) {
+    console.log(e.detail);
+    let items = this.data.brand;
+    items.forEach(item => {
+      if(item.id == e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      brand: items
+    });
+  },
+
+  change3(e) {
+    console.log(e.detail);
+    let items = this.data.price;
+    items.forEach(item => {
+      if(item.id == e.detail.key) {
+        item.checked = e.detail.checked;
+      }
+    });
+    this.setData({
+      price: items
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    wx.lin.initValidateForm(this)
   },
 
   /**
