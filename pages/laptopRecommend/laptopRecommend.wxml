@@ -72,7 +72,7 @@
         </view>
         <view class="right"> -->
         <l-form-item name="switch" label="专业模式：">
-          <switch checked="{{}}" bindchange="" color="#2c61b4"></switch>
+          <switch checked="{{switch}}" bindchange="changeSwitch" color="#2c61b4"></switch>
         </l-form-item>
 <!--           
         </view>
@@ -99,7 +99,7 @@
           型号：{{Record[index]._model}}
         </view>
       </view>
-      <view name="switchOn">
+      <view wx:if="{{switch}}" name="switchOn">
         <view class="lv1">
           <view class="lv2">
             CPU：{{Record[index]._CPU}}

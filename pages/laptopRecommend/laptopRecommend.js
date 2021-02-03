@@ -6,6 +6,7 @@ Page({
    */
   data: {
     Record: {},
+    switch: false,
     type: [{
       id: 1,
       name: '轻薄本',
@@ -110,6 +111,12 @@ Page({
     });
   },
 
+  changeSwitch(e){
+    this.setData({
+      switch: e.detail.value
+    })
+  },
+
   toClaim(e) {
     var type = []
     var items = this.data.type;
@@ -156,6 +163,7 @@ Page({
 
   reset(e){
     this.setData({
+      switch: false,
       type: [{
         id: 1,
         name: '轻薄本',
