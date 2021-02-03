@@ -43,7 +43,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
   "appid": "wx2278c2c1237dd227",
-  "projectname": "jishiyuTest",
+  "projectname": "ijishiyu",
   "debugOptions": {
     "hidedInDevtools": []
   },
@@ -151,6 +151,12 @@
         {
           "name": "反馈查询页面",
           "pathName": "pages/feedbackQuery/feedbackQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "停止服务",
+          "pathName": "pages/closed/closed",
           "scene": null
         }
       ]

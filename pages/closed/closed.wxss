@@ -1,0 +1,12 @@
+/* pages/closed/closed.wxss */
+image{
+  width: 315rpx;
+  height: 300rpx;
+  margin: 20vh 217rpx 3vh 217rpx;
+}
+
+view{
+  text-indent: 2rem;
+  margin: 0 40rpx;
+  font-size: 36rpx;
+}
