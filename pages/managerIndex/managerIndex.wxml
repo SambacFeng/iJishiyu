@@ -2,11 +2,11 @@
   <view class="header">
     <!-- 后期改为调取管理员头像 -->
     <view class="avatar">
-      <l-avatar src="/assets/logo.jpg" size="220" />
+      <l-avatar src="{{avatar}}" size="220" />
     </view>
     <!-- 后期改为调取管理员姓名 -->
     <view class="name">
-      <text>{{}}</text>
+      <text>{{staffname}}</text>
     </view>
   </view>
   <view class="btns">

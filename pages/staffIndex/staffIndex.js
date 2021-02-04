@@ -1,18 +1,31 @@
 // pages/staffIndex/staffIndex.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    avatar: '/assets/logo.jpg',
+    staffname: '及时雨志愿者服务队',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var fileid = 'cloud://jishiyutest-0gwe9qrfa9d62009.6a69-jishiyutest-0gwe9qrfa9d62009-1304847030/staffimg/'+app.globalData.staffInfo.name+'.png'
+    wx.cloud.downloadFile({
+      fileID: fileid,
+      success: res => {
+        console.log('[文件下载] 成功',res.tempFilePath)
+        this.setData({
+          avatar: res.tempFilePath,
+          staffname: app.globalData.staffInfo.name,
+        })
+      },
+      fail: console.err
+    })
   },
 
   /**
