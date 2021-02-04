@@ -42,6 +42,7 @@ App({
   globalData: {
     userInfo: null,
     indexurl: '',
+    avatar: '',
     staffInfo: {}
   }
 })
