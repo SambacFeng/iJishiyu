@@ -50,29 +50,9 @@ Page({
           console.log('[云函数] [login] 调用成功 ', res.result.openid, res.result.url)
           app.globalData.indexurl = res.result.url
           app.globalData.staffInfo = res.result.Record
-          if(res.result.url === '../userIndex/userIndex'){
-            wx.redirectTo({
-              url: app.globalData.indexurl,
-            })
-          } else {
-            var fileid = 'cloud://jishiyutest-0gwe9qrfa9d62009.6a69-jishiyutest-0gwe9qrfa9d62009-1304847030/staffimg/'+app.globalData.staffInfo.name+'.jpg'
-            wx.cloud.downloadFile({
-              fileID: fileid,
-              success: res => {
-                console.log('[文件下载] 成功',res.tempFilePath)
-                app.globalData.avatar = res.tempFilePath
-                wx.redirectTo({
-                  url: app.globalData.indexurl,
-                })
-              },
-              fail: err => {
-                console.log('[文件下载] 失败')
-                wx.redirectTo({
-                  url: app.globalData.indexurl,
-                })
-              }
-            })
-          }
+          wx.redirectTo({
+            url: app.globalData.indexurl,
+          })
         },
         fail: err => {
           console.error('[云函数] [login] 调用失败', err)

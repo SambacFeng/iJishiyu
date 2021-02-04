@@ -14,17 +14,35 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      avatar: app.globalData.avatar,
-      staffname: app.globalData.staffInfo.name,
-    })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    if(app.globalData.avatar === ''){
+      var fileid = 'cloud://jishiyutest-0gwe9qrfa9d62009.6a69-jishiyutest-0gwe9qrfa9d62009-1304847030/staffimg/'+app.globalData.staffInfo.name+'.jpg'
+      wx.cloud.downloadFile({
+        fileID: fileid,
+        success: res => {
+          console.log('[文件下载] 成功',res.tempFilePath)
+          app.globalData.avatar = res.tempFilePath
+          this.setData({
+            avatar: app.globalData.avatar,
+            staffname: app.globalData.staffInfo.name,
+          })
+        },
+        fail: err => {
+          console.log('[文件下载] 失败')
+        }
+      })
+    } else {
+      this.setData({
+        avatar: app.globalData.avatar,
+        staffname: app.globalData.staffInfo.name,
+      })
+    }
   },
 
   /**
