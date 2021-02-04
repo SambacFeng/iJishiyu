@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/closed/closed",
     "pages/formCollect/formCollect",
     "pages/formClaim/formClaim",
     "pages/formComplete/formComplete",

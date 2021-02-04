@@ -1,82 +1,51 @@
 <content-title name="购机推荐" describe="点击按钮以进行筛选">
   <content-card name="筛选条件">
     <l-form name="select">
-      <!-- <view class="row">
-        <view class="left">
-          类型：       
-        </view>
-        <view class="right"> -->
-          <l-form-item name="type" label="类型：">
-            <l-checkbox-group id="type" placement="row" bind:linchange="change">
-              <l-checkbox 
-                wx:for="{{type}}"
-                wx:key="id"
-                key="{{item.id}}"
-                checked="{{item.checked}}"
-              >
-                <!-- <l-button size="mini" slot="icon" plain="{{!item.checked}}"> -->
-                  {{item.name}}
-                <!-- </l-button> -->
-              </l-checkbox>
-            </l-checkbox-group>            
-          </l-form-item>
-        <!-- </view>
-      </view> -->
-      <!-- <view class="row">
-        <view class="left">
-          品牌：
-        </view>
-        <view class="right"> -->
-        <l-form-item name="brand" label="品牌：">
-          <l-checkbox-group id="brand" placement="row" bind:linchange="change2">
-            <l-checkbox 
-              wx:for="{{brand}}"
-              wx:key="id"
-              key="{{item.id}}"
-              checked="{{item.checked}}"
-            >
-              <!-- <l-button size="mini" plain="{{!item.checked}}"> -->
-                {{item.name}}
-              <!-- </l-button> -->
-            </l-checkbox>
-          </l-checkbox-group>        
-        </l-form-item>
-
-        <!-- </view>
-      </view> -->
-      <!-- <view class="row">
-        <view class="left">
-          价格：
-        </view>
-        <view class="right"> -->
-        <l-form-item name="price" label="价格：">
-          <l-checkbox-group id="price" placement="row" bind:linchange="change3">
-            <l-checkbox 
-            wx:for="{{price}}"
+      <l-form-item name="type" label="类型：">
+        <l-checkbox-group id="type" placement="row" bind:linchange="change">
+          <l-checkbox 
+            wx:for="{{type}}"
             wx:key="id"
             key="{{item.id}}"
             checked="{{item.checked}}"
-            >
-              <!-- <l-button size="mini" plain="{{!item.checked}}"> -->
-                {{item.name}}
-              <!-- </l-button> -->
-            </l-checkbox>
-          </l-checkbox-group>        
-        </l-form-item>
-
-        <!-- </view>
-      </view> -->
-      <!-- <view class="row" style="margin: 10rpx 0">
-        <view class="left" style="width: 180rpx; padding: 5rpx 0">
-          专业模式：
-        </view>
-        <view class="right"> -->
-        <l-form-item name="switch" label="专业模式：">
-          <switch checked="{{switch}}" bindchange="changeSwitch" color="#2c61b4"></switch>
-        </l-form-item>
-<!--           
-        </view>
-      </view> -->
+          >
+            <!-- <l-button size="mini" slot="icon" plain="{{!item.checked}}"> -->
+              {{item.name}}
+            <!-- </l-button> -->
+          </l-checkbox>
+        </l-checkbox-group>            
+      </l-form-item>
+      <l-form-item name="brand" label="品牌：">
+        <l-checkbox-group id="brand" placement="row" bind:linchange="change2">
+          <l-checkbox 
+            wx:for="{{brand}}"
+            wx:key="id"
+            key="{{item.id}}"
+            checked="{{item.checked}}"
+          >
+            <!-- <l-button size="mini" plain="{{!item.checked}}"> -->
+              {{item.name}}
+            <!-- </l-button> -->
+          </l-checkbox>
+        </l-checkbox-group>        
+      </l-form-item>
+      <l-form-item name="price" label="价格：">
+        <l-checkbox-group id="price" placement="row" bind:linchange="change3">
+          <l-checkbox 
+          wx:for="{{price}}"
+          wx:key="id"
+          key="{{item.id}}"
+          checked="{{item.checked}}"
+          >
+            <!-- <l-button size="mini" plain="{{!item.checked}}"> -->
+              {{item.name}}
+            <!-- </l-button> -->
+          </l-checkbox>
+        </l-checkbox-group>        
+      </l-form-item>
+      <l-form-item name="switch" label="专业模式：">
+        <switch checked="{{switch}}" bindchange="changeSwitch" color="#2c61b4"></switch>
+      </l-form-item>
       <view class="comment">
         专业模式下，将显示笔记本的CPU、显卡、内存等硬件的具体信息。
       </view>
@@ -90,10 +59,7 @@
     <view class="comment">
       本结果中的各项参数仅供参考。如对筛选结果有疑问或不满意，可添加及时雨志愿者服务队官方QQ：2354221762进行咨询
     </view>
-  </content-card>
-
-  <content-card wx:for="{{Record}}" wx:key="*this" name="{{index+1}}">
-    <view >
+    <view class="item" wx:for="{{Record}}" wx:key="*this">
       <view class="lv1" style="border-top: #2c61b440 2rpx solid">
         <view class="lv2" style="width: 100%">
           型号：{{Record[index]._model}}
@@ -141,10 +107,10 @@
         </view>
       </view>
       <view class="lv1">
-        <view class="lv2">
+        <!-- <view class="lv2">
           SKU：{{Record[index]._SKU}}
-        </view>
-        <view class="lv2">
+        </view> -->
+        <view class="lv2" style="width: 100%">
           参考价格：{{Record[index]._price}}
         </view>
       </view>

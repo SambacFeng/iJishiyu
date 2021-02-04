@@ -38,3 +38,8 @@ l-button{
   margin: 0 20rpx 20rpx 20rpx;
   text-indent: 54rpx;
 }
+
+.item{
+  margin: 50rpx 0;
+  box-shadow: 3rpx 3rpx 1rpx #2c61b4;
+}
