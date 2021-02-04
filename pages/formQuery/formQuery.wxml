@@ -32,6 +32,11 @@
           完成时间：{{Record[index]._solvedtime}}
         </view>
       </view>
+      <view class="lv1">
+        <view class="lv2">
+          队员姓名：{{Record[index]._staffname}}
+        </view>
+      </view>
     </view>
 
     <view wx:else>
