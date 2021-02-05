@@ -57,7 +57,7 @@
   </content-card>
   <content-card name="筛选结果">
     <view class="comment">
-      本结果中的各项参数仅供参考。如对筛选结果有疑问或不满意，可添加及时雨志愿者服务队官方QQ：2354221762进行咨询
+      本结果中的各项参数仅供参考。如对筛选结果有疑问或不满意，可添加及时雨志愿者服务队官方QQ：2354221762进行咨询。数据库最后更新时间：2021-1-31
     </view>
     <view class="item" wx:for="{{Record}}" wx:key="*this">
       <view class="lv1" style="border-top: #2c61b440 2rpx solid">
