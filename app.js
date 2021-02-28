@@ -4,7 +4,7 @@ App({
     // 初始化云环境
     wx.cloud.init({
       // 后缀test为开发用的测试环境
-      env: 'jishiyutest-0gwe9qrfa9d62009',
+      env: 'ijishiyu-6g6n5cncc846de79',
       traceUser: true
     })
     // 展示本地存储能力

@@ -22,7 +22,7 @@ Page({
    */
   onReady: function () {
     if(app.globalData.avatar === ''){
-      var fileid = 'cloud://jishiyutest-0gwe9qrfa9d62009.6a69-jishiyutest-0gwe9qrfa9d62009-1304847030/staffimg/'+app.globalData.staffInfo.name+'.jpg'
+      var fileid = 'cloud://ijishiyu-6g6n5cncc846de79.696a-ijishiyu-6g6n5cncc846de79-1304847030/staffimg/'+app.globalData.staffInfo.name+'.jpg'
       wx.cloud.downloadFile({
         fileID: fileid,
         success: res => {
