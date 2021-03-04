@@ -39,7 +39,8 @@ Page({
         id: 6, 
         name: '其他或问题不清楚，请在下方简单描述',
         checked: false}
-    ]
+    ],
+    submitted: false,
   },
 
   inputName(e){
@@ -106,6 +107,7 @@ Page({
   submit(e){
     // console.log("提交成功", e)
     console.log(this.data)
+    if(this.submitted === true) return
 
     wx.showModal({
       cancelColor: 'cancelColor',
@@ -152,6 +154,9 @@ Page({
             })
             return 
           } 
+          this.setData({
+            submitted: true,
+          })
           wx.cloud.callFunction({
             name: 'submitform',
             data: {
@@ -168,17 +173,15 @@ Page({
             },
             success: res => {
               console.log('[云函数] [submitform] 执行成功',res.result)
-              if(res.result === true){
-                wx.showToast({
-                  title: '提交成功',
-                  duration: 3000
-                })
-                var startTime = new Date().getTime() + 3000;
-                while(new Date().getTime() < startTime) {}
-                wx.redirectTo({
-                  url: '../formSubmit/formSubmit',
-                })
-              }
+              wx.redirectTo({
+                url: '../formSubmit/formSubmit',
+              })
+            },
+            fail: res=>{
+              console.log('[云函数] [submitform] 执行失败')
+              this.setData({
+                submitted: false,
+              })
             }
           })
         }
@@ -231,6 +234,9 @@ Page({
    */
   onLoad: function () {
     wx.lin.initValidateForm(this)
+    this.setData({
+      submitted: false,
+    })
   },
 
   /**

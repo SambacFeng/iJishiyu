@@ -60,7 +60,10 @@
     <!-- 点击提交后跳转到submitAccess页面 -->
     <view class="btns">
       <view slot="submit" class="btn">
-        <l-button width="200" height="80" bindtap="submit" >提交</l-button>
+        <l-button width="200" height="80" bindtap="submit" disabled="{{submitted}}">
+          <text wx:if="{{submitted}}">已提交</text>
+          <text wx:else>提交</text>
+        </l-button>
       </view>
       <view slot="reset" class="btn">
         <l-button width="200" height="80" bindtap="reset" type="default" plain>重置</l-button>
