@@ -4,6 +4,7 @@
     "pages/closed/closed",
     "pages/formCollect/formCollect",
     "pages/formClaim/formClaim",
+    "pages/formAbort/formAbort",
     "pages/formComplete/formComplete",
     "pages/formSubmit/formSubmit",
     "pages/formQuery/formQuery",

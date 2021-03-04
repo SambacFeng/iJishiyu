@@ -18,6 +18,15 @@ page{
   padding: 20rpx 0 0 10rpx;
 }
 
+.btns{
+  display: flex;
+  margin-top: 30rpx;
+}
+
+l-button{
+  margin: 0 auto;
+}
+
 .comment{
   margin: 40rpx;
   margin-top: 30vh;

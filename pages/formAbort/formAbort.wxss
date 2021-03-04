@@ -1,0 +1,21 @@
+l-radio{
+  margin: 0 20rpx;
+}
+
+.comment{
+  font-size: 26rpx;
+  color: #2c60b4e0;
+  margin: 0 20rpx 20rpx 20rpx;
+  text-indent: 56rpx;
+}
+
+l-button{
+  padding: 20rpx 87.5rpx 20rpx 87.5rpx;
+  width: 200rpx;
+  height: 80rpx;
+}
+
+.btn{
+  width: 375rpx;
+  margin-top: 25rpx;
+}
