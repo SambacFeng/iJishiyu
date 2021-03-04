@@ -115,5 +115,10 @@
         </view>
       </view>
     </view>
+    <view wx:if="{{Record.length == 0}}">
+      <view class="noresult">
+        没有符合条件的机型，试试改变筛选条件吧。
+      </view>
+    </view>
   </content-card>
 </content-title>

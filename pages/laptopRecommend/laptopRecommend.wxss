@@ -47,3 +47,10 @@ l-button{
   margin: 50rpx 0;
   box-shadow: 3rpx 3rpx 1rpx #2c61b4;
 }
+
+.noresult
+{
+  font-size: 30rpx;
+  text-align: center;
+  margin: 30rpx 0;
+}
