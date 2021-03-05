@@ -31,9 +31,17 @@
       </view>  
 
       <view wx:elif="{{Record[index]._staffopenid === ''}}" class="lv1">
-        <view class="lv2">
+        <view class="lv2" style="width: 520rpx">
           维修状态：<text>等待分配</text>
-        </view>
+        </view>      
+        <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx">
+        <l-button
+          width="170"
+          plain
+        >
+          <text style="font-size: 36rpx">终止</text>
+        </l-button>
+      </view>
       </view>
 
       <view wx:else>

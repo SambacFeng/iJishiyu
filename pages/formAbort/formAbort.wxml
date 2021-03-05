@@ -1,18 +1,17 @@
 <view>
   <content-card name="终止表单的原因">
     <view class="comment">
-      终止表单的操作不可撤销，请谨慎操作。
+      终止表单将删除您本次的报修记录，已接单的队员将不再能看到您的联系方式。终止表单的操作不可撤销，请谨慎操作。如果您对我们的服务有不满，希望您能在主页“报修反馈”处留下您宝贵的意见和建议。
     </view>
     <l-radio-group 
       id="reason" 
       current="{{reason}}" 
       bind:linchange="changeReason" 
       none-checked="{{false}}" 
-      length="4"
+      length="3"
     >
-      <l-radio key="报修人已自行解决">报修人已自行解决</l-radio>
-      <l-radio key="报修人通过其他方式解决">报修人通过其他方式解决</l-radio>
-      <l-radio key="问题已自行消失">问题自行消失</l-radio>
+      <l-radio key="问题已自行消失">问题已自行消失</l-radio>
+      <l-radio key="已通过其他方式解决">已通过其他方式解决</l-radio>
       <l-radio key="其他">其他</l-radio>
     </l-radio-group>
     <view class="btn">
