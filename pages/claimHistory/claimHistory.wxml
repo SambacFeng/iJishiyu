@@ -31,10 +31,10 @@
       </view>
     </view>
     <view class="lv1">
-      <view class="lv2" style="width: 100%">
+      <view class="lv2" style="width: 520rpx">
         报修时间：{{Record[index]._time}}
       </view>
-      <!-- <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx">
+      <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx">
         <l-button 
           data-formid="{{Record[index]._id}}" 
           data-index="{{index}}" 
@@ -45,9 +45,9 @@
           <text wx:if="{{Record[index]._solvedtime === ''}}" style="font-size: 36rpx">完成</text>
           <text wx:else style="font-size: 36rpx">已完成</text>
         </l-button>
-      </view> -->
+      </view>
     </view>
-    <view class="btns">
+    <!-- <view class="btns">
       <l-button 
         data-formid="{{Record[index]._id}}" 
         data-index="{{index}}" 
@@ -69,7 +69,7 @@
         <text wx:if="{{Record[index]._solvedtime === ''}}" style="font-size: 36rpx">中止</text>
         <text wx:else style="font-size: 36rpx">已中止</text>
       </l-button>
-    </view>
+    </view> -->
   </content-card>
 </view>
 <view wx:if="{{Record.length == 0}}">

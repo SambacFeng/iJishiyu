@@ -17,7 +17,7 @@ page{
   border-right: #2c61b440 2rpx solid;
   padding: 20rpx 0 0 10rpx;
 }
-
+/* 
 .btns{
   display: flex;
   margin-top: 30rpx;
@@ -25,7 +25,7 @@ page{
 
 l-button{
   margin: 0 auto;
-}
+} */
 
 .comment{
   margin: 40rpx;
