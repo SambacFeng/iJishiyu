@@ -7,7 +7,6 @@ Page({
    */
   data: {
     Record: {},
-    submitted: false,
   },
 
   /**
@@ -77,8 +76,11 @@ Page({
 
   },
   toClaim: function(e) {
+    var index = e.currentTarget.dataset.index
+    var tmp = this.data.Record
+    tmp[index].submitted = true
     this.setData({
-      submitted: true,
+      Record: tmp,
     })
     wx.cloud.callFunction({
       name: 'formClaim',
@@ -90,11 +92,10 @@ Page({
       },
       success: res => {
         console.log('[云函数] [forClaim] 调用成功', res.result)
-        var tmp = this.data.Record
-        tmp[e.currentTarget.dataset.index]._staffopenid='1'
+        tmp[index]._staffopenid='1'
+        tmp[index].submitted=false
         this.setData({
           Record: tmp,
-          submitted: false,
         })
         if (res.result === true){
           wx.showToast({
