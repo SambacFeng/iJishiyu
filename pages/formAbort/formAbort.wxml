@@ -12,7 +12,8 @@
       <l-radio key="已通过其他方式解决">已通过其他方式解决</l-radio>
       <l-radio key="其他">其他</l-radio>
     </l-radio-group>
-    <view class="btns">
+  </content-card>
+  <view class="btns">
       <view slot="submit" class="btn">
         <l-button wx:if="{{submitted}}" loading="true" width="200" height="80" disabled="true">
           <text>终止中</text>
@@ -27,5 +28,4 @@
         </l-button>
       </view>
     </view>
-  </content-card>
 </view>

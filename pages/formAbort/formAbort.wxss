@@ -15,7 +15,13 @@ l-button{
   height: 80rpx;
 }
 
+.btns{
+  height: 120rpx;
+  display: flex;
+}
+
 .btn{
   width: 375rpx;
-  margin-top: 25rpx;
+  margin: 25rpx auto;
+  align-content: center;
 }
