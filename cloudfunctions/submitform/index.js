@@ -36,7 +36,7 @@ exports.main = async (event, context) => {
       data: tmp
     })
     return true
-  } else if (event.type == 'userfeedback'){
+  } else if (event.type === 'userfeedback'){
     var tmp = event.Record
     tmp._openid = wxContext.OPENID
     tmp.time = time
@@ -45,6 +45,9 @@ exports.main = async (event, context) => {
       data: tmp
     })
     return true
-  } 
+  } else if (event.type === 'formstop'){
+    db.collection('Forms').doc(event.id).remove()
+    return true
+  }
   return false
 }

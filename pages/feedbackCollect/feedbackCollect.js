@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    submitted: false,
     name: '',
     staffname: '',
     problem: '电脑问题已全部被解决',
@@ -51,6 +52,9 @@ Page({
 
   submit(e){
     console.log(this.data)
+    this.setData({
+      submitted: true,
+    })
     if(this.data.problemDetail !== ''){
       this.setData({
         problem: this.data.problemDetail
@@ -58,6 +62,7 @@ Page({
     }
     var tmp = this.data
     delete tmp.problemDetail
+    delete tmp.submitted
     wx.cloud.callFunction({
       name: 'submitform',
       data: {
@@ -73,8 +78,8 @@ Page({
           })
           var startTime = new Date().getTime() + 3000;
           while(new Date().getTime() < startTime) {}
-          wx.redirectTo({
-            url: '../userIndex/userIndex',
+          wx.navigateBack({
+            delta: 1,
           })
         }
       },

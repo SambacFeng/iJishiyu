@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    Record: {}
+    Record: {},
+    submitted: false,
   },
 
   /**
@@ -76,6 +77,9 @@ Page({
 
   },
   toClaim: function(e) {
+    this.setData({
+      submitted: true,
+    })
     wx.cloud.callFunction({
       name: 'formClaim',
       data: {
@@ -89,7 +93,8 @@ Page({
         var tmp = this.data.Record
         tmp[e.currentTarget.dataset.index]._staffopenid='1'
         this.setData({
-          Record: tmp
+          Record: tmp,
+          submitted: false,
         })
         if (res.result === true){
           wx.showToast({

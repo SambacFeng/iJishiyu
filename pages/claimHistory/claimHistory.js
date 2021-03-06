@@ -29,7 +29,7 @@ Page({
   onComplete(e){
     var formid = e.currentTarget.dataset.formid
     var url = '../formComplete/formComplete?id='+formid
-    wx.navigateTo({
+    wx.redirectTo({
       url: url,
     })
   },

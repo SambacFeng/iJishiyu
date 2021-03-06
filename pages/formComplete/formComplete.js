@@ -9,6 +9,7 @@ Page({
     result: '',
     suggestion: '',
     solvetime: '',
+    submitted: false,
   },
 
   /**
@@ -48,6 +49,9 @@ Page({
       })
       return
     }
+    this.setData({
+      submitted: true,
+    })
     wx.cloud.callFunction({
       name: 'formClaim',
       data: {

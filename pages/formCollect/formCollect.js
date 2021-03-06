@@ -105,10 +105,7 @@ Page({
   },
 
   submit(e){
-    // console.log("提交成功", e)
     console.log(this.data)
-    if(this.submitted === true) return
-
     wx.showModal({
       cancelColor: 'cancelColor',
       content: '是否提交？',

@@ -44,7 +44,8 @@
       </content-card>
     </l-form-item>
     <view class="btns">
-      <l-button width="200" height="80" bindtap="submit">提交</l-button>
+      <l-button wx:if="{{submitted==false}}" width="200" height="80" bindtap="submit">提交</l-button>
+      <l-button wx:else width="200" height="80" loading="true" disabled="true">提交中</l-button>
       <l-button width="200" height="80" bindtap="reset" plain>重置</l-button>
     </view>
   </l-form>

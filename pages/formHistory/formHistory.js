@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    Record: {}
+    Record: {},
+    submitted: false,
   },
 
   /**
@@ -38,6 +39,14 @@ Page({
    */
   onShow: function () {
 
+  },
+
+  toStop: function (e){
+    console.log(e)
+    var url = '../formAbort/formAbort?id='+e.currentTarget.dataset.formid
+    wx.redirectTo({
+      url: url,
+    })
   },
 
   /**

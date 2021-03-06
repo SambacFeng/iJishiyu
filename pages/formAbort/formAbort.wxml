@@ -5,19 +5,27 @@
     </view>
     <l-radio-group 
       id="reason" 
-      current="{{reason}}" 
-      bind:linchange="changeReason" 
-      none-checked="{{false}}" 
+      current="问题已自行消失" 
       length="3"
     >
       <l-radio key="问题已自行消失">问题已自行消失</l-radio>
       <l-radio key="已通过其他方式解决">已通过其他方式解决</l-radio>
       <l-radio key="其他">其他</l-radio>
     </l-radio-group>
-    <view class="btn">
-      <l-button bind:lintap="submit">
-        确认
-      </l-button>
+    <view class="btns">
+      <view slot="submit" class="btn">
+        <l-button wx:if="{{submitted}}" loading="true" width="200" height="80" disabled="true">
+          <text>终止中</text>
+        </l-button>
+        <l-button wx:else width="200" height="80" bindtap="toStop">
+          <text>终止</text>
+        </l-button>
+      </view>
+      <view slot="reset" class="btn">
+        <l-button width="200" height="80" type="default" plain>
+          <navigator url="../formHistory/formHistory" open-type="redirect">取消</navigator>
+        </l-button>
+      </view>
     </view>
   </content-card>
 </view>

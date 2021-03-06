@@ -35,20 +35,20 @@
           维修状态：<text>等待分配</text>
         </view>      
         <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx">
-        <l-button
-          width="170"
-          plain
-        >
-          <text style="font-size: 36rpx">终止</text>
-        </l-button>
-      </view>
+          <l-button bind:lintap="toStop" data-formid="{{Record[index]._id}}" width="170" plain>
+            <text style="font-size: 36rpx">终止</text>
+          </l-button>
+        </view>
       </view>
 
-      <view wx:else>
-        <view class="lv1">
-          <view class="lv2">
-            维修状态：<text>维修中</text>
-          </view>
+      <view wx:else class="lv1">
+        <view class="lv2">
+          维修状态：<text>维修中</text>
+        </view>
+        <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx">
+          <l-button bind:lintap="toStop" data-formid="{{Record[index]._id}}" width="170" plain>
+            <text style="font-size: 36rpx">终止</text>
+          </l-button>
         </view>
       </view>
 
