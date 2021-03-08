@@ -75,6 +75,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+
   toClaim: function(e) {
     var index = e.currentTarget.dataset.index
     var tmp = this.data.Record
@@ -110,5 +111,15 @@ Page({
         }
       }
     })
-  }
+  },
+
+  
+  toCopy(e){
+    var data = e.currentTarget.dataset.data
+    // console.log(data)
+    wx.setClipboardData({
+      data: data,
+    })
+  },
+
 })

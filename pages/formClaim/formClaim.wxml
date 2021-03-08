@@ -1,7 +1,7 @@
 <view wx:for="{{Record.length}}" wx:key="*this">
   <content-card name="{{index+1}}">
     <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
-      <view class="lv2" style="width: 520rpx">
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._name}}" style="width: 520rpx">
         姓名：{{Record[index]._name}}
       </view>
       <view class="lv2" style="width: 186rpx">
@@ -9,15 +9,15 @@
       </view>
     </view>
     <view class="lv1">
-      <view class="lv2">
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._phone}}">
         手机：{{Record[index]._phone}}
       </view>
-      <view class="lv2">
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._QQ}}">
         QQ：{{Record[index]._QQ}}
       </view>
     </view>
     <view class="lv1">
-      <view class="lv2">
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._address}}">
         地址：{{Record[index]._address}}
       </view>
       <view class="lv2">

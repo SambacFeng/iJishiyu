@@ -61,7 +61,7 @@
     </view>
     <view class="item" wx:for="{{Record}}" wx:key="*this">
       <view class="lv1" style="border-top: #2c61b440 2rpx solid">
-        <view class="lv2" style="width: 100%">
+        <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._model}}" style="width: 100%">
           型号：{{Record[index]._model}}
         </view>
       </view>

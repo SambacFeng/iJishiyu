@@ -228,6 +228,14 @@ Page({
       }]
     })
   },
+  
+  toCopy(e){
+    var data = e.currentTarget.dataset.data
+    // console.log(data)
+    wx.setClipboardData({
+      data: data,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
