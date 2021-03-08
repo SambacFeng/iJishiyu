@@ -52,6 +52,17 @@ Page({
                   submitted: false,
                 })
               }
+            },
+            fail: err => {
+              console.log('[云函数] [submitform] 调用失败')
+              wx.showToast({
+                title: '终止失败请重试',
+                icon: 'error',
+                duration: 3000,
+              })
+              this.setData({
+                submitted: false,
+              })
             }
           })
         }

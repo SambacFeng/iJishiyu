@@ -75,8 +75,26 @@ Page({
             url: '../claimHistory/claimHistory',
           })
         } else {
-          console.err
+          wx.showToast({
+            title: '提交失败请重试',
+            icon: 'error',
+            duration: 3000,
+          })
+          this.setData({
+            submitted: false,
+          })
         }
+      },
+      fail: err => {
+        console.log('[云函数] [formClaim] 调用失败')
+        wx.showToast({
+          title: '提交失败请重试',
+          icon: 'error',
+          duration: 3000,
+        })
+        this.setData({
+          submitted: false,
+        })
       }
     })
   },

@@ -23,6 +23,14 @@ Page({
         this.setData({
           Record: res.result
         })
+      },
+      fail: err => {
+        console.log('[云函数] [query] 调用失败')
+        wx.showToast({
+          title: '获取失败请重试',
+          icon: 'error',
+          duration: 3000,
+        })
       }
     })
   },
@@ -109,6 +117,14 @@ Page({
             duration: 3000
           })
         }
+      },
+      fail: err => {
+        console.log('[云函数] [forClaim] 调用失败')
+        wx.showToast({
+          title: '接单失败请重试',
+          icon: 'error',
+          duration: 3000,
+        })
       }
     })
   },

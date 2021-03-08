@@ -84,7 +84,12 @@ Page({
         }
       },
       fail: err => {
-        console.err
+        console.log('[云函数] [submitform] 调用失败')
+        wx.showToast({
+          title: '提交失败请重试',
+          icon: 'error',
+          duration: 3000,
+        })
       }
     })
   },
