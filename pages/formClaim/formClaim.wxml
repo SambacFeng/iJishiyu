@@ -25,7 +25,7 @@
       </view>
     </view>
     <!-- 这个问题设置成如果选已有问题就显示选项，选“其他”的话就显示报修人写的具体内容 -->
-    <view class="lv1" style="height: 140rpx">
+    <view class="lv1">
       <view class="lv2 prob">
         问题：{{Record[index]._problem}}
       </view>
@@ -34,13 +34,14 @@
       <view class="lv2" style="width: 520rpx">
         报修时间：{{Record[index]._time}}
       </view>
-      <view class="lv2" style="width: 186rpx; padding: 4rpx 0 0 10rpx; ">
+      <view class="lv2" style="width: 186rpx; padding: 4rpx 0 4rpx 25rpx; ">
         <l-button wx:if="{{Record[index].submitted===true}}" loading="true" disabled="true">接单中</l-button>
         <l-button
           wx:else 
           data-formid="{{Record[index]._id}}" 
           data-index="{{index}}" 
-          width="170" 
+          width="150" 
+          height="60"
           bind:lintap="toClaim" 
           disabled="{{Record[index]._staffopenid !== ''}}"
         >

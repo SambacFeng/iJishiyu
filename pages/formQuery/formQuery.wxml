@@ -9,7 +9,7 @@
         性别：{{Record[index]._gender}}
       </view>
     </view>
-    <view class="lv1" style="height: 140rpx">
+    <view class="lv1">
       <view class="lv2">
         电脑问题：{{Record[index]._problem}}
       </view>

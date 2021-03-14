@@ -6,7 +6,6 @@ page{
 
 .lv1{
   width: 100%;
-  height: 80rpx;
   display: flex;
   border-bottom: #2c61b440 2rpx solid;
   border-left: #2c61b440 2rpx solid;
@@ -15,5 +14,5 @@ page{
 .lv2{
   width: 100%;
   border-right: #2c61b440 2rpx solid;
-  padding: 20rpx 0 0 10rpx;
+  padding: 14rpx 0 14rpx 10rpx;
 }

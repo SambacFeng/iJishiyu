@@ -19,7 +19,7 @@
         维修结果：{{Record[index].problem}}
       </view>
     </view>
-    <view class="lv1" style="height: 200rpx">
+    <view class="lv1">
       <view class="lv2">
         意见或建议：{{Record[index].otheridea}}
       </view>
