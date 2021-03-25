@@ -1,4 +1,24 @@
 <!--pages/formQuery/formQuery.wxml-->
+<view class="select">
+  <l-button 
+    bindtap=""
+    plain
+  >
+    待分配
+  </l-button>
+  <l-button 
+    bindtap=""
+    plain
+  >
+    维修中
+  </l-button>
+  <l-button 
+    bindtap=""
+    plain
+  >
+    已完成
+  </l-button>
+</view>
 <view wx:for="{{Record}}" wx:key="*this">
   <content-card name="{{index+1}}">
     <view class="lv1" style="border-top: #2c61b440 2rpx solid">

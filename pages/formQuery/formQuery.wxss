@@ -4,6 +4,14 @@ page{
   box-sizing: content-box;
 }
 
+.select{
+  display: flex;
+}
+
+l-button{
+  margin: 30rpx auto;
+}
+
 .lv1{
   width: 100%;
   display: flex;
