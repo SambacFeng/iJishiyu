@@ -16,13 +16,14 @@
     "pages/managerIndex/managerIndex",
     "pages/staffStatistic/staffStatistic",
     "pages/staffIndex/staffIndex",
+    "pages/staffSignIn/staffSignIn",
     "pages/userIndex/userIndex"
 
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#2c61b4",
-    "navigationBarTitleText": "呼叫及时雨",
+    "navigationBarTitleText": "i及时雨",
     "navigationBarTextStyle":"white"
   },
   "style": "v2",

@@ -1,0 +1,124 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "用户首页",
+          "pathName": "pages/userIndex/userIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "队员首页",
+          "pathName": "pages/staffIndex/staffIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "跳转页面",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理员首页",
+          "pathName": "pages/managerIndex/managerIndex",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修表单收集",
+          "pathName": "pages/formCollect/formCollect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "维修反馈页面",
+          "pathName": "pages/feedbackCollect/feedbackCollect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "接单页面",
+          "pathName": "pages/formClaim/formClaim",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "报修历史",
+          "pathName": "pages/formHistory/formHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "已接报修单",
+          "pathName": "pages/claimHistory/claimHistory",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "接单统计",
+          "pathName": "pages/staffStatistic/staffStatistic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "完成维修",
+          "pathName": "pages/formComplete/formComplete",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购机推荐页面",
+          "pathName": "pages/laptopRecommend/laptopRecommend",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单提交成功",
+          "pathName": "pages/formSubmit/formSubmit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "表单查询",
+          "pathName": "pages/formQuery/formQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "反馈查询页面",
+          "pathName": "pages/feedbackQuery/feedbackQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "停止服务",
+          "pathName": "pages/closed/closed",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "终止表单",
+          "pathName": "pages/formAbort/formAbort",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "值班打卡",
+          "pathName": "pages/staffSignIn/staffSignIn",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

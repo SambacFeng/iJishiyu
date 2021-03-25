@@ -20,6 +20,11 @@
         <text>已接报修单</text>
       </l-button>
     </navigator>
+    <navigator url="../staffSignIn/staffSignIn">
+      <l-button type="default" plain width="600">
+        <text>青竹打卡</text>
+      </l-button>
+    </navigator>
     <navigator url="../userIndex/userIndex">
       <l-button type="default" plain width="600">
         <text>用户首页</text>

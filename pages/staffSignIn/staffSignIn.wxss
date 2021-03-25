@@ -1,0 +1,14 @@
+/* pages/staffSignIn/staffSignIn.wxss */
+.lv1{
+  width: 100%;
+  display: flex;
+  border-bottom: #2c61b440 2rpx solid;
+  border-left: #2c61b440 2rpx solid;
+  font-size: 36rpx;
+}
+
+.lv2{
+  width: 355rpx;
+  border-right: #2c61b440 2rpx solid;
+  padding: 14rpx 0 14rpx 14rpx;
+}

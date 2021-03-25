@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "content-card": "/components/content-card/index"
+  }
+}
