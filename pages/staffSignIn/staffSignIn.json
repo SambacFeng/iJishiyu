@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "content-card": "/components/content-card/index"
+    "content-card": "/components/content-card/index",
+    "l-image-picker":"/miniprogram_npm/lin-ui/image-picker/index"
   }
 }

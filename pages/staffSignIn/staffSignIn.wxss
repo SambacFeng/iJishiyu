@@ -12,3 +12,7 @@
   border-right: #2c61b440 2rpx solid;
   padding: 14rpx 0 14rpx 14rpx;
 }
+
+.upLoad{
+  padding: 20rpx 0 0 10rpx;
+}

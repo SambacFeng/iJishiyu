@@ -74,3 +74,11 @@
     </view>
   </view>
 </content-card>
+<content-card name="拍照打卡">
+  <l-image-picker count="1" bindchange="" />
+  <view class="upLoad">
+    <l-button>
+      <text>上传</text>
+    </l-button>    
+  </view>
+</content-card>
