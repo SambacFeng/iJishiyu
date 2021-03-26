@@ -75,10 +75,9 @@
   </view>
 </content-card>
 <content-card name="拍照打卡">
-  <l-image-picker count="1" bindchange="" />
+  <l-image-picker count="1" bind:linchange="toChange" />
   <view class="upLoad">
-    <l-button>
-      <text>上传</text>
-    </l-button>    
+    <l-button wx:if="{{!flag}}" bindtap="toCamera">上传</l-button>    
+    <l-button wx:else loading="true" disabled="true">上传中</l-button>
   </view>
 </content-card>
