@@ -8,6 +8,7 @@
     "pages/formComplete/formComplete",
     "pages/formSubmit/formSubmit",
     "pages/formQuery/formQuery",
+    "pages/signInQuery/signInQuery",
     "pages/feedbackCollect/feedbackCollect",
     "pages/feedbackQuery/feedbackQuery",
     "pages/formHistory/formHistory",

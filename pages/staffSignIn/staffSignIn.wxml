@@ -1,3 +1,130 @@
+<content-card name="拍照打卡">
+  <l-image-picker count="1" bind:linchange="toChange" />
+  <view class="upLoad">
+    <l-button wx:if="{{!flag}}" bindtap="toCamera">上传</l-button>    
+    <l-button wx:else loading="true" disabled="true">上传中</l-button>
+  </view>
+</content-card>
+<content-card>
+  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+    <view class="left">
+      时间
+    </view>
+    <view class="mid">
+      时间
+    </view>
+    <view class="right">
+      人员
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      周一
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+      啊啊啊 啊啊啊 啊啊啊
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      周二
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      周三
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      周四
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+      周五
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left">
+
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+
+    </view>
+  </view>
+  <view class="lv1">
+    <view class="left" style="width:20%">
+      周六
+    </view>
+    <view class="right" style="width:80%">
+
+    </view>
+  </view>
+</content-card>
 <content-card name="值班表">
   <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
     <view class="lv2" style="width:20%">
@@ -74,10 +201,4 @@
     </view>
   </view>
 </content-card>
-<content-card name="拍照打卡">
-  <l-image-picker count="1" bind:linchange="toChange" />
-  <view class="upLoad">
-    <l-button wx:if="{{!flag}}" bindtap="toCamera">上传</l-button>    
-    <l-button wx:else loading="true" disabled="true">上传中</l-button>
-  </view>
-</content-card>
+

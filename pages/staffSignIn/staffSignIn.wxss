@@ -13,6 +13,24 @@
   padding: 14rpx 0 14rpx 14rpx;
 }
 
+.left{
+  width: 20%;
+  border-right: #2c61b440 2rpx solid;
+  padding: 14rpx 0 14rpx 14rpx;
+}
+
+.mid{
+  width: 20%;
+  border-right: #2c61b440 2rpx solid;
+  padding: 14rpx 0 14rpx 14rpx;
+}
+
+.right{
+  width: 60%;
+  border-right: #2c61b440 2rpx solid;
+  padding: 14rpx 0 14rpx 14rpx;
+}
+
 .upLoad{
   padding: 20rpx 0 0 10rpx;
 }
