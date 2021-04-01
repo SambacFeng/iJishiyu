@@ -25,6 +25,11 @@
         <text>数据统计</text>
       </l-button>
     </navigator>
+    <navigator url="../signInQuery/signInQuery">
+      <l-button type="default" plain width="600">
+        <text>打卡记录</text>
+      </l-button>
+    </navigator>
     <navigator url="../staffIndex/staffIndex">
       <l-button type="default" plain width="600">
         <text>队员首页</text>

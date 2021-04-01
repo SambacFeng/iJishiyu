@@ -1,1 +1,24 @@
 /* pages/signInQuery/signInQuery.wxss */
+page{
+  font-size: 36rpx;
+  box-sizing: content-box;
+}
+
+.lv1{
+  width: 100%;
+  display: flex;
+  border-bottom: #2c61b440 2rpx solid;
+  border-left: #2c61b440 2rpx solid;
+  text-align: center;
+}
+
+.lv2{
+  flex: 1;
+  border-right: #2c61b440 2rpx solid;
+  padding: 10rpx 0;
+}
+
+.time{
+  flex: none;
+  width: 55%;
+}

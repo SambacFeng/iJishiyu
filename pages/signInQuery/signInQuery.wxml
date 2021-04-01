@@ -1,2 +1,32 @@
-<!--pages/signInQuery/signInQuery.wxml-->
-<text>pages/signInQuery/signInQuery.wxml</text>
+<content-card name="青竹空间打卡记录">
+  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+    <view class="lv2 time">
+      时间
+    </view>
+    <view class="lv2">
+      姓名
+    </view>
+    <view class="lv2">
+      照片
+    </view>
+  </view>
+  <!-- <view wx:for="{{}}"> -->
+    <view class="lv1">
+      <view class="lv2 time">
+        yyyy-mm-dd hh:mm
+      </view>
+      <view class="lv2">
+        啊啊啊
+      </view>
+      <view class="lv2" style="padding-top: 10rpx">
+        <l-button 
+          width="140"
+          height="60"
+          bindtap=""
+        >
+          查看
+        </l-button>
+      </view>
+    </view>
+  <!-- </view> -->
+</content-card>
