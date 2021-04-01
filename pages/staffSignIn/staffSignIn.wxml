@@ -5,7 +5,7 @@
     <l-button wx:else loading="true" disabled="true">上传中</l-button>
   </view>
 </content-card>
-<content-card>
+<content-card name="值班表">
   <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
     <view class="left">
       时间
@@ -125,7 +125,7 @@
     </view>
   </view>
 </content-card>
-<content-card name="值班表">
+<!-- <content-card name="值班表">
   <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
     <view class="lv2" style="width:20%">
       时间
@@ -200,5 +200,5 @@
       <text>张芸峰 黄英子 燕美霖\n卢晓琪 刘宇轩</text>
     </view>
   </view>
-</content-card>
+</content-card> -->
 
