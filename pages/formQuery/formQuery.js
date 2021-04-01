@@ -1,4 +1,5 @@
 // pages/formQuery/formQuery.js
+var Backup
 Page({
 
   /**
@@ -6,6 +7,9 @@ Page({
    */
   data: {
     Record: {},
+    flag1: true,
+    flag2: false,
+    flag3: false,
   },
 
   /**
@@ -19,13 +23,73 @@ Page({
       },
       success: res => {
         console.log('[云函数] [login] 调用成功',res.result)
-        this.setData({
-          Record: res.result
-        })
+        Backup = res.result
+        this.allocating()
+        // var tmp = {}
+        // for(var i=0,id=0;i<Backup.length;i++){
+        //   // console.log(Backup[i])
+        //   if(Backup[i]._staffopenid === ""){
+        //     tmp[id++]=Backup[i]
+        //   }
+        // }
+        // // console.log(tmp)
+        // this.setData({
+        //   Record: tmp
+        // })
       }
     })
   },
 
+  allocating(){
+    var tmp = {}
+    for(var i=0,id=0;i<Backup.length;i++){
+      // console.log(Backup[i])
+      if(Backup[i]._staffopenid === ""){
+        tmp[id++]=Backup[i]
+      }
+    }
+    // console.log(tmp)
+    this.setData({
+      Record: tmp,
+      flag1: true,
+      flag2: false,
+      flag3: false,
+    })
+  },
+
+  repairing(){
+    var tmp = {}
+    for(var i=0,id=0;i<Backup.length;i++){
+      // console.log(Backup[i])
+      if(Backup[i]._staffopenid !== "" && Backup[i]._solvedtime === ""){
+        tmp[id++]=Backup[i]
+      }
+    }
+    // console.log(tmp)
+    this.setData({
+      Record: tmp,
+      flag1: false,
+      flag2: true,
+      flag3: false,
+    })
+  },
+
+  done(){
+    var tmp = {}
+    for(var i=0,id=0;i<Backup.length;i++){
+      // console.log(Backup[i])
+      if(Backup[i]._solvedtime !== ""){
+        tmp[id++]=Backup[i]
+      }
+    }
+    // console.log(tmp)
+    this.setData({
+      Record: tmp,
+      flag1: false,
+      flag2: false,
+      flag3: true,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
