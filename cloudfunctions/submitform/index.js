@@ -48,6 +48,19 @@ exports.main = async (event, context) => {
   } else if (event.type === 'formstop'){
     db.collection('Forms').doc(event.id).remove()
     return true
+  } else if (event.type === 'checkin'){//队员青竹空间签到模块
+    staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
+    if(staff.type !== 1 && staff.type !== 2) return false
+    var tmp={}
+    tmp._openid=wxContext.OPENID
+    tmp._name=staff.name
+    tmp._time=time
+    tmp._fulltime=date
+    tmp._filename=event.filename
+    db.collection('CheckinRecord').add({
+      data: tmp
+    })
+    return true
   }
   return false
 }
