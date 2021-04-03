@@ -74,6 +74,11 @@ exports.main = async (event, context) => {
         return {}
       }
       form = (await db.collection('Worksheet').where({}).get()).data[0]
+    } else if (event.type === 'CheckinRecord'){
+      if(usertype !== 2){
+        return {}
+      }
+      form = (await db.collection('CheckinRecord').where({}).orderBy('_fulltime','desc').get()).data
     }
   }
   return form
