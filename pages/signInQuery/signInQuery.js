@@ -5,14 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    Record: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.cloud.callFunction({
+      name: 'query',
+      data: {
+        type: 'CheckinRecord',
+      },
+      success: res => {
+        console.log('[云函数][query]调用成功',res.result)
+        this.setData({
+          Record: res.result
+        })
+      },
+    })
+  },
 
+  toCheck: function (options){
+    console.log(options.currentTarget.dataset.index)
+    var name = this.data.Record[options.currentTarget.dataset.index]._filename
+    wx.previewImage({
+      urls: ['cloud://ijishiyu-6g6n5cncc846de79.696a-ijishiyu-6g6n5cncc846de79-1304847030/signin/'+name],
+    })
   },
 
   /**

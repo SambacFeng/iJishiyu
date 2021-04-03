@@ -10,23 +10,23 @@
       照片
     </view>
   </view>
-  <!-- <view wx:for="{{}}"> -->
+  <view wx:for="{{Record}}" wx:key="*this">
     <view class="lv1">
       <view class="lv2 time">
-        yyyy-mm-dd hh:mm
+        {{Record[index]._time}}
       </view>
       <view class="lv2">
-        啊啊啊
+        {{Record[index]._name}}
       </view>
       <view class="lv2" style="padding-top: 10rpx">
-        <l-button 
+        <l-button data-index="{{index}}"
           width="140"
           height="60"
-          bindtap=""
+          bindtap="toCheck"
         >
           查看
         </l-button>
       </view>
     </view>
-  <!-- </view> -->
+  </view>
 </content-card>
