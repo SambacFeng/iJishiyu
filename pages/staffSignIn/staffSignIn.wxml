@@ -25,7 +25,7 @@
       上午
     </view>
     <view class="right">
-      啊啊啊 啊啊啊 啊啊啊
+      {{staffsheet[0]}}
     </view>
   </view>
   <view class="lv1">
@@ -36,7 +36,7 @@
       下午
     </view>
     <view class="right">
-
+      {{staffsheet[1]}}
     </view>
   </view>
   <view class="lv1">
@@ -47,7 +47,7 @@
       上午
     </view>
     <view class="right">
-
+      {{staffsheet[2]}}
     </view>
   </view>
   <view class="lv1">
@@ -58,18 +58,18 @@
       上午
     </view>
     <view class="right">
-
+      {{staffsheet[4]}}
     </view>
   </view>
   <view class="lv1">
     <view class="left">
-      
+
     </view>
     <view class="mid">
       下午
     </view>
     <view class="right">
-
+      {{staffsheet[5]}}
     </view>
   </view>
   <view class="lv1">
@@ -80,7 +80,7 @@
       上午
     </view>
     <view class="right">
-
+      {{staffsheet[6]}}
     </view>
   </view>
   <view class="lv1">
@@ -91,7 +91,7 @@
       下午
     </view>
     <view class="right">
-
+      {{staffsheet[7]}}
     </view>
   </view>
   <view class="lv1">
@@ -102,7 +102,7 @@
       上午
     </view>
     <view class="right">
-
+      {{staffsheet[8]}}
     </view>
   </view>
   <view class="lv1">
@@ -113,7 +113,7 @@
       下午
     </view>
     <view class="right">
-
+      {{staffsheet[9]}}
     </view>
   </view>
   <view class="lv1">
@@ -121,7 +121,7 @@
       周六
     </view>
     <view class="right" style="width:80%">
-
+      {{staffsheet[10]}}
     </view>
   </view>
 </content-card>

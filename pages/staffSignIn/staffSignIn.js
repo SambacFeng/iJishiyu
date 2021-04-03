@@ -8,13 +8,25 @@ Page({
   data: {
     flag: false,
     tmpsrc: '',
+    staffsheet: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.lin.initValidateForm(this)
+    wx.cloud.callFunction({
+      name: 'query',
+      data: {
+        type: 'Worksheet',
+      },
+      success: res => {
+        console.log('[云函数][query]调用成功',res.result)
+        this.setData({
+          staffsheet: res.result._staffname
+        })
+      }
+    })
   },
 
   /**
