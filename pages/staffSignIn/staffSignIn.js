@@ -64,26 +64,47 @@ Page({
       filePath: this.data.tmpsrc,
       success: res=> {
         console.log('图片上传成功')
-        wx.showToast({
-          title: '上传成功',
-          icon: 'success',
-          duration: 3000,
-        })
-        this.setData({
-          flag: false,
-          tmpsrc: '',
+        wx.cloud.callFunction({
+          name: 'submitform',
+          data: {
+            type: 'checkin',
+            filename: name,
+          },
+          success: res => {
+            console.log('[云函数][submitform]调用成功',res.result)
+            wx.showToast({
+              title: '打卡成功',
+              icon: 'success',
+              duration: 3000,
+            })
+            linClearImage()
+            this.setData({
+              flag: false,
+              tmpsrc: '',
+            })
+          },
+          fail: err => {
+            console.error('打卡失败',err)
+            wx.showToast({
+              title: '打卡失败',
+              icon: 'none',
+              duration: 3000,
+            })
+            this.setData({
+              flag: false,
+            })
+          }
         })
       },
       fail: err => {
         console.error('上传失败',err)
         wx.showToast({
-          title: '上传失败',
+          title: '打卡失败',
           icon: 'none',
           duration: 3000,
         })
         this.setData({
           flag: false,
-          tmpsrc: ''
         })
       }
     })
