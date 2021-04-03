@@ -77,10 +77,10 @@ Page({
               icon: 'success',
               duration: 3000,
             })
-            linClearImage()
             this.setData({
               flag: false,
               tmpsrc: '',
+              checkin: true,
             })
           },
           fail: err => {
