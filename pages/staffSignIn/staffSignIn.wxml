@@ -118,10 +118,10 @@
     </view>
   </view>
   <view class="lv1">
-    <view class="left" style="width:20%">
+    <view class="left" style="width:15%">
       周六
     </view>
-    <view class="right" style="width:80%">
+    <view class="right" style="width:90%; font-size:34rpx">
       {{staffsheet[10]}}
     </view>
   </view>
