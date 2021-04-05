@@ -15,7 +15,7 @@ Page({
     wx.cloud.callFunction({
       name: 'query',
       data: {
-        type: 'CheckinRecord',
+        type: 'SigninRecord',
       },
       success: res => {
         console.log('[云函数][query]调用成功',res.result)

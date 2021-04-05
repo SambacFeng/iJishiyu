@@ -67,7 +67,7 @@ Page({
         wx.cloud.callFunction({
           name: 'submitform',
           data: {
-            type: 'checkin',
+            type: 'signin',
             filename: name,
           },
           success: res => {
