@@ -25,17 +25,6 @@ Page({
         console.log('[云函数] [login] 调用成功',res.result)
         Backup = res.result
         this.allocating()
-        // var tmp = {}
-        // for(var i=0,id=0;i<Backup.length;i++){
-        //   // console.log(Backup[i])
-        //   if(Backup[i]._staffopenid === ""){
-        //     tmp[id++]=Backup[i]
-        //   }
-        // }
-        // // console.log(tmp)
-        // this.setData({
-        //   Record: tmp
-        // })
       }
     })
   },

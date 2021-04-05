@@ -7,8 +7,8 @@
   <l-button wx:if="{{flag3}}">已完成</l-button>
   <l-button wx:else bindtap="done" plain>已完成</l-button>
 </view>
-<view wx:for="{{Record}}" wx:key="*this">
-  <content-card name="{{index+1}}">
+<view wx:for="{{Record}}" wx:key="index">
+  <content-card name="{{index*1+1}}">
     <view class="lv1" style="border-top: #2c61b440 2rpx solid">
       <view class="lv2" style="width: 520rpx">
         姓名：{{Record[index]._name}}
@@ -59,7 +59,5 @@
         </view>
       </view>
     </view>
-
-
   </content-card>
 </view>
