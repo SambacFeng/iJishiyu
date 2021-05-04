@@ -1,7 +1,7 @@
-/* .main view{
+.main view{
   display: flex;
   flex-direction: column;
-} */
+}
 
 image{
   width: 200rpx;
@@ -15,10 +15,8 @@ image{
   text-indent: 2rem;
 }
 
-
-
 navigator{
-  margin: 40rpx 0;
+  margin: 25rpx 0;
 }
 
 l-button text{
@@ -26,7 +24,7 @@ l-button text{
 }
 
 .btns{
-  margin: 0 75rpx;
+  margin: 0rpx 75rpx 40rpx 75rpx;
 }
 
 

@@ -35,7 +35,13 @@
         报修时间：{{Record[index]._time}}
       </view>
       <view class="lv2" style="width: 186rpx; padding: 4rpx 0 4rpx 25rpx; ">
-        <l-button wx:if="{{Record[index].submitted===true}}" loading="true" disabled="true">接单中</l-button>
+        <l-button 
+          wx:if="{{Record[index].submitted===true}}" 
+          loading="true" 
+          disabled="true"
+          width="150" 
+          height="60"
+        >接单中</l-button>
         <l-button
           wx:else 
           data-formid="{{Record[index]._id}}" 

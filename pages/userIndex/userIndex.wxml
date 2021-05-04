@@ -6,7 +6,7 @@
   <view class="intro">
     及时雨志愿者服务队是西南大学计算机与信息科学学院团委直属组织，旨在运用所学的知识为同学提供免费服务，解决电脑方面的问题。如果您的电脑遇到问题需要维修，请点击“我要报修”填写报修表单，若是对我们的服务有意见或建议，请点击“维修反馈”填写反馈表单。
   </view>
-  <view class="intro" style="margin-bottom: 40rpx">
+  <view class="intro" style="margin-bottom: 15rpx">
     愿您心中有个温暖的及时雨。
   </view>
   <view class="btns">
