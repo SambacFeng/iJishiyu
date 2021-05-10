@@ -128,6 +128,11 @@
       {{staffsheet[10]}}
     </view>
   </view>
+  <view class="lv1" style="font-size: 30rpx">
+    <view class="right" style="width: 100%">
+      上午：10：00-11：30 下午：14：30-16：30
+    </view>
+  </view>
   <!-- <view class="lv1">
     <view class="left" style="width:15%">
       周六
