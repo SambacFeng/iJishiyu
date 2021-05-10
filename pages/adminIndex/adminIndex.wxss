@@ -1,0 +1,35 @@
+.main view{	 
+  display: flex;	 
+  flex-direction: column;	 
+  }	
+  
+  .header{
+    height: 460rpx;
+    background-color: #2c60b420;
+    margin:60rpx 0;
+    border-top: 3rpx solid #2c61b4;
+    border-bottom: 3rpx solid #2c61b4;
+  }
+  
+  .avatar{
+    height: 260rpx;
+    margin: 70rpx;
+  }
+  
+  .name{
+    height: 160rpx;
+    margin: auto;
+    font-size: 44rpx;
+  }
+  
+  navigator{
+    margin: 30rpx 0;
+  }
+  
+  l-button text{
+    font-size: 36rpx;
+  }
+  
+  .btns{
+    margin: 80rpx 75rpx;
+  }

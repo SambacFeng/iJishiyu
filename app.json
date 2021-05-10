@@ -17,6 +17,8 @@
     "pages/managerIndex/managerIndex",
     "pages/staffStatistic/staffStatistic",
     "pages/staffIndex/staffIndex",
+    "pages/adminIndex/adminIndex",
+    "pages/permissionManagement/permissionManagement",
     "pages/staffSignIn/staffSignIn",
     "pages/userIndex/userIndex"
 

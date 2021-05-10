@@ -31,7 +31,7 @@
           "scene": null
         },
         {
-          "name": "管理员首页",
+          "name": "顾问首页",
           "pathName": "pages/managerIndex/managerIndex",
           "query": "",
           "scene": null
@@ -123,6 +123,13 @@
         {
           "name": "打卡情况查询",
           "pathName": "pages/signInQuery/signInQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理员首页",
+          "pathName": "pages/adminIndex/adminIndex",
+          "query": "",
           "scene": null
         }
       ]
