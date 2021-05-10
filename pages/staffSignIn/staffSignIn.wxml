@@ -84,7 +84,7 @@
       {{staffsheet[6]}}
     </view>
   </view>
-  <view class="lv1">
+  <!-- <view class="lv1">
     <view class="left">
 
     </view>
@@ -94,8 +94,8 @@
     <view class="right">
       {{staffsheet[7]}}
     </view>
-  </view>
-  <view class="lv1">
+  </view> -->
+  <!-- <view class="lv1">
     <view class="left">
       周五
     </view>
@@ -105,10 +105,10 @@
     <view class="right">
       {{staffsheet[8]}}
     </view>
-  </view>
+  </view> -->
   <view class="lv1">
     <view class="left">
-
+      周五
     </view>
     <view class="mid">
       下午
@@ -118,13 +118,24 @@
     </view>
   </view>
   <view class="lv1">
+    <view class="left">
+      周六
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+      {{staffsheet[10]}}
+    </view>
+  </view>
+  <!-- <view class="lv1">
     <view class="left" style="width:15%">
       周六
     </view>
     <view class="right" style="width:90%; font-size:34rpx">
       {{staffsheet[10]}}
     </view>
-  </view>
+  </view> -->
 </content-card>
 <!-- <content-card name="值班表">
   <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
