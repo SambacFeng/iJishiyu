@@ -13,7 +13,7 @@
         <text>权限管理</text>
       </l-button>
     </navigator>
-    <navigator url="../formQuery/formQuery">
+    <navigator url="../addStaff/addStaff">
       <l-button type="default" plain width="600">
         <text>添加成员</text>
       </l-button>

@@ -1,2 +1,21 @@
 <!--pages/addStaff/addStaff.wxml-->
-<text>pages/addStaff/addStaff.wxml</text>
+<content-card name="添加成员">
+  <view>
+    <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+      <view class="lv2" style="width: 520rpx">
+        姓名：
+      </view>
+      <view class="lv2" style="width: 186rpx">
+        性别：        
+      </view>
+    </view>
+    <view class="lv1">
+      <view class="lv2">
+        手机：
+      </view>
+      <view class="lv2">
+        QQ：        
+      </view>
+    </view>
+  </view>
+</content-card>

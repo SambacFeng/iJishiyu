@@ -1,1 +1,18 @@
 /* pages/addStaff/addStaff.wxss */
+page{
+  font-size: 36rpx;
+  box-sizing: content-box;
+}
+
+.lv1{
+  width: 100%;
+  display: flex;
+  border-bottom: #2c61b440 2rpx solid;
+  border-left: #2c61b440 2rpx solid;
+}
+
+.lv2{
+  width: 355rpx;
+  border-right: #2c61b440 2rpx solid;
+  padding: 14rpx 0 14rpx 10rpx;
+}

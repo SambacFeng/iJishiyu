@@ -137,6 +137,12 @@
           "pathName": "pages/permissionManagement/permissionManagement",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "添加队员",
+          "pathName": "pages/addStaff/addStaff",
+          "query": "",
+          "scene": null
         }
       ]
     }
