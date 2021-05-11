@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "content-card": "/components/content-card/index"
+    "content-card": "/components/content-card/index",
+    "l-radio-group":"/miniprogram_npm/lin-ui/radio-group/index",
+    "l-radio":"/miniprogram_npm/lin-ui/radio/index",
+    "l-loading":"/miniprogram_npm/lin-ui/loading/index"
   }
 }

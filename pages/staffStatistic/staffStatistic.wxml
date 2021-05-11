@@ -1,9 +1,11 @@
 <content-card name="队员接单统计">
-  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+  <view class="lv1" style="border-top: #2c61b440 2rpx solid;height: 80rpx">
     <view class="lv2 name">
       姓名
     </view>
-    <view class="lv2">
+    <!-- ------------------------------------------------ -->
+
+    <!-- <view class="lv2">
       本周
     </view>
     <view class="lv2">
@@ -11,15 +13,37 @@
     </view>
     <view class="lv2">
       总计
+    </view> -->
+
+    <!-- 以上部分在默认模式下显示，以下部分在管理模式下显示 -->
+
+    <view class="lv2" style="flex:none; width: 40%">
+      类型
     </view>
+    <view class="lv2">
+      删除
+    </view>
+
+    <!-- ------------------------------------------------ -->
   </view>
-  <!-- 数组渲染，输出全部队员数据 -->
+
+  <!-- <view wx:if="{{true}}" style="  display: flex;flex-direction: column;align-items: center;">
+    <view class="loading">
+      <l-loading show="{{true}}" size="large" type="flash"></l-loading>
+    </view>
+    <view>
+      <text>数据加载中，请稍候 . . .</text>
+    </view>
+  </view> -->
+
   <view wx:for="{{Record}}" wx:key="*this">
     <view class="lv1">
       <view class="lv2 name">
         {{Record[index].name}}
       </view>
-      <view class="lv2">
+       <!-- ------------------------------------------------ -->
+
+      <!-- <view class="lv2">
         {{Record[index].thisweek}}
       </view>
       <view class="lv2">
@@ -27,7 +51,33 @@
       </view>
       <view class="lv2">
         {{Record[index].total}}
+      </view> -->
+
+      <!-- 以上部分在默认模式下显示，以下部分在管理模式下显示 -->
+
+      <view class="lv2" style="flex:none; width: 40%">
+        <!-- {{Record[index].type}} -->
+        <l-radio-group id="type" placement="row" current="{{type}}" bind:linchange="changeType" none-checked="{{false}}" length="2">
+          <l-radio key="1">队员</l-radio>
+          <l-radio key="2">顾问</l-radio>
+        </l-radio-group>
       </view>
+      <view class="lv2">
+        <l-button data-index="{{index}}"
+          width="100"
+          height="60"
+          bindtap="toDelete"
+          type="error"
+          plain
+        >
+          删除
+        </l-button>
+      </view>
+
+       <!-- ------------------------------------------------ -->
     </view>
+  </view>
+  <view>
+    <switch color="#2c61b4" wx:if="{{true}}" bindchange="SetPermission">管理模式</switch>
   </view>
 </content-card>

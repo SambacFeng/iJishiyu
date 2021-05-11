@@ -18,7 +18,7 @@
       <view class="lv2">
         {{Record[index]._name}}
       </view>
-      <view class="lv2" style="padding-top: 10rpx">
+      <view class="lv2">
         <l-button data-index="{{index}}"
           width="140"
           height="60"
