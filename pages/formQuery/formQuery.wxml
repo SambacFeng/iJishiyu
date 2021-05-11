@@ -28,9 +28,19 @@
       </view>
     </view>
 
-    <view wx:if="{{Record[index]._staffopenid === ''}}" class="lv1">
-      <view class="lv2">
+    <view wx:if="{{Record[index]._staffopenid === ''}}" class="lv1" style="text-align: center;">
+      <view class="lv2" style="text-align:left;width: 520rpx;padding: 14rpx 0 10rpx 10rpx">
         维修状态：<text>等待分配</text>
+      </view>
+      <view class="lv2" style="width: 186rpx; padding: 10rpx 0;">
+        <!-- 按钮仅在管理员身份下出现，点击按钮后进行二次确认，提取该报修单用户的openid，姓名，手机，QQ等信息，写入member数据库，之后删除该表单 -->
+        <l-button data-index="{{index}}"
+          width="140"
+          height="60"
+          bindtap="toCheck"
+        >
+          添加
+        </l-button>
       </view>
     </view>
 
