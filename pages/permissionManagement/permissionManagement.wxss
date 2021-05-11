@@ -1,1 +1,30 @@
 /* pages/permissionManagement/permissionManagement.wxss */
+page{
+  font-size: 36rpx;
+  box-sizing: content-box;
+}
+
+.lv1{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  border-bottom: #2c61b440 2rpx solid;
+  border-left: #2c61b440 2rpx solid;
+  text-align: center;
+}
+
+.lv2{
+  flex: 1;
+  border-right: #2c61b440 2rpx solid;
+  padding-top: 20rpx;
+}
+
+.name{
+  flex: none;
+  width: 40%;
+}
+
+.operation{
+  flex: none;
+  width: 50%;
+}

@@ -131,6 +131,12 @@
           "pathName": "pages/adminIndex/adminIndex",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "权限管理",
+          "pathName": "pages/permissionManagement/permissionManagement",
+          "query": "",
+          "scene": null
         }
       ]
     }

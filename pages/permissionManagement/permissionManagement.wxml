@@ -1,2 +1,33 @@
 <!--pages/permissionManagement/permissionManagement.wxml-->
-<text>pages/permissionManagement/permissionManagement.wxml</text>
+<content-card name="权限管理">
+  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
+    <view class="lv2 name">
+      姓名
+    </view>
+    <view class="lv2">
+      类型
+    </view>
+    <view class="lv2">
+      操作
+    </view>
+  </view>
+  <view   >
+    <view class="lv1">
+      <view class="lv2 name">
+        张三
+      </view>
+      <view class="lv2">
+        队员
+      </view>
+      <view class="lv2" style="padding-top: 10rpx">
+        <l-button data-index="{{index}}"
+          width="140"
+          height="60"
+          bindtap=""
+        >
+          更改
+        </l-button>
+      </view>
+    </view>
+  </view>
+</content-card>

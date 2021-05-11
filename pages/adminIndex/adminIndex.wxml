@@ -1,38 +1,26 @@
 <view class="main">
   <view class="header">
-    <!-- 后期改为调取管理员头像 -->
     <view class="avatar">
       <l-avatar src="{{avatar}}" size="220" />
     </view>
-    <!-- 后期改为调取管理员姓名 -->
     <view class="name">
       <text>{{staffname}}</text>
     </view>
   </view>
   <view class="btns">
-    <navigator url="../feedbackQuery/feedbackQuery">
+    <navigator url="../permissionManagement/permissionManagement">
       <l-button type="default" width="600">
-        <text>反馈查询</text>
+        <text>权限管理</text>
       </l-button>
     </navigator>
     <navigator url="../formQuery/formQuery">
       <l-button type="default" plain width="600">
-        <text>表单查询</text>
+        <text>添加成员</text>
       </l-button>
     </navigator>
-    <navigator url="../staffStatistic/staffStatistic">
+    <navigator url="../managerIndex/managerIndex">
       <l-button type="default" plain width="600">
-        <text>数据统计</text>
-      </l-button>
-    </navigator>
-    <navigator url="../signInQuery/signInQuery">
-      <l-button type="default" plain width="600">
-        <text>打卡记录</text>
-      </l-button>
-    </navigator>
-    <navigator url="../staffIndex/staffIndex">
-      <l-button type="default" plain width="600">
-        <text>队员首页</text>
+        <text>顾问首页</text>
       </l-button>
     </navigator>
   </view>
