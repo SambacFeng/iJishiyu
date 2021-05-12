@@ -17,11 +17,6 @@ page{
   padding: 14rpx 0 14rpx 10rpx;
 }
 
-.prob{
-  width: 100%;
-  padding: 10rpx;
-}
-
 .comment{
   margin: 40rpx;
   margin-top: 30vh;
