@@ -9,6 +9,7 @@ Page({
     Record: {},
     admintype: false,
     isadmin: 0,
+    loading: true
   },
   SetPermission() {
     if(this.data.admintype){
@@ -112,7 +113,8 @@ Page({
       },
       success: res => {
         this.setData({
-          Record: res.result
+          Record: res.result,
+          loading: false,
         })
         console.log('[云函数] [query] 调用成功',res.result)
       }

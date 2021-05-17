@@ -83,7 +83,7 @@ exports.main = async (event, context) => {
     staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
     if(staff.type !== 3) return false
     flag = (await db.collection('Member').where({_openid: event.userinfo._openid}).count())
-    // if(flag.total !== 0) return false
+    if(flag.total !== 0) return false
     let userinfo = event.userinfo
     userinfo.type = 1
     db.collection("Member").add({
