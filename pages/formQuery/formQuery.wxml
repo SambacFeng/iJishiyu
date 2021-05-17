@@ -34,13 +34,11 @@
       </view>
       <view class="lv2" style="width: 186rpx; padding: 10rpx 0;">
         <!-- 按钮仅在管理员身份下出现，点击按钮后进行二次确认，提取该报修单用户的openid，姓名，手机，QQ等信息，写入member数据库，之后删除该表单 -->
-        <l-button data-index="{{index}}"
-          width="140"
-          height="60"
-          bindtap="toCheck"
-        >
-          添加
-        </l-button>
+        <view wx:if="{{isadmin === 3}}">
+          <l-button wx:if="{{Record[index].added}}" width="140" height="60" disabled="true">已添加</l-button>
+          <l-button wx:elif="{{Record[index].addloading}}" width="140" height="60" loading>添加中</l-button>
+          <l-button wx:else data-index="{{index}}" width="140" height="60" bindtap="toCheck">添加</l-button>
+        </view>
       </view>
     </view>
 

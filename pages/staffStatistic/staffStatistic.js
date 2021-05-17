@@ -1,4 +1,5 @@
 // pages/staffStatistic/staffStatistic.js
+const app =getApp()
 Page({
 
   /**
@@ -6,10 +7,94 @@ Page({
    */
   data: {
     Record: {},
+    admintype: false,
+    isadmin: 0,
   },
-  SetPermission(e) {
+  SetPermission() {
+    if(this.data.admintype){
+      this.setData({
+        admintype: false,
+      })
+    }else{
+      this.setData({
+        admintype: true,
+      })
+    }
+    console.log(this.data.admintype)
+  },
+
+  changeType(e) {
+    console.log(e.detail)
+    if(e.detail.cell.type !== e.detail.currentKey*1){
+      wx.cloud.callFunction({
+        name: 'submitform',
+        data: {
+          type: 'changemembertype',
+          id: e.detail.cell._id,
+          currenttype: e.detail.currentKey*1
+        },
+        success: res => {
+          console.log('调用成功')
+          if(res.result){
+            wx.showToast({
+              title: '成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }else{
+            wx.showToast({
+              title: '失败',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
+  },
+
+  delemember(indexx,res){
+    if (res.confirm) {
+      console.log('用户点击确定')
+      wx.cloud.callFunction({
+        name: 'submitform',
+        data: {
+          type: 'removemember',
+          id: this.data.Record[indexx]._id,
+        },
+        success: res => {
+          wx.showToast({
+            title: '删除成功',
+            icon: 'success',
+            duration: 3000,
+          })
+          let tmp =this.data.Record
+          tmp[indexx].deled = true
+          this.setData({
+            Record: tmp
+          })
+        }
+      })
+    } else if(res.cancel){
+      let tmp = this.data.Record
+      tmp[indexx].deleing = false
+      this.setData({
+        Record: tmp
+      })
+    }
+  },
+
+  toDelete(e){
+    let index = e.currentTarget.dataset.index
+    let tmp = this.data.Record
+    tmp[index].deleing = true
     this.setData({
-      permission: e.detail.value
+      Record: tmp
+    })
+    wx.showModal({
+      title: '提示',
+      content: '确定删除？',
+      success: this.delemember.bind(this,index)
     })
   },
 
@@ -17,6 +102,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      isadmin: app.globalData.staffInfo.type
+    })
     wx.cloud.callFunction({
       name: 'query',
       data: {

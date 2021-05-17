@@ -31,10 +31,10 @@ exports.main = async (event, context) => {
     }
     else {
       Record = re.data[0]
-      if (re.data[0].type == 2){//管理员
+      if (re.data[0].type === 2 || re.data[0].type === 3){//管理员
         url = '../managerIndex/managerIndex'
       }
-      else if (re.data[0].type == 1){//队员
+      else if (re.data[0].type === 1){//队员
         url = '../staffIndex/staffIndex'
       }
     }

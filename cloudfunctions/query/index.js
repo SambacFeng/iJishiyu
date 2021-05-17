@@ -23,17 +23,17 @@ exports.main = async (event, context) => {
   } else {
     usertype = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0].type
     if (event.type === 'StaffQuery'){
-      if (usertype !== 1 && usertype !== 2){
+      if (usertype !== 1 && usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Forms').where({_staffopenid: wxContext.OPENID}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'formClaim'){
-      if (usertype !== 1 && usertype !== 2){
+      if (usertype !== 1 && usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Forms').where({_staffopenid: ''}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'ManagerMemberQuery'){
-      if (usertype !== 2){
+      if (usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Member').where({}).orderBy('_fulltime','desc').get()).data
@@ -60,22 +60,22 @@ exports.main = async (event, context) => {
       }
       // console.log(form)
     } else if (event.type === 'ManagerFormsQuery'){
-      if (usertype !== 2){
+      if (usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Forms').where({}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'ManagerFeedback'){
-      if (usertype !== 2){
+      if (usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Feedback').where({}).orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'Worksheet'){
-      if (usertype !== 1 && usertype !==2){
+      if (usertype !== 1 && usertype !==2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('Worksheet').where({}).get()).data[0]
     } else if (event.type === 'SigninRecord'){
-      if(usertype !== 2){
+      if(usertype !== 2 &&usertype !== 3){
         return {}
       }
       form = (await db.collection('SigninRecord').where({}).orderBy('_fulltime','desc').get()).data

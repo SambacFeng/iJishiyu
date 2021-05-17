@@ -1,5 +1,6 @@
 // pages/formQuery/formQuery.js
 var Backup
+const app = getApp()
 Page({
 
   /**
@@ -10,6 +11,7 @@ Page({
     flag1: true,
     flag2: false,
     flag3: false,
+    isadmin: false,
   },
 
   /**
@@ -27,6 +29,9 @@ Page({
         this.allocating()
       }
     })
+    this.setData({
+      isadmin: app.globalData.staffInfo.type
+    })
   },
 
   allocating(){
@@ -34,7 +39,8 @@ Page({
     for(var i=0,id=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._staffopenid === ""){
-        tmp[id++]=Backup[i]
+        tmp[id]=Backup[i]
+        tmp[id++].faorder=i
       }
     }
     // console.log(tmp)
@@ -51,7 +57,8 @@ Page({
     for(var i=0,id=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._staffopenid !== "" && Backup[i]._solvedtime === ""){
-        tmp[id++]=Backup[i]
+        tmp[id]=Backup[i]
+        tmp[id++].faorder=i
       }
     }
     // console.log(tmp)
@@ -68,7 +75,8 @@ Page({
     for(var i=0,id=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._solvedtime !== ""){
-        tmp[id++]=Backup[i]
+        tmp[id]=Backup[i]
+        tmp[id++].faorder=i
       }
     }
     // console.log(tmp)
@@ -77,6 +85,59 @@ Page({
       flag1: false,
       flag2: false,
       flag3: true,
+    })
+  },
+
+  addmember(indexx,res){
+    if(res.confirm){
+      console.log(this.data.Record[indexx])
+      wx.cloud.callFunction({
+        name: 'submitform',
+        data: {
+          type: 'addmember',
+          formid: this.data.Record[indexx]._id,
+          userinfo: {
+            QQ: this.data.Record[indexx]._QQ,
+            name: this.data.Record[indexx]._name,
+            phone: this.data.Record[indexx]._phone,
+            _openid: this.data.Record[indexx]._openid,
+          }
+        },
+        success: res => {
+          if(res.result){
+            wx.showToast({
+              title: '添加成功',
+              icon: 'success',
+              duration: 3000
+            })
+          }
+          let tmp = this.data.Record
+          tmp[indexx].added = true
+          Backup[this.data.Record[indexx].faorder].added = true
+          this.setData({
+            Record: tmp
+          })
+        }
+      })
+    }else if(res.cancel){
+      let tmp = this.data.Record
+      tmp[indexx].addloading = false
+      this.setData({
+        Record: tmp
+      })
+    }
+  },
+  
+  toCheck(e){
+    let index = e.currentTarget.dataset.index
+    let tmp = this.data.Record
+    tmp[index].addloading=true
+    this.setData({
+      Record: tmp
+    })
+    wx.showModal({
+      title: '确定添加？',
+      success: this.addmember.bind(this,index)
     })
   },
   /**

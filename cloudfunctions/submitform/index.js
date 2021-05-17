@@ -50,7 +50,7 @@ exports.main = async (event, context) => {
     return true
   } else if (event.type === 'signin'){//队员青竹空间签到模块
     staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
-    if(staff.type !== 1 && staff.type !== 2) return false
+    if(staff.type !== 1 && staff.type !== 2 && staff.type !== 3) return false
     var tmp={}
     tmp._openid=wxContext.OPENID
     tmp._name=staff.name
@@ -60,6 +60,36 @@ exports.main = async (event, context) => {
     db.collection('SigninRecord').add({
       data: tmp
     })
+    return true
+  } else if (event.type === 'changemembertype'){
+    staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
+    tarstaff = (await db.collection('Member').doc(event.id).get()).data
+    console.log(tarstaff)
+    if(staff.type !== 3 || event.currenttype === 3 || tarstaff.type === 3) return false
+    db.collection('Member').doc(event.id).update({
+      data: {
+        type: event.currenttype
+      }
+    })
+    return true
+  } else if (event.type === 'removemember'){
+    staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
+    tarstaff = (await db.collection('Member').doc(event.id).get()).data
+    console.log(tarstaff)
+    if(staff.type !== 3 || tarstaff.type === 3) return false
+    db.collection("Member").doc(event.id).remove()
+    return true
+  } else if (event.type === 'addmember'){
+    staff = (await db.collection('Member').where({_openid: wxContext.OPENID}).get()).data[0]
+    if(staff.type !== 3) return false
+    flag = (await db.collection('Member').where({_openid: event.userinfo._openid}).count())
+    // if(flag.total !== 0) return false
+    let userinfo = event.userinfo
+    userinfo.type = 1
+    db.collection("Member").add({
+      data: userinfo
+    })
+    db.collection('Forms').doc(event.formid).remove()
     return true
   }
   return false
