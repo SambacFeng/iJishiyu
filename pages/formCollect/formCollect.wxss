@@ -14,20 +14,11 @@ l-checkbox{
 }
 
 .btns{
-  height: 120rpx;
   display: flex;
 }
 
 .btn{
-  width: 375rpx;
-  margin: 25rpx auto;
-  align-content: center;
+  flex: 1;
+  margin: 40rpx 87.5rpx;
 }
-
-l-button{
-  padding: 20rpx 87.5rpx 20rpx 87.5rpx;
-  width: 200rpx;
-  height: 80rpx;
-}
-
 
