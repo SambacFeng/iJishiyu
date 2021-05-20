@@ -31,7 +31,9 @@ exports.main = async (event, context) => {
       if (usertype !== 1 && usertype !== 2 &&usertype !== 3){
         return {}
       }
-      form = (await db.collection('Forms').where({_staffopenid: ''}).orderBy('_fulltime','desc').get()).data
+      form = (await db.collection('Forms').where({_staffopenid: ''})
+      .orderBy('_timeArrange','desc')
+      .orderBy('_fulltime','asc').get()).data
     } else if (event.type === 'ManagerMemberQuery'){
       if (usertype !== 2 &&usertype !== 3){
         return {}
@@ -63,7 +65,9 @@ exports.main = async (event, context) => {
       if (usertype !== 2 &&usertype !== 3){
         return {}
       }
-      form = (await db.collection('Forms').where({}).orderBy('_fulltime','desc').get()).data
+      form = (await db.collection('Forms').where({})
+      .orderBy('_timeArrange','desc')
+      .orderBy('_fulltime','asc').get()).data
     } else if (event.type === 'ManagerFeedback'){
       if (usertype !== 2 &&usertype !== 3){
         return {}
