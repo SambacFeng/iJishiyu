@@ -60,10 +60,22 @@
     <!-- 点击提交后跳转到submitAccess页面 -->
     <view class="btns">
       <view slot="submit" class="btn">
-        <l-button wx:if="{{submitted}}" loading="true" width="200" height="80" disabled="true">
+        <l-button 
+          wx:if="{{submitted}}" 
+          loading="true" 
+          width="200" 
+          height="80" 
+          disabled="true"
+        >
           <text>提交中</text>
         </l-button>
-        <l-button wx:else width="200" height="80" bindtap="submit">
+        <l-button 
+          wx:else 
+          width="200" 
+          height="80" 
+          bindtap="submit"
+          disabled="{{''?true:''}}"
+        >
           <text>提交</text>
         </l-button>
       </view>
@@ -73,3 +85,17 @@
     </view>
   </l-form>
 </view>
+<l-popup 
+  show="{{showPopup}}" 
+  locked="{{showPopup}}" 
+  bind:lintap="onPopupTap"
+> 
+  <view class="popup">
+    <view class="popupText">
+    期末将至，及时雨的小伙伴们也要投入到紧张的复习中去，电脑报修服务将于<text style="color: red">2021-6-13</text>关闭，遇到问题可以联系及时雨官方QQ：2354221762，我们将不定期上线为您解决问题，给您带来不便敬请谅解。         
+    </view>
+    <view class='popup-mask' catchtap='onHidePopupTap'>
+      好的
+    </view>
+  </view>
+</l-popup>

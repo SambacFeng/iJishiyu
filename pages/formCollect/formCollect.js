@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showPopup: 'true',
     name: '',
     gender: '男',
     phone: '',
@@ -224,6 +225,20 @@ Page({
           checked: false}
       ]
     })
+  },
+
+  onHidePopupTap() {
+    this.data.showPopup = false;
+    this.setData({
+      showPopup: this.data.showPopup
+    });
+  },
+
+  onPopupTap() {
+    wx.showToast({
+      title: '请阅读提示文字后点击按钮取消！',
+      icon: 'none'
+    });
   },
 
   /**
