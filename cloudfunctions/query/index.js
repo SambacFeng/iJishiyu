@@ -66,8 +66,7 @@ exports.main = async (event, context) => {
         return {}
       }
       form = (await db.collection('Forms').where({})
-      .orderBy('_timeArrange','desc')
-      .orderBy('_fulltime','asc').get()).data
+      .orderBy('_fulltime','desc').get()).data
     } else if (event.type === 'ManagerFeedback'){
       if (usertype !== 2 &&usertype !== 3){
         return {}

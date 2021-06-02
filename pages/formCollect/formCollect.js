@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showPopup: 'true',
+    showPopup: false,
     name: '',
     gender: '男',
     phone: '',
@@ -232,6 +232,12 @@ Page({
     this.setData({
       showPopup: this.data.showPopup
     });
+    let stoptype = this.data.stoptype
+    if(stoptype !==1){
+      wx.navigateBack({
+        delta: 0,
+      })
+    }
   },
 
   onPopupTap() {
@@ -248,6 +254,19 @@ Page({
     wx.lin.initValidateForm(this)
     this.setData({
       submitted: false,
+    })
+    const db = wx.cloud.database()
+    db.collection('ServiceStart').where({}).limit(1).get().then(res => {
+      console.log(res.data)
+      if(res.data.length !== 0){
+        res = res.data[0]
+        this.setData({
+          showPopup: res.showPopup,
+          stoptype: res.stoptype,
+          stoptime: res.stoptime,
+          starttime: res.starttime,
+        })
+      }
     })
   },
 
