@@ -6,6 +6,7 @@ Page({
    */
   data: {
     Record: {},
+    updatetime: '',
     switch: false,
     type: [{
       id: 1,
@@ -242,6 +243,13 @@ Page({
    */
   onLoad: function () {
     wx.lin.initValidateForm(this)
+    const db = wx.cloud.database()
+    db.collection('Schedule').where({type: 'laptopupdate'}).get().then(res => {
+      console.log(res.data)
+      this.setData({
+        updatetime: res.data[0].updatetime
+      })
+    })
   },
 
   /**

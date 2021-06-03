@@ -256,7 +256,7 @@ Page({
       submitted: false,
     })
     const db = wx.cloud.database()
-    db.collection('ServiceStart').where({}).limit(1).get().then(res => {
+    db.collection('Schedule').where({type: 'servicetime'}).limit(1).get().then(res => {
       console.log(res.data)
       if(res.data.length !== 0){
         res = res.data[0]
