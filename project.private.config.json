@@ -103,12 +103,6 @@
           "scene": null
         },
         {
-          "name": "停止服务",
-          "pathName": "pages/closed/closed",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "终止表单",
           "pathName": "pages/formAbort/formAbort",
           "query": "",
