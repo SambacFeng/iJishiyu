@@ -90,12 +90,19 @@
   locked="{{showPopup}}" 
   bind:lintap="onPopupTap"
 > 
+  <!-- 
+    showpopup: 是否弹窗提示，正常服务期间为false
+    stoptime:
+    1. 即将结束，显示结束时间
+    2. 已结束，显示结束时间
+    3. 已结束，显示下次开始时间
+   -->
   <view class="popup">
     <view wx:if="{{stoptype === 1}}" class="popupText">
     期末将至，及时雨的小伙伴们也要投入到紧张的复习中去，电脑报修服务将于<text style="color: red">{{stoptime}}</text>关闭，遇到问题可以联系及时雨官方QQ：2354221762，我们将不定期上线为您解决问题，给您带来不便敬请谅解。         
     </view>
     <view wx:elif="{{stoptype === 2}}" class="popupText">
-    及时雨电脑报修服务已于<text style="color: red">{{stoptime}}</text>关闭，遇到问题可以联系及时雨官方QQ：2354221762，我们将不定期上线为您解决问题，给您带来不便敬请谅解。         
+    期末将至，及时雨电脑报修服务已于<text style="color: red">{{stoptime}}</text>关闭，遇到问题可以联系及时雨官方QQ：2354221762，我们将不定期上线为您解决问题，给您带来不便敬请谅解。         
     </view>
     <view wx:else class="popupText">
     现在是小雨的休息时间，暂时不提供电脑维修等相关服务。预计恢复服务的时间为：<text style="color: red">{{starttime}}</text>，有问题请咨询及时雨官方QQ：2354221762.
