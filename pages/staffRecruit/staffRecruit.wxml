@@ -1,0 +1,66 @@
+<view>
+  <l-form name="form">
+    <content-card name="加入及时雨">
+      <l-form-item name="name" label="姓名" label-width="150rpx" align-items="end">
+        <l-input id="name" placeholder="请输入姓名" value="{{name}}" bind:lininput="inputName" hide-label/>
+      </l-form-item>
+      <l-form-item name="gender" label="性别" label-width="150rpx" align-items="end">
+              <l-radio-group id="gender" placement="row" current="{{gender}}" bind:linchange="changeGender" none-checked="{{false}}" length="2">
+          <l-radio key="男">男</l-radio>
+          <l-radio key="女">女</l-radio>
+        </l-radio-group>
+      </l-form-item>
+          <l-form-item name="nation" label="民族" label-width="150rpx" align-items="end">
+            <l-input id="nation" placeholder="请输入民族" value="{{phone}}" bind:lininput="inputPhone" hide-label/>
+          </l-form-item>
+      <l-form-item name="classes" label="班级" label-width="150rpx" align-items="end">
+        <l-input id="classes" placeholder="请填写专业与班级，如：软工1班" value="{{address}}" bind:lininput="inputAddress" hide-label/>
+      </l-form-item>
+      <l-form-item name="phone" label="手机" label-width="150rpx" align-items="end">
+        <l-input id="phone" placeholder="请输入11位手机号码" value="{{phone}}" bind:lininput="inputPhone" hide-label/>
+      </l-form-item>
+      <l-form-item name="QQ" label="QQ" label-width="150rpx" align-items="end">
+        <l-input id="QQ" placeholder="请输入QQ号码" value="{{QQ}}" bind:lininput="inputQQ" hide-label/>
+      </l-form-item>
+      <l-form-item name="address" label="地址" label-width="150rpx" align-items="end">
+        <l-input id="address" placeholder="请填写园区与楼栋，如：李园1舍" value="{{address}}" bind:lininput="inputAddress" hide-label/>
+      </l-form-item>
+      <l-form-item label="自我介绍" name="desc" label-width="150rpx" align-items="end">
+        <l-textarea 
+          id="desc" 
+          placeholder="性格特点、爱好、自身优势与特长等"
+          value="{{desc}}" 
+          auto-height="{{true}}" 
+          border="{{false}}"
+          indicator="{{false}}"
+          style="height: 200rpx"
+        />
+      </l-form-item>
+    </content-card>
+    <view class="btns">
+      <view slot="submit" class="btn">
+        <l-button 
+          wx:if="{{submitted}}" 
+          loading="true" 
+          width="200" 
+          height="80" 
+          disabled="true"
+        >
+          <text>提交中</text>
+        </l-button>
+        <l-button 
+          wx:else 
+          width="200" 
+          height="80" 
+          bindtap="submit"
+          disabled="{{''?true:''}}"
+        >
+          <text>提交</text>
+        </l-button>
+      </view>
+      <view slot="reset" class="btn">
+        <l-button width="200" height="80" bindtap="reset" type="default" plain>重置</l-button>
+      </view>
+    </view>
+  </l-form>
+</view>

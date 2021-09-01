@@ -1,0 +1,51 @@
+l-radio{
+  margin: 0 20rpx;
+}
+
+l-checkbox{
+  margin: 0 20rpx;
+}
+
+.comment{
+  font-size: 26rpx;
+  color: #2c60b4e0;
+  margin: 0 20rpx 20rpx 20rpx;
+  text-indent: 56rpx;
+}
+
+.btns{
+  display: flex;
+}
+
+.btn{
+  flex: 1;
+  margin: 40rpx 87.5rpx;
+}
+
+.popup {
+  height: 400rpx;
+  width: 400rpx;
+  background: #ffffff;
+  text-align: center;
+  /* line-height: 500rpx; */
+  color: #555;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  padding: 50rpx 50rpx;
+}
+
+.popupText{
+  font-size: 30rpx;
+}
+
+.popup-mask {
+  width: 180rpx;
+  height: 72rpx;
+  border-radius: 4rpx;
+  border: 1px solid rgba(54, 131, 214, 1);
+  color: rgba(54, 131, 214, 1);
+  font-size: 28rpx;
+  margin: 40rpx auto;
+  line-height: 72rpx;
+  text-align: center;
+}

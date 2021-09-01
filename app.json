@@ -17,6 +17,7 @@
     "pages/staffStatistic/staffStatistic",
     "pages/staffIndex/staffIndex",
     "pages/staffSignIn/staffSignIn",
+    "pages/staffRecruit/staffRecruit",
     "pages/userIndex/userIndex"
 
   ],

@@ -119,6 +119,12 @@
           "pathName": "pages/signInQuery/signInQuery",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "招新表单",
+          "pathName": "pages/staffRecruit/staffRecruit",
+          "query": "",
+          "scene": null
         }
       ]
     }
