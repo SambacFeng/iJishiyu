@@ -44,6 +44,15 @@
       <l-form-item wx:if="{{items[5].checked === true}}" name="problemDetail">
         <l-input id="problemDetail" hide-label="{{true}}" value="{{problemDetail}}" bind:lininput="inputProblemDetail" placeholder="请描述您的电脑遇到的问题" />
       </l-form-item>
+      <view class="comment" style="margin: 15rpx 0;">
+        (可选)您可以上传遇到问题的照片，最多三张
+      </view>
+      <l-image-picker count="3" bind:linchange="toChange" custom="{{true}}">
+        <view class="add">
+          <image class='add-icon' src='/assets/camera_add.png'></image>
+          <text class='add-text'>选择图片</text>
+        </view>
+      </l-image-picker>
     </content-card>
     <l-form-item name="timeArrange">
       <content-card name="电脑使用的紧急性">
