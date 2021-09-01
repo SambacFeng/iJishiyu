@@ -1,8 +1,13 @@
 <content-card name="拍照打卡">
-  <l-image-picker count="1" bind:linchange="toChange" />
+  <l-image-picker count="1" bind:linchange="toChange" custom="{{true}}">
+    <view class="add">
+      <image class='add-icon' src='/assets/camera_add.png'></image>
+      <text class='add-text'>选择图片</text>
+    </view>
+  </l-image-picker>
   <view class="upLoad">
     <l-button wx:if="{{checkin}}" type="success">打卡成功</l-button>
-    <l-button wx:elif="{{!flag}}" bindtap="toCamera">上传</l-button>    
+    <l-button wx:elif="{{!flag}}" bindtap="toCamera">上传</l-button>
     <l-button wx:else loading="true" disabled="true">上传中</l-button>
   </view>
 </content-card>
@@ -31,7 +36,6 @@
   </view>
   <view class="lv1">
     <view class="left">
-      
     </view>
     <view class="mid">
       下午
@@ -142,80 +146,3 @@
     </view>
   </view> -->
 </content-card>
-<!-- <content-card name="值班表">
-  <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
-    <view class="lv2" style="width:20%">
-      时间
-    </view>
-    <view class="lv2">
-      上午
-    </view>
-    <view class="lv2">
-      下午
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:20%">
-      周一
-    </view>
-    <view class="lv2">
-      <text>周瑞燃 伍瑞淇\n卢晓琪</text>
-    </view>
-    <view class="lv2">
-      <text>卢刘柳 苏博怡\n周华波</text>
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:20%">
-      周二
-    </view>
-    <view class="lv2">
-      <text>刘宇浩 卢刘柳\n刘宇轩</text>
-    </view>
-    <view class="lv2">
-
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:20%">
-      周三
-    </view>
-    <view class="lv2">
-      <text>周瑞燃 潘龙基\n孙海萌</text>
-    </view>
-    <view class="lv2">
-      <text>张芸峰 王嘉庆\n李宇航</text>
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:20%">
-      周四
-    </view>
-    <view class="lv2">
-      <text>苏博怡 谷艺恺\n周华波</text>
-    </view>
-    <view class="lv2">
-      <text>李方圆 李宇航\n潘龙基</text>
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:20%">
-      周五
-    </view>
-    <view class="lv2">
-      <text>王嘉庆 谷艺恺\n伍瑞淇</text>
-    </view>
-    <view class="lv2">
-      <text>黄英子 刘宇浩\n燕美霖</text>
-    </view>
-  </view>
-  <view class="lv1">
-    <view class="lv2" style="width:35%">
-      周六（上午）
-    </view>
-    <view class="lv2" style="width:65%">
-      <text>张芸峰 黄英子 燕美霖\n卢晓琪 刘宇轩</text>
-    </view>
-  </view>
-</content-card> -->
-
