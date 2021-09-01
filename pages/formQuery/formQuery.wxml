@@ -69,3 +69,10 @@
     </view>
   </content-card>
 </view>
+<!-- 筛选结果为空时显示 -->
+<view wx:if="{{flag1}}">
+    <view class="tips">
+      <!-- 插值语法内填待分配/维修中/已完成 -->
+      目前没有{{}}的表单
+    </view>
+  </view>
