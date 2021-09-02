@@ -2,6 +2,7 @@
   "usingComponents": {
     "content-card": "/components/content-card/index",
     "l-input":"/miniprogram_npm/lin-ui/input/index",
-    "l-button":"/miniprogram_npm/lin-ui/button/index"
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index"
   }
 }

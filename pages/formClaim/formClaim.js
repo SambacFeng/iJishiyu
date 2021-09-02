@@ -35,6 +35,15 @@ Page({
     })
   },
 
+  toShow: function (options){
+    /* 
+      1. 给“更多”绑定的点击事件，把当前record的showDetail属性设置为true
+      2. 列表渲染图片，给每个图片绑定点击事件查看大图
+    */
+    this.setData({
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

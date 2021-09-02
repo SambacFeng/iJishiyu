@@ -9,14 +9,6 @@
       </view>
     </view>
     <view class="lv1">
-      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._phone}}">
-        手机：{{Record[index]._phone}}
-      </view>
-      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._QQ}}">
-        QQ：{{Record[index]._QQ}}
-      </view>
-    </view>
-    <view class="lv1">
       <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._address}}">
         地址：{{Record[index]._address}}
       </view>
@@ -30,7 +22,66 @@
         问题：{{Record[index]._problem}}
       </view>
     </view>
-    <view class="lv1" style="text-align: center;">
+    <view class="lv1" style="text-align: center;position: relative;">
+      <view class="lv2" style="text-align:left; width: 510rpx; border-right: none">
+        报修时间：{{Record[index]._time}}
+      </view>
+      <view hidden="{{Record[index].showDetail}}" bindtap="toShow" class="showmore">
+        更多
+        <l-icon name="down" size="32" style="position: absolute; right: 10%"/>
+      </view>
+      <view >
+                
+      </view>
+      <view hidden="{{!Record[index].showDetail}}" class="lv2" style="width: 186rpx; padding: 10rpx 0; border-left: #2c61b440 2rpx solid;">
+        <l-button 
+          wx:if="{{Record[index].submitted===true}}" 
+          loading="true" 
+          disabled="true"
+          width="140" 
+          height="56"
+        >接单中</l-button>
+        <l-button
+          wx:else 
+          data-formid="{{Record[index]._id}}" 
+          data-index="{{index}}" 
+          width="140" 
+          height="56"
+          bind:lintap="toClaim" 
+          disabled="{{Record[index]._staffopenid !== ''}}"
+        >
+          <text wx:if="{{Record[index]._staffopenid === ''}}" style="font-size: 36rpx">接单</text>
+          <text wx:else style="font-size: 36rpx">已接</text>
+        </l-button>
+      </view>
+    </view>
+    <block wx:if="{{Record[index].showDetail}}">
+    <view class="lv1">
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._phone}}">
+        手机：{{Record[index]._phone}}
+      </view>
+      <view class="lv2" bind:longpress="toCopy" data-data="{{Record[index]._QQ}}">
+        QQ：{{Record[index]._QQ}}
+      </view>
+    </view>
+
+    <view class="lv1" style="border-right: #2c61b440 2rpx solid; text-align: left">
+      <!-- <image src="{{Record[index]}}"></image> -->
+      <image src="/assets/logo.jpg" alt="" />
+      <image src="/assets/logo.jpg" alt="" />
+      <image src="/assets/logo.jpg" alt="" />
+    </view>      
+    </block>
+
+  </content-card>
+</view>
+<view wx:if="{{Record.length == 0}}">
+  <view class="comment">
+    暂时没有未处理的报修单，去做点其他事情吧。
+  </view>
+</view>
+
+    <!-- <view class="lv1" style="text-align: center;">
       <view class="lv2" style="text-align:left;width: 520rpx;">
         报修时间：{{Record[index]._time}}
       </view>
@@ -55,11 +106,4 @@
           <text wx:else style="font-size: 36rpx">已接</text>
         </l-button>
       </view>
-    </view>
-  </content-card>
-</view>
-<view wx:if="{{Record.length == 0}}">
-  <view class="comment">
-    暂时没有未处理的报修单，去做点其他事情吧。
-  </view>
-</view>
+    </view> -->
