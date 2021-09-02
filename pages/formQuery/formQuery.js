@@ -8,7 +8,7 @@ Page({
    */
   data: {
     Record: {},
-    flag1: 2,
+    flag1: 1,
     flag2: 0,
     flag3: 0,
     title: '待分配',
