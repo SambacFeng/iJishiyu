@@ -21,11 +21,11 @@
       <view class="lv2" style="width: 100%">
         问题：{{Record[index]._problem}}
       </view>
-      <view hidden="{{Record[index].showDetail}}" bindtap="toChange" class="showmore" data-index="{{index}}">
+      <view hidden="{{Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}">
         更多
         <l-icon name="right" size="32" style="position: absolute; right: 10%"/>
       </view>      
-      <view hidden="{{!Record[index].showDetail}}" bindtap="toChange" class="showmore">
+      <view hidden="{{!Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}">
         收起
         <l-icon name="down" size="32" style="position: absolute; right: 10%"/>
       </view>      
@@ -67,9 +67,9 @@
       </view>
       <view class="lv1" style="border-right: #2c61b440 2rpx solid; text-align: left">
         <!-- <image src="{{Record[index]}}"></image> -->
-        <image src="/assets/logo.jpg" alt="" />
-        <image src="/assets/logo.jpg" alt="" />
-        <image src="/assets/logo.jpg" alt="" />
+        <image src="{{Record[index]._picsrc[0]}}" alt="" />
+        <image src="{{Record[index]._picsrc[1]}}" alt="" />
+        <image src="{{Record[index]._picsrc[2]}}" alt="" />
       </view>      
     </block>
   </content-card>
