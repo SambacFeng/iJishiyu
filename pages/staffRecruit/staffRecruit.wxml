@@ -11,10 +11,10 @@
         </l-radio-group>
       </l-form-item>
           <l-form-item name="nation" label="民族" label-width="150rpx" align-items="end">
-            <l-input id="nation" placeholder="请输入民族" value="{{phone}}" bind:lininput="inputPhone" hide-label/>
+            <l-input id="nation" placeholder="请输入民族" value="{{nation}}" bind:lininput="inputNation" hide-label/>
           </l-form-item>
       <l-form-item name="classes" label="班级" label-width="150rpx" align-items="end">
-        <l-input id="classes" placeholder="请填写专业与班级，如：软工1班" value="{{address}}" bind:lininput="inputAddress" hide-label/>
+        <l-input id="classes" placeholder="请填写专业与班级，如：软工1班" value="{{classes}}" bind:lininput="inputClasses" hide-label/>
       </l-form-item>
       <l-form-item name="phone" label="手机" label-width="150rpx" align-items="end">
         <l-input id="phone" placeholder="请输入11位手机号码" value="{{phone}}" bind:lininput="inputPhone" hide-label/>
@@ -34,13 +34,14 @@
           border="{{false}}"
           indicator="{{false}}"
           style="height: 200rpx"
+          bind:lininput="inputDesc"
         />
       </l-form-item>
     </content-card>
     <view class="btns">
       <view slot="submit" class="btn">
         <l-button 
-          wx:if="{{submitted}}" 
+          wx:if="{{submitted === 1}}" 
           loading="true" 
           width="200" 
           height="80" 
@@ -49,10 +50,18 @@
           <text>提交中</text>
         </l-button>
         <l-button 
+          wx:elif="{{submitted === 2}}" 
+          width="200" 
+          height="80" 
+          disabled="true"
+        >
+          <text>已提交</text>
+        </l-button>
+        <l-button 
           wx:else 
           width="200" 
           height="80" 
-          bindtap="submit"
+          bindtap="checksubmit"
           disabled="{{''?true:''}}"
         >
           <text>提交</text>
