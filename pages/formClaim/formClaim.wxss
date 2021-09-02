@@ -33,10 +33,12 @@ page{
   /* padding: 0 20rpx; */
   width:186rpx;
   height:76rpx;
-  line-height: 76rpx;
+  line-height: 86rpx;
   color: #2c61b4;
   font-weight: 500;
   border-right: #2c61b440 2rpx solid;
+  /* background-color: red; */
+  text-align: center;
 }
 
 image {
