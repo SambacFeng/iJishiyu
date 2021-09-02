@@ -1,4 +1,6 @@
 // pages/formCollect/formCollect.js
+var tmpsrc = []
+
 Page({
 
   /**
@@ -105,6 +107,11 @@ Page({
     })
   },
 
+  solvePicture: function (options) {
+    console.log(options.detail.all)
+    tmpsrc = options.detail.all
+  },
+
   submit(e){
     console.log(this.data)
     wx.showModal({
@@ -155,6 +162,35 @@ Page({
           this.setData({
             submitted: true,
           })
+
+          var picsrc = []
+
+          var date = new Date()
+          var years = date.getFullYear().toString()
+          var months = (date.getMonth()+1).toString()
+          if (months.length < 2) months = '0'+months
+          var days = date.getDate().toString()
+          if (days.length < 2) days = '0'+days
+          var hours = date.getHours().toString()
+          if (hours.length < 2) hours = '0'+hours
+          var minutes = date.getMinutes().toString()
+          if (minutes.length < 2) minutes = '0'+minutes
+          var time = years+months+days+hours+minutes
+
+          for(var i in tmpsrc) {
+            var name=time+this.data.name+i+'.jpg'
+            picsrc.push(name)
+            wx.cloud.uploadFile({
+              cloudPath: 'Forms/'+name,
+              filePath: tmpsrc[i].url,
+              success: res=> {
+                console.log('图片上传成功')
+              },
+              fail: res => {
+                console.log('图片上传失败')
+              }
+            })
+          }
           wx.cloud.callFunction({
             name: 'submitform',
             data: {
@@ -166,6 +202,7 @@ Page({
                 _QQ: this.data.QQ,
                 _address: this.data.address,
                 _problem: this.data.problem,
+                _picsrc: picsrc,
                 _timeArrange: this.data.timeArrange,
               }
             },

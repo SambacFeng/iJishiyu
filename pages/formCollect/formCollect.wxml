@@ -47,7 +47,7 @@
       <view class="comment" style="margin: 15rpx 0;">
         (可选)您可以上传遇到问题的照片，最多三张
       </view>
-      <l-image-picker count="3" bind:linchange="toChange" custom="{{true}}">
+      <l-image-picker count="3" bind:linchange="solvePicture" bind:linremove="solvePicture" custom="{{true}}">
         <view class="add">
           <image class='add-icon' src='/assets/camera_add.png'></image>
           <text class='add-text'>选择图片</text>
