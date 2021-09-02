@@ -12,14 +12,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const db = wx.cloud.database()
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const db = wx.cloud.database()
+    db.collection('Schedule').where({type: 'isRecruiting'}).get().then(res => {
+      console.log(res.data)
+      this.setData({
+        isRecruiting: res.data[0].isRecruiting
+      })
+    })
   },
 
   /**

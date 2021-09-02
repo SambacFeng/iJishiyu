@@ -16,7 +16,7 @@
         </l-button>
       </navigator>
       <!-- 数据库schedule里定义一个是否显示这个recruit按钮的条目 -->
-      <navigator url="/pages/staffRecruit/staffRecruit" wx:if="isRecruiting">
+      <navigator url="/pages/staffRecruit/staffRecruit" wx:if="{{isRecruiting}}">
         <l-button type="default" width="600" plain>
           <text>加入及时雨</text>
         </l-button>
