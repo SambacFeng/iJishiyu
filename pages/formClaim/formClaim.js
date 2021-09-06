@@ -170,4 +170,13 @@ Page({
     })
   },
 
+  toCheck: function (options){
+    let index = options.currentTarget.dataset.index
+    let data = options.currentTarget.dataset.data
+    var name = this.data.Record[options.currentTarget.dataset.index]._filename
+    wx.previewImage({
+      urls: [this.data.Record[index]._picsrc[data]]
+    })
+  },
+
 })

@@ -30,6 +30,7 @@
         <l-icon name="down" size="32" style="position: absolute; right: 10%"/>
       </view>      
     </view>
+    <l-transition show="{{Record[index].showDetail}}" name="fade">
     <block wx:if="{{Record[index].showDetail}}">
     <view class="lv1" style="text-align: center;position: relative;">
       <view class="lv2" style="text-align:left; width: 510rpx; border-right: none">
@@ -65,13 +66,15 @@
           QQ：{{Record[index]._QQ}}
         </view>
       </view>
-      <view class="lv1" style="border-right: #2c61b440 2rpx solid; text-align: left">
+      <view wx:if="{{Record[index]._picsrc[0]}}" class="lv1" style="border-right: #2c61b440 2rpx solid; text-align: left">
         <!-- <image src="{{Record[index]}}"></image> -->
-        <image src="{{Record[index]._picsrc[0]}}" alt="" />
-        <image src="{{Record[index]._picsrc[1]}}" alt="" />
-        <image src="{{Record[index]._picsrc[2]}}" alt="" />
+        <image data-index="{{index}}" data-data="0" bindtap="toCheck" src="{{Record[index]._picsrc[0]}}" alt="" />
+        <image data-index="{{index}}" data-data="1" bindtap="toCheck" src="{{Record[index]._picsrc[1]}}" alt="" />
+        <image data-index="{{index}}" data-data="2" bindtap="toCheck" src="{{Record[index]._picsrc[2]}}" alt="" />
       </view>      
-    </block>
+    </block>      
+    </l-transition>
+
   </content-card>
 </view>
 <view wx:if="{{Record.length == 0}}">
