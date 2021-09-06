@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "content-card": "/components/content-card/index"
+    "content-card": "/components/content-card/index",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index",
+    "l-transition":"/miniprogram_npm/lin-ui/transition/index"
   }
 }

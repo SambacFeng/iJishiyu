@@ -26,6 +26,38 @@ Page({
     })
   },
 
+  toShow: function (options){
+    /* 
+      1. 给“更多”绑定的点击事件，把当前record的showDetail属性设置为true
+      2. 列表渲染图片，给每个图片绑定点击事件查看大图
+    */
+    var index = options.currentTarget.dataset.index
+    var tmp = this.data.Record
+    tmp[index].showDetail^=1
+    this.setData({
+      Record: tmp
+    })
+    
+    if(this.data.Record[index]._picsrc[0][0] === 'h') return 
+    
+    var picid = 0
+    for(var i in this.data.Record[index]._picsrc) {
+      var url = 'cloud://ijishiyu-6g6n5cncc846de79.696a-ijishiyu-6g6n5cncc846de79-1304847030/Forms/'+this.data.Record[index]._picsrc[i]
+      wx.cloud.downloadFile({
+        fileID: url,
+        success: res=> {
+          if(res.statusCode === 200) {
+            console.log(res.tempFilePath)
+            tmp[index]._picsrc[picid++] = res.tempFilePath
+            this.setData({
+              Record: tmp
+            })
+          }
+        }
+      })
+    }
+  },
+
   onComplete(e){
     var formid = e.currentTarget.dataset.formid
     var url = '../formComplete/formComplete?id='+formid
