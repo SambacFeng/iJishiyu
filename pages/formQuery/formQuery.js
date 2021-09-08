@@ -8,9 +8,10 @@ Page({
    */
   data: {
     Record: {},
-    flag1: true,
-    flag2: false,
-    flag3: false,
+    flag1: 1,
+    flag2: 0,
+    flag3: 0,
+    title: '待分配',
     isadmin: false,
   },
 
@@ -36,7 +37,8 @@ Page({
 
   allocating(){
     var tmp = {}
-    for(var i=0,id=0;i<Backup.length;i++){
+    var id = 0
+    for(var i=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._staffopenid === ""){
         tmp[id]=Backup[i]
@@ -46,15 +48,17 @@ Page({
     // console.log(tmp)
     this.setData({
       Record: tmp,
-      flag1: true,
-      flag2: false,
-      flag3: false,
+      flag1: id==0?2:1,
+      flag2: 0,
+      flag3: 0,
+      title: '待分配'
     })
   },
 
   repairing(){
     var tmp = {}
-    for(var i=0,id=0;i<Backup.length;i++){
+    var id = 0
+    for(var i=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._staffopenid !== "" && Backup[i]._solvedtime === ""){
         tmp[id]=Backup[i]
@@ -64,15 +68,17 @@ Page({
     // console.log(tmp)
     this.setData({
       Record: tmp,
-      flag1: false,
-      flag2: true,
-      flag3: false,
+      flag1: 0,
+      flag2: id==0?2:1,
+      flag3: 0,
+      title: '维修中'
     })
   },
 
   done(){
     var tmp = {}
-    for(var i=0,id=0;i<Backup.length;i++){
+    var id = 0
+    for(var i=0;i<Backup.length;i++){
       // console.log(Backup[i])
       if(Backup[i]._solvedtime !== ""){
         tmp[id]=Backup[i]
@@ -82,9 +88,10 @@ Page({
     // console.log(tmp)
     this.setData({
       Record: tmp,
-      flag1: false,
-      flag2: false,
-      flag3: true,
+      flag1: 0,
+      flag2: 0,
+      flag3: id == 0?2:1,
+      title: '已完成'
     })
   },
 

@@ -41,3 +41,10 @@ l-button{
 text{
   color: #2c61b4;
 }
+
+.tips {
+  margin: 30vh auto 0;
+  font-size: 46rpx;
+  text-align: center;
+  color: #2c61b4;
+}

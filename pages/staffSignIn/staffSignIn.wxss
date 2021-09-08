@@ -34,3 +34,24 @@
 .upLoad{
   padding: 20rpx 0 0 10rpx;
 }
+
+.add{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-icon {
+  height: 80rpx;
+  width: 80rpx;
+}
+
+.add-text {
+  margin-top: 6rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #bfbfbf;
+}

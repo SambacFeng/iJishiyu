@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     motto: 'Hello World',
+    isStuck: false,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,6 +17,11 @@ Page({
     })
   },
   onLoad() {
+    setTimeout(()=>{
+      this.setData({
+        isStuck: true
+      })
+    }, 8000);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -103,12 +103,6 @@
           "scene": null
         },
         {
-          "name": "停止服务",
-          "pathName": "pages/closed/closed",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "终止表单",
           "pathName": "pages/formAbort/formAbort",
           "query": "",
@@ -123,6 +117,12 @@
         {
           "name": "打卡情况查询",
           "pathName": "pages/signInQuery/signInQuery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "招新表单",
+          "pathName": "pages/staffRecruit/staffRecruit",
           "query": "",
           "scene": null
         }

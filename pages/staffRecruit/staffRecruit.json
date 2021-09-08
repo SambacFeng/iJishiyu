@@ -9,6 +9,6 @@
     "l-checkbox":"/miniprogram_npm/lin-ui/checkbox/index",
     "l-popup":"/miniprogram_npm/lin-ui/popup/index",
     "l-radio":"/miniprogram_npm/lin-ui/radio/index",
-    "l-image-picker":"/miniprogram_npm/lin-ui/image-picker/index"
+    "l-textarea":"/miniprogram_npm/lin-ui/textarea/index"
   }
 }

@@ -1,7 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/closed/closed",
     "pages/formCollect/formCollect",
     "pages/formClaim/formClaim",
     "pages/formAbort/formAbort",
@@ -18,6 +17,7 @@
     "pages/staffStatistic/staffStatistic",
     "pages/staffIndex/staffIndex",
     "pages/staffSignIn/staffSignIn",
+    "pages/staffRecruit/staffRecruit",
     "pages/userIndex/userIndex"
 
   ],

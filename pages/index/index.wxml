@@ -1,9 +1,19 @@
 <!-- 尽快进行身份验证，跳转到不同身份对应的首页 -->
 <view class="main">
-  <view class="loading">
-    <l-loading show="{{true}}" size="large" type="flash"></l-loading>
-  </view>
-  <view>
-    <text>页面跳转中，请稍候 . . .</text>
-  </view>
+  <block wx:if="{{!isStuck}}">
+    <view class="loading">
+      <l-loading show="{{true}}" size="large" type="flash"></l-loading>
+    </view>
+    <view>
+      <text>页面加载中，请稍候 . . .</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="loading">
+      <l-icon name="close" color="#F4516C" size="72"/>
+    </view>
+    <text>
+      遇到错误，请尝试重启小程序
+    </text>
+  </block>
 </view>

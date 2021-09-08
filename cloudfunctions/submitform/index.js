@@ -91,6 +91,14 @@ exports.main = async (event, context) => {
     })
     db.collection('Forms').doc(event.formid).remove()
     return true
+  } else if (event.type === 'RecruitNew') {
+    let newinfo = event.newinfo
+    newinfo._openid = wxContext.OPENID
+    console.log(newinfo)
+    db.collection("RecruitNew").add({
+      data: newinfo
+    })
+    return true
   }
   return false
 }
