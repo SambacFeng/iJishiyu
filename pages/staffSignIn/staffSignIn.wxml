@@ -14,7 +14,7 @@
 <content-card name="值班表">
   <view class="lv1" style="border-top: #2c61b440 2rpx solid;">
     <view class="left">
-      时间
+      星期
     </view>
     <view class="mid">
       时间
@@ -23,9 +23,11 @@
       人员
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[0]}}" class="lv1">
     <view class="left">
-      周一
+      <view>
+        周一
+      </view>
     </view>
     <view class="mid">
       上午
@@ -34,8 +36,11 @@
       {{staffsheet[0]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[1]}}" class="lv1">
     <view class="left">
+      <view wx:if="{{!staffsheet[0]}}">
+        周一
+      </view>
     </view>
     <view class="mid">
       下午
@@ -44,9 +49,11 @@
       {{staffsheet[1]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[2]}}" class="lv1">
     <view class="left">
-      周二
+      <view>
+        周二
+      </view>
     </view>
     <view class="mid">
       上午
@@ -55,9 +62,24 @@
       {{staffsheet[2]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[3]}}" class="lv1">
     <view class="left">
-      周三
+      <view wx:if="{{!staffsheet[2]}}">
+        周二
+      </view>
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+      {{staffsheet[3]}}
+    </view>
+  </view>
+  <view wx:if="{{staffsheet[4]}}" class="lv1">
+    <view class="left">
+      <view>
+        周三
+      </view>
     </view>
     <view class="mid">
       上午
@@ -66,9 +88,11 @@
       {{staffsheet[4]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[5]}}" class="lv1">
     <view class="left">
-
+      <view wx:if="{{!staffsheet[4]}}">
+        周三
+      </view>
     </view>
     <view class="mid">
       下午
@@ -77,9 +101,11 @@
       {{staffsheet[5]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[6]}}" class="lv1">
     <view class="left">
-      周四
+      <view>
+        周四
+      </view>
     </view>
     <view class="mid">
       上午
@@ -88,9 +114,11 @@
       {{staffsheet[6]}}
     </view>
   </view>
-  <!-- <view class="lv1">
+  <view wx:if="{{staffsheet[7]}}" class="lv1">
     <view class="left">
-
+      <view wx:if="{{!staffsheet[6]}}">
+        周四
+      </view>
     </view>
     <view class="mid">
       下午
@@ -98,10 +126,12 @@
     <view class="right">
       {{staffsheet[7]}}
     </view>
-  </view> -->
-  <!-- <view class="lv1">
+  </view>
+  <view wx:if="{{staffsheet[8]}}" class="lv1">
     <view class="left">
-      周五
+      <view>
+        周五
+      </view>
     </view>
     <view class="mid">
       上午
@@ -109,10 +139,12 @@
     <view class="right">
       {{staffsheet[8]}}
     </view>
-  </view> -->
-  <view class="lv1">
+  </view>
+  <view wx:if="{{staffsheet[9]}}" class="lv1">
     <view class="left">
-      周五
+      <view wx:if="{{!staffsheet[8]}}">
+        周五
+      </view>
     </view>
     <view class="mid">
       下午
@@ -121,15 +153,56 @@
       {{staffsheet[9]}}
     </view>
   </view>
-  <view class="lv1">
+  <view wx:if="{{staffsheet[10]}}" class="lv1">
     <view class="left">
-      周六
+      <view>
+        周六
+      </view>
     </view>
     <view class="mid">
       上午
     </view>
     <view class="right">
       {{staffsheet[10]}}
+    </view>
+  </view>
+  <view wx:if="{{staffsheet[11]}}" class="lv1">
+    <view class="left">
+      <view wx:if="{{!staffsheet[10]}}">
+        周六
+      </view>
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+      {{staffsheet[11]}}
+    </view>
+  </view>
+  <view wx:if="{{staffsheet[12]}}" class="lv1">
+    <view class="left">
+      <view>
+        周日
+      </view>
+    </view>
+    <view class="mid">
+      上午
+    </view>
+    <view class="right">
+      {{staffsheet[12]}}
+    </view>
+  </view>
+  <view wx:if="{{staffsheet[13]}}" class="lv1">
+    <view class="left">
+      <view wx:if="{{!staffsheet[12]}}">
+        周日
+      </view>
+    </view>
+    <view class="mid">
+      下午
+    </view>
+    <view class="right">
+      {{staffsheet[13]}}
     </view>
   </view>
   <view class="lv1" style="font-size: 30rpx">
