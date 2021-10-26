@@ -21,11 +21,11 @@
       <view class="lv2" style="width: 100%">
         问题：{{Record[index]._problem}}
       </view>
-      <view hidden="{{Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}">
+      <view hidden="{{Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}" style="border-right: none">
         更多
         <l-icon name="right" size="32" style="position: absolute; right: 10%"/>
       </view>      
-      <view hidden="{{!Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}">
+      <view hidden="{{!Record[index].showDetail}}" bindtap="toShow" class="showmore" data-index="{{index}}" style="border-right: none">
         收起
         <l-icon name="down" size="32" style="position: absolute; right: 10%"/>
       </view>      
@@ -33,7 +33,7 @@
     <l-transition show="{{Record[index].showDetail}}" name="fade">
     <block wx:if="{{Record[index].showDetail}}">
     <view class="lv1" style="text-align: center;position: relative;">
-      <view class="lv2" style="text-align:left; width: 510rpx; border-right: none">
+      <view class="lv2" style="text-align:left; width: 520rpx; border-right: none">
         报修时间：{{Record[index]._time}}
       </view>
       <view class="lv2" style="width: 186rpx; padding: 10rpx 0; border-left: #2c61b440 2rpx solid;">
