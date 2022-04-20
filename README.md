@@ -10,6 +10,9 @@
 <a href="https://imgtu.com/i/5TNhsU"><img src="https://z3.ax1x.com/2021/10/27/5TNhsU.png" alt="5TNhsU.png" width = "240" border="0"></a>
 <a href="https://imgtu.com/i/5TN4LF"><img src="https://z3.ax1x.com/2021/10/27/5TN4LF.png" alt="5TN4LF.png" width = "240" border="0"></a>
 
+### 视频介绍：
+[i及时雨视频介绍-bilibili](https://www.bilibili.com/video/BV1Da411v7di/)
+
 ### 体验二维码：
 
 注：此二维码为生产环境二维码，还请您在体验过程中不要进行表单提交等操作，以免给我们的工作带来困扰，感谢您的理解
