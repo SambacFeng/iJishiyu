@@ -35,7 +35,7 @@
   </view>
 
   <view wx:for="{{Record}}" wx:key="*this">
-    <view class="lv1">
+    <view class="lv1" wx:if="{{Record[index].type}}">
       <view class="lv2 name">
         {{Record[index].name}}
       </view>
