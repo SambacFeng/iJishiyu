@@ -38,7 +38,9 @@ exports.main = async (event, context) => {
       if (usertype !== 2 &&usertype !== 3){
         return {}
       }
-      form = (await db.collection('Member').where({}).orderBy('_fulltime','desc').get()).data
+      form = (await db.collection('Member').where({
+        _openid: _.neq("oMouO5T-ypxCHFZAtER4YYIzQEoY").and(_.neq("oMouO5f4a5eSrEma7SO4dLHmoNLw"))//Feng and Zhang
+      }).orderBy('_fulltime','desc').get()).data
       var date = new Date()
       var dateofweek = date.getDay() || 7
       var fday = new Date(date.getFullYear(),date.getMonth(),date.getDate()-dateofweek+1)
